@@ -1,0 +1,408 @@
+@media (max-width: 1700px){
+    #title{
+        width: 850px;
+        height: 400px;
+        padding: 0 80px;
+    }
+    #title h1{
+        font-size: calc(2vw + 22px);
+        letter-spacing: 15px;
+    }
+    #sima{
+        height: 430px;
+    }
+}
+@media (max-width: 1500px){
+    #upravni-odbor-2-red{
+        gap: 80px;
+    }
+
+}
+@media (max-width: 1440px){
+    #hero{
+        height: 100vh;
+        min-height: 750px;
+        background-position: -180px;
+    }
+    #title{
+        width: calc(50% + 130px);
+        height: 300px;
+        padding: 0 60px;
+    }
+    #title h1{
+        font-size: calc(2.6vw + 12px);
+        letter-spacing: 14px;
+    }
+    #sima{
+        height: 330px;
+        right: -125px;
+    }
+    #konkursi{
+        gap: 25px;
+        height: 55%;
+    }
+    .konkurs{
+        width: 310px;
+    }   
+    .konkurs-sadrzaj{
+        height: 85%;
+        width: 90%;
+    }
+    .konkrs-picture{
+        width: 80%;
+    }
+    .konkurs-text{
+        width: 85%;
+    }
+    .konkurs-text p{
+        padding: 0 7%;
+    }
+    #upravni-odbor-2-red{
+        gap: 20px;
+    }
+    .clan-uo-border{
+        width: 210px;
+        height: 300px;
+        top: 5%;
+    }
+    .clan-uo-opis{
+        left: 5%;
+        top: -85%;
+    }
+    #clan2-uo-opis, #clan4-uo-opis{
+        left: -55%;
+    }
+    #about-text{
+        width: 900px;
+    }
+    #about-pictures{
+        width: 100%;
+    }
+    #ap1, #ap2{
+        justify-content: center;
+        gap: 30px;
+    }
+    .a-picture{
+        height: 100%;
+        width: 300px;
+    }
+    #about-pictures-enlarged-img{
+        height: 75%;
+    }
+    #x{
+        top: 12.5%;
+        right: 4px;
+    }
+    #mapa-border{
+        height: 300px;
+        width: 450px;
+    }
+}
+@media (max-width: 1350px){
+    /* .konkurs{
+        width: 350px;
+    } */
+    /* #upravni-odbor-2-red{
+        gap: 30px;
+    } */
+    /* #mapa-border{
+        width: 400px;
+    } */
+}
+@media (max-width: 1300px){
+    nav ul li a{
+        width: 150px;
+        /* padding: 0 12px; */
+    }
+    /* nav ul li a{
+        width: 150px;
+    } */
+    /* #hero{
+        height: 700px;
+        min-height: auto;
+    } */
+    /* #title h1{
+        position: relative;
+        left: -20px;
+    } */
+    /* #upravni-odbor-2-red{
+        gap: 20px;
+    } */
+    /* #contact{
+        height: 400px;
+    } */
+}
+@media (max-width: 1250px){
+    /* #konkursi{
+        gap: 20px;
+    } */
+    /* #upravni-odbor-2-red{
+        gap: 10px;
+    } */
+    /* .clan-uo-border{
+        width: 240px;
+        height: 330px;
+        border: 3px solid rgb(243, 233, 219);
+        position: relative;
+        top: 5%;
+    } */
+    /* #ap1, #ap2{
+        justify-content: center;
+        gap: 20px;
+    } */
+}
+@media (max-width: 1201px){
+    /* .konkurs-sadrzaj{
+        width: 90%;
+    }
+    .konkurs-text{
+        width: 85%;
+    }
+    .konkurs-text p{
+        padding: 0 30px;
+    } */
+    /* #about{
+        height: 750px;
+        min-height: auto;
+        gap: 20px;
+    } */
+    /* #about-text{
+        width: 900px;
+    }
+    #about-pictures{
+        width: 1000px;
+    } */
+}
+@media (max-width: 1150px){
+    /* nav ul li a{
+        width: 130px;
+    } */
+    /* #hero{
+        height: 600px;
+    } */
+    /* .konkurs{
+        width: 300px;
+    } */
+}
+@media (max-width: 1100px){ 
+    /* #news{
+        height: 800px;
+        min-height: auto;
+    } */
+    /* .konkurs-text p{
+        padding: 0 15px;
+    } */
+    /* .clan-uo-border{
+        width: 215px;
+        height: 300px;
+    } */
+}
+@media (max-width: 1024px){
+    nav ul li a{
+        width: 125px;
+        /* padding: 0 10px; */
+        font-size: calc(.6vw + 8.5px);
+    }
+    #hero{
+        height: 100vh;
+        min-height: 600px;
+        background-position: -370px;
+    }
+    #title{
+        width: calc(40% + 100px);
+        height: 250px;
+        padding: 0 60px;
+    }
+    #title h1{
+        font-size: calc(2.8vw + 14px);
+        letter-spacing: 12px;
+        line-height: calc(2vw + 35px);
+    }
+    #sima{
+        height: 280px;
+        right: -115px;
+    }
+    #news{
+        height: 80vh;
+        min-height: 800px;
+    }
+    #konkursi{
+        gap: 10px;
+        height: 55%;
+    }
+    #konkursi-naslov{
+        right: 70%;
+    }
+    .konkurs{
+        width: 235px;
+    }   
+    .konkurs-sadrzaj{
+        height: 85%;
+        width: 90%;
+    }
+    .konkrs-picture{
+        width: 80%;
+    }
+    .konkurs-text{
+        width: 95%;
+    }
+    .konkurs-text p{
+        padding: 0 5%;
+    }
+    
+    #upravni-odbor{
+        height: 100vh;
+        min-height: 950px;
+    }
+    #patrijarh-border{
+        width: 220px;
+        height: 280px;
+        top: 10%;
+    }
+    #patrijarh-ime{
+        font-size: calc(1vw + 12px);
+        top: 60px;
+    }
+    #patrijarh-opis{
+        width: 250px;
+        height: 300px;
+        top: -20px;
+        left: -15px;
+        padding: 5px;
+    }
+    #patrijarh-opis h2{
+        font-size: 21px;
+    }
+    #patrijarh-opis p{
+        font-size: 16.5px;
+    }
+    #upravni-odbor-2-red{
+        gap: 10px;
+    }
+    .clan-uo-border{
+        width: 160px;
+        height: 200px;
+        top: 15%;
+    }
+    .clan-uo-opis{
+        left: 5%;
+        top: -85%;
+        font-size: 14px;
+        padding: 3% 15% 8% 15%;
+    }
+    .clan-uo-opis h2{
+        text-align: center;
+        padding: 5% 0;
+        font-size: 20px;
+    }
+    #clan2-uo-opis, #clan4-uo-opis{
+        left: -55%;
+    }
+    .clan-ime{
+        font-size: calc(.8vw + 9px);
+    }
+    #about-text{
+        width: 700px;
+    }
+    #about{
+        font-family: MYRIADPRO-REGULAR;
+        width: 100%;
+        height: 80vh;
+        min-height: 720px;
+    }
+    #ap1, #ap2{
+        justify-content: center;
+        gap: 15px;
+    }
+    .a-picture{
+        width: 230px;
+    }
+    #mapa-border{
+        height: 250px;
+        width: 370px;
+    }
+    /* #news{
+        height: 700px;
+    } */
+    /* .konkurs{
+        width: 260px;
+    }
+    .konkurs-sadrzaj{
+        height: 90%;
+        width: 90%;
+        top: 5%;
+    } */
+    /* .konkurs-text{
+        width: 90%;
+    }
+    .konkurs-text h2{
+        font-size: 32px;
+    }
+    .konkurs-text h5{
+        padding: 4% 0 6.5% 0;
+    } */
+    /* .konkurs-text p{
+        padding: 0 15px;
+        font-size: 16px;
+    } */
+    /* #upravni-odbor{
+        width: 100%;
+        height: 1000px;
+        min-height: auto;
+    } */
+    /* #patrijarh-border{
+        width: 220px;
+        height: 260px;
+    } */
+    /* #patrijarh{
+        border: 2px solid rgb(243, 233, 219);
+    } */
+    /* #patrijarh-ime{
+        font-size: 20px;
+    } */
+    /* #patrijarh-opis{
+        width: 260px;
+        height: 340px;
+        top: -20px;
+        left: -20px;
+    } */
+    /* #patrijarh-opis h2{
+        font-size: 24px;
+    } */
+    /* #patrijarh-opis p{
+        font-size: 18px;
+    } */
+    /* #upravni-odbor-2-red{
+        gap: 20px;
+    } */
+    /* .clan-uo-border{
+        width: 190px;
+        height: 250px;
+    } */
+    /* .clan-ime{
+        font-size: 16px;
+    } */
+    /* .clan-uo-opis{
+    font-size: 16px;
+    } */
+    /* .clan-uo-opis h2{
+        font-size: 21px;
+    } */
+    /* #about-text{
+        width: 800px;
+    } */
+    /* #about-text p{
+        font-size: calc(1vw + 12px);
+    } */
+    /* #about-pictures{
+        width: 800px;
+    } */
+    /* #mapa-border{
+        width: 350px;
+    } */
+}
+@media (max-width: 950px){
+    /* #upravni-odbor-2-red{
+        gap: 5px;
+    } */
+}

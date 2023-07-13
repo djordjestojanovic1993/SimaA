@@ -1,0 +1,568 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+@font-face {
+    src: url(font/MYRIADPRO-REGULAR.OTF);
+    font-family: MYRIADPRO-REGULAR;
+}
+@font-face {
+    src: url(font/MYRIADPRO-SEMIBOLD.OTF);
+    font-family: MYRIADPRO-BOLD;
+}
+@font-face {
+    src: url(font/MYRIADPRO-CONDIT.OTF);
+    font-family: MYRIADPRO-CONDIT;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+.center-y-axis{
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+header{
+    font-family: MYRIADPRO-REGULAR;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    z-index: 5;
+    box-shadow: 0px -3px 15px 0px rgb(102, 101, 101);
+}
+nav{
+    width: 100%;
+    height: 100%;
+    transition: 0.8s;
+}
+#nav-ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 70%;
+    left: 30%;
+}
+nav ul li{
+    text-align: center;
+    display: inline-block;
+    position: relative;
+	float: left;
+    height: 100%;
+}
+nav ul li a{
+    color: rgb(250, 235, 215);
+    transition: all 0.5s ease 0s;
+    text-decoration: none;
+    font-size: calc(.6vw + 10px);
+    display: block;
+    padding: 0 20px;
+    height: 100%;
+    width: calc(11vw);
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav ul li ul{
+	position: absolute;
+	left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    transition: 0.8s;
+}
+nav ul li ul li a{ 
+    padding: 16px 20px;
+    /* width: calc(10vw); */
+}
+nav ul li a:hover{
+    transition: all 0.5s ease 0s;
+    text-decoration: none;
+    color: rgb(77, 21, 21);
+    background-color: rgb(250, 235, 215);
+    color: rgb(77, 21, 21);
+}
+nav ul li:focus-within > ul,
+nav ul li:hover > ul{
+    visibility: visible;
+    opacity: 1;
+}
+#page{
+    position: relative;
+}
+#hero{
+    width: 100%;
+    height: 100vh;
+    min-height: 800px;
+    background-image: url(/./pictures/backgrounds/pozadina2-modified.jpg) ;
+    background-size: cover;
+    font-family: MYRIADPRO-REGULAR;
+}
+#title-sima{
+    height: 100%;
+    width: 100%;
+    background-color: rgba(145, 113, 46, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+#title{
+    background-color: rgba(207, 201, 189, 0.7);
+    width: 1100px;
+    height: 450px;
+    position: relative;
+    box-shadow: 0px 0 30px 8px #474545;
+    margin: auto;
+    padding: 0 100px;
+}
+#title h1{
+    font-size: calc(3vw + 20px);
+    text-align: center;
+    color: rgba(77, 21, 21, 80%);
+    letter-spacing: 16px;
+    /* width: 90%; */
+}
+#sima{
+    position: absolute;
+    right: -185px;
+    top: -30px;
+    height: 480px;
+    /* background-color: red; */
+}
+#sima img{
+    width: 100%;
+    height: 100%;
+    transform: scaleX(-1);
+}
+#news{
+    width: 100%;
+    height: 100vh;
+    min-height: 900px;
+    background-color: rgb(243, 233, 219);
+    position: relative;
+    font-family: MYRIADPRO-REGULAR;
+}
+#konkursi-naslov{
+    position: absolute;
+    top: 8%;
+    right: 75%;
+}
+#konkursi-naslov h2{
+    font-size: calc(2vw + 18px);
+    color: rgb(77, 21, 21);
+    letter-spacing: 5px;
+}
+#konkursi{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    position: relative;
+    top: 55%;
+    margin: auto;
+}
+.konkurs{
+    height: 100%;
+    width: 400px;
+}
+.konkurs a{
+    text-decoration: none;
+    color: black;
+}
+.konkurs-border{
+    height: 100%;
+    width: 100%;
+    border: 3px solid rgb(77, 21, 21);
+    box-shadow: 5px 5px 15px rgb(77, 21, 21), -2px -2px 15px rgb(197, 174, 174);
+    transition: 1.1s all;
+}
+.konkurs-border:hover{
+    box-shadow: inset -2px -2px 15px rgb(77, 21, 21), inset 5px 5px 15px rgb(197, 174, 174);
+    transition: 1.1s all;
+}
+.konkurs-sadrzaj{
+    height: 85%;
+    width: 85%;
+    border-top: 3px solid rgb(77, 21, 21);
+    border-bottom: 3px solid rgb(77, 21, 21);
+    position: relative;
+    top: 7.5%;
+    margin: auto;
+    letter-spacing: 0.5px;
+}
+.konkrs-picture{
+    width: 75%;
+    height: 30%;
+    margin: auto;
+    position: relative;
+    top: 5%;
+}
+.konkrs-picture img{
+    width: 100%;
+    height: 100%;
+}
+.konkurs-text{
+    width: 75%;
+    height: 60%;
+    margin: auto;
+    position: relative;
+    top: 7%;
+    overflow-y: auto;
+}
+.konkurs-text::-webkit-scrollbar {
+    width: .0px;
+}
+.konkurs-text h2{
+    text-align: center;
+    font-size: calc(.8vw + 22px);
+    font-weight: bold;
+}
+.konkurs-text h5{
+    padding: 5%;
+    font-size: 20px;
+    font-weight: bold;
+    max-height: 38px;
+    overflow-y: auto;
+    text-align: center;
+    margin-bottom: 5px;
+}
+.konkurs-text h5::-webkit-scrollbar {
+    width: .0px;
+}
+.konkurs-text p{
+    font-size: calc(.5vw + 10px);
+    text-align: justify;
+}
+#upravni-odbor{
+    width: 100%;
+    height: 120vh;
+    min-height: 1100px;
+    background-color: rgb(77, 21, 21);
+}
+#upravni-odbor-border{
+    height: 90%;
+    width: 94%;
+    border: 5px solid rgb(243, 233, 219);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+#upravni-odbor-1-red{
+    width: 100%;
+    height: 50%;
+    position: relative;
+}
+#patrijarh-border{
+    border: 5px solid rgb(243, 233, 219);
+    width: 280px;
+    height: 350px;
+    margin: auto;
+    position: relative;
+    top: 10%;
+}
+#patrijarh{
+    border: 3px solid rgb(243, 233, 219);
+    width: 93%;
+    height: 95%;
+    margin: auto;
+    position: relative;
+}
+#patrijarh-ime{
+    position: relative;
+    top: 70px;
+    color: rgb(243, 233, 219);
+    text-align: center;
+    font-size: 24px;
+    transition: visibility 0s, opacity 0.5s linear;
+}
+#patrijarh-opis{
+    cursor: pointer;
+    width: 320px;
+    height: 400px;
+    overflow-y: hidden;
+    background-color: rgb(77, 21, 21);
+    position: absolute;
+    top: -25px;
+    left: -20px;
+    transition: all 0.5s ease 0s;
+    box-shadow: 6px 6px 10px  rgb(51, 11, 11), -2px -2px 10px rgb(97, 42, 42);
+    z-index: 2;
+    font-weight: 550;
+    font-family: MYRIADPRO-CONDIT;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.6s linear;
+    color: rgb(243, 233, 219);
+    letter-spacing: 0.5px;
+    padding: 5px 0;
+}
+#patrijarh-opis h2{
+    text-align: center;
+    padding: 5% 10%;
+    font-size: 28px;
+}
+#patrijarh-opis p{
+    font-size: 21px;
+    text-align: justify;
+    margin: 0 10% 0 10%;
+}
+#patrijarh-border:hover #patrijarh-opis{
+    visibility: visible;
+    opacity: 1;
+}
+#patrijarh-border:hover ~ #patrijarh-ime{
+    opacity: 0;
+}
+#upravni-odbor-2-red{
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    position: relative;
+    width: 100%;
+    height: 50%;
+}
+.clan-uo-border{
+    width: 270px;
+    height: 350px;
+    border: 3px solid rgb(243, 233, 219);
+    position: relative;
+    top: 5%;
+}
+.clan-uo{
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+}
+#upravni-odbor img{
+    height: 90%;
+    width: 90%;
+    position: relative;
+    left: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.clan-uo-opis{
+    width: 120%;
+    background-color: rgba(243, 233, 219, 85%);
+    position: relative;
+    left: 30%;
+    top: -80%;
+    transition: all 0.5s ease 0s;
+    box-shadow: 3px 3px 10px  rgb(129, 104, 104);
+    padding: 8% 15%;
+    font-weight: 550;
+    font-size: 18px;
+    font-family: MYRIADPRO-CONDIT;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s linear;
+    z-index: 5;
+    text-align: justify;
+}
+.clan-uo-opis h2{
+    text-align: center;
+    padding: 5% 0;
+    font-size: 24px;
+}
+.clan-ime{
+    position: relative;
+    top: 10%;
+    color: rgb(243, 233, 219);
+    text-align: center;
+    font-size: 20px;  
+    transition: visibility 0s, opacity 0.5s linear;
+}
+#clan2-uo-opis{
+    left: -70%;
+}
+#clan4-uo-opis{
+    left: -70%;
+}
+#clan1-uo:hover #clan1-uo-opis{  
+    visibility: visible;
+    opacity: 1;
+}
+#clan1-uo:hover ~ .clan-ime{
+    opacity: 0;
+}
+#clan2-uo:hover #clan2-uo-opis{
+    visibility: visible;
+    opacity: 1;
+}
+#clan2-uo:hover ~ .clan-ime{
+    opacity: 0;
+}
+#clan3-uo:hover #clan3-uo-opis{
+    
+    visibility: visible;
+    opacity: 1;
+}
+#clan3-uo:hover ~ .clan-ime{
+    opacity: 0;
+}
+#clan4-uo:hover #clan4-uo-opis{
+    visibility: visible;
+    opacity: 1;
+}
+#clan4-uo:hover ~ .clan-ime{
+    opacity: 0;
+}
+#about{
+    font-family: MYRIADPRO-REGULAR;
+    width: 100%;
+    height: 100vh;
+    min-height: 920px;
+    background-color: rgb(243, 233, 219);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#about-text{
+    width: 65%;
+    position: relative;
+    padding: 2.5%;
+    text-align: justify;
+}
+#about-text p{
+    font-size: calc(1vw + 8px);
+}
+#about-pictures{
+    width: 70%;
+    height: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#ap1, #ap2{
+    width: 100%;
+    height: 45%;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+}
+.a-picture{
+    height: 100%;
+    width: 30%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 5px 5px 15px 5px rgb(158, 132, 97), -3px -3px 10px rgb(255, 255, 255);
+}
+.a-picture img{
+    width: 100%;
+    height: 100%;
+    filter: sepia(0.7);
+    transition: all 0.5s ease 0s;
+}
+.a-picture div{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(145, 113, 46, 0.2);
+    position: absolute;
+}
+.a-picture img:hover{
+    filter: none;
+    transform: scale(1.05);
+    transition: 1s;
+}
+#about-pictures-enlarged{
+    height: 80%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.6s, opacity 0.6s linear;
+    z-index: 3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#about-pictures-enlarged-border{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    opacity: 0;
+    cursor: pointer;
+    background-color: rgba(77, 21, 21, 0.9);
+    transition: visibility 0.3s, opacity 0.3s linear;
+}
+#about-pictures-enlarged-img{
+    height: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 7px solid wheat;
+}
+#x{
+    position: absolute;
+    top: 0px;
+    right: 2px;
+    z-index: 1;
+    background-color: rgb(77, 21, 21);
+    color: wheat;
+    width: 4.5%;
+    height: 6%;
+    font-size: 1.8vw;
+    cursor: pointer;
+    border-left: 3.5px solid wheat;
+    border-bottom: 3.5px solid wheat;
+    border-right: 3.5px solid wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#x:hover{
+    background-color: rgb(116, 48, 48);
+    transition: 0.4s;
+}
+#contact{
+    font-family: MYRIADPRO-REGULAR;
+    height: 60vh;
+    width: 100%;
+    min-height: 350px;
+    background-color: rgb(92, 91, 91);
+    display: flex;
+}
+#kontakt{
+    height: 50%;
+    width: 50%;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#kontakt i{
+    margin-top: 3%;
+}
+#kontakt p{
+    display: inline-block;
+    font-weight: bold;
+}
+#mapa-border{
+    height: 400px;
+    width: 600px;
+    box-shadow: 5px 5px 20px 15px rgb(53, 53, 53);
+}
+#mapa{
+    width: 100%;
+    height: 100%;
+}
+
+#mapa iframe{
+    height: 100%;
+    width: 100%;
+    filter: grayscale(100%);
+}
+#mapa-preko{
+}
