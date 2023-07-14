@@ -401,8 +401,66 @@
         width: 350px;
     } */
 }
+@media (min-width: 951px){
+    #nav-ul{
+        display: flex !important;
+    }
+}
 @media (max-width: 950px){
-    /* #upravni-odbor-2-red{
-        gap: 5px;
-    } */
+    #hamburger{
+        display: block;
+        color: black;
+    }
+    nav{
+        
+    }
+    #nav-ul{
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        right: 0;
+        top: 100px;
+        transform: translateY(0);
+        background-color: inherit;
+        background-image: linear-gradient(to right, rgba(245, 243, 245, 0.1), rgba(245, 243, 245, 0.1));
+        padding: 10px 0;
+        left: 0;
+        top: 0;
+        height: 200px;
+        /* margin-top: 60px; */
+        background-color: rgb(61, 19, 19);
+    }
+    #nav-ul i{
+        position: absolute;
+        left: 575px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #nav-ul li{
+        display: block;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #nav-ul1{
+        position: relative;
+        width: 100%;
+        display: none;
+        flex-direction: column !important;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+        background-color: red;
+    }
+    #nav-ul1 li {  
+        position: relative;
+        display: block;
+        height: 30px;
+    }
+    nav ul li ul li a{ 
+        display: block;
+    }
 }

@@ -53,4 +53,84 @@ for(let i=0; i<6; i++){
     })
 }
 
+const navUl1 = document.getElementById("nav-ul1");
 
+function hamburger(){
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    const line3 = document.getElementById('line3');
+    const hamburger = document.getElementById('hamburger');
+    const list = document.querySelector('nav ul');
+    const listA = document.querySelector('nav ul li a');
+    const nav = document.querySelector('nav');
+    const arrowHero = document.getElementById("arrow-hero");
+    let clicked1 = false;
+
+
+    const openList = function(){
+        line1.style.transform = "rotate(45deg)";
+        line2.style.transform = "scaleY(0)";
+        line3.style.transform = "rotate(-45deg)";
+        list.style.display = "flex";
+        if(!nav.classList.contains('scrolled')){
+            nav.classList.add('scrolled');
+            addedScrolled = true;
+        }
+        clicked = true;
+    }
+    const closeList = function(){
+        line1.style.transform = "rotate(0deg)";
+        line2.style.transform = "scaleY(1)";
+        line3.style.transform = "rotate(0deg)";
+        list.style.display = "none";
+        if(addedScrolled){
+            nav.classList.remove('scrolled');
+            addedScrolled = false;
+        }
+        clicked = false;
+    }
+
+    let addedScrolled = false;
+    let clicked = false;
+
+    hamburger.addEventListener('click', function(){
+        if(clicked === false){
+            openList();
+        }else{
+            closeList();
+        }
+    });
+
+    listA.addEventListener('click', function(){
+        if(clicked1 === true)
+            closeList();
+    });
+
+    const openHeroList = function(){
+        navUl1.style.display = "flex";
+        // if(!nav.classList.contains('scrolled')){
+        //     nav.classList.add('scrolled');
+        //     addedScrolled = true;
+        // }
+        clicked1 = true;
+    }
+
+    const closeHeroList = function(){
+        navUl1.style.display = "none";
+        // if(!nav.classList.contains('scrolled')){
+        //     nav.classList.add('scrolled');
+        //     addedScrolled = true;
+        // }
+        clicked1 = false;
+    }
+
+    arrowHero.addEventListener('click', function(){
+        if(clicked1 === false){
+            openHeroList();
+        }else{
+            closeHeroList();
+        }
+    });
+
+}
+hamburger();
