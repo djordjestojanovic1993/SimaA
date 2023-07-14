@@ -405,6 +405,9 @@
     #nav-ul{
         display: flex !important;
     }
+    #nav-ul1{
+        display: block !important;
+    }
 }
 @media (max-width: 950px){
     #hamburger{
@@ -423,19 +426,20 @@
         transform: translateY(0);
         background-color: inherit;
         background-image: linear-gradient(to right, rgba(245, 243, 245, 0.1), rgba(245, 243, 245, 0.1));
-        padding: 10px 0;
+        padding: 20px 0;
         left: 0;
         top: 0;
-        height: 200px;
+        height: 390px;
         /* margin-top: 60px; */
         background-color: rgb(61, 19, 19);
+        justify-content: center;
+        gap: 90px;
     }
     #nav-ul i{
-        position: absolute;
-        left: 575px;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 30px;
     }
     #nav-ul li{
         display: block;
@@ -444,23 +448,42 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 30px;
+    }
+    #nav-ul li a{  
+        font-size: calc(1vw + 11px) !important;
+    }
+    #nav-ul li:nth-child(2) a{
+        width: 200px;
+    }
+    #div-hero{
+          display: flex;  
+          height: 100%;
+          gap: 10px;
+          margin-left: 40px;
     }
     #nav-ul1{
-        position: relative;
+        position: absolute;
+        top: 30px;
         width: 100%;
-        display: none;
+        visibility: hidden;
+        opacity: 0;
         flex-direction: column !important;
-        align-items: center;
+        /* align-items: center; */
         justify-content: center;
-        height: 150px;
-        background-color: red;
+        /* height: 150px; */
+        /* transition: display 1.5s ease !important; */
     }
     #nav-ul1 li {  
         position: relative;
-        display: block;
+        display: flex;
         height: 30px;
+        /* padding: 2px 0 8px 0; */
     }
-    nav ul li ul li a{ 
-        display: block;
+    #nav-ul1 li a{  
+        font-size: calc(1vw + 8px) !important;
+        width: 165px;
+        height: 100%;
+        padding: 0;
     }
 }

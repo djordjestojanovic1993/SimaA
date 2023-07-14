@@ -61,7 +61,7 @@ function hamburger(){
     const line3 = document.getElementById('line3');
     const hamburger = document.getElementById('hamburger');
     const list = document.querySelector('nav ul');
-    const listA = document.querySelector('nav ul li a');
+    const listA = document.getElementsByClassName('nav-a');
     const nav = document.querySelector('nav');
     const arrowHero = document.getElementById("arrow-hero");
     let clicked1 = false;
@@ -83,11 +83,14 @@ function hamburger(){
         line2.style.transform = "scaleY(1)";
         line3.style.transform = "rotate(0deg)";
         list.style.display = "none";
+        navUl1.style.opacity = "0";
+        navUl1.style.visibility = "hidden";
         if(addedScrolled){
             nav.classList.remove('scrolled');
             addedScrolled = false;
         }
         clicked = false;
+        clicked1 = false;
     }
 
     let addedScrolled = false;
@@ -101,13 +104,17 @@ function hamburger(){
         }
     });
 
-    listA.addEventListener('click', function(){
-        if(clicked1 === true)
-            closeList();
-    });
+    for(let navA of listA){
+        navA.addEventListener('click', function(){
+            // if(clicked1 === true)
+                closeList();
+        });
+    }
 
     const openHeroList = function(){
         navUl1.style.display = "flex";
+        navUl1.style.opacity = "1";
+        navUl1.style.visibility = "visible";
         // if(!nav.classList.contains('scrolled')){
         //     nav.classList.add('scrolled');
         //     addedScrolled = true;
@@ -116,7 +123,8 @@ function hamburger(){
     }
 
     const closeHeroList = function(){
-        navUl1.style.display = "none";
+        navUl1.style.opacity = "0";
+        navUl1.style.visibility = "hidden";
         // if(!nav.classList.contains('scrolled')){
         //     nav.classList.add('scrolled');
         //     addedScrolled = true;

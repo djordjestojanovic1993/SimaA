@@ -60,6 +60,12 @@ nav ul li{
 	float: left;
     height: 100%;
 }
+
+#div-hero{
+      display: flex;  
+      height: 100%;
+      gap: 10px;
+}
 nav ul li a{
     color: rgb(250, 235, 215);
     transition: all 0.5s ease 0s;
@@ -80,7 +86,7 @@ nav ul li ul{
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s, opacity 0.5s linear;
-    transition: 0.8s;
+    transition: 0.8s all;
 }
 nav ul li ul li a{ 
     padding: 16px 20px;
