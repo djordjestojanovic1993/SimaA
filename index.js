@@ -53,6 +53,33 @@ for(let i=0; i<6; i++){
     })
 }
 
+const clanoviUpravnogOdbora = document.getElementsByClassName('upravni-odbor-slide');
+const upravniOdborStrelicaDesno = document.getElementById('upravni-odbor-strelica-desno');
+const upravniOdborStrelicaLevo = document.getElementById('upravni-odbor-strelica-levo');
+
+function slideMembersUpravnogOdbora(){
+    let brClanovaUpravnogOdbora = clanoviUpravnogOdbora.length;
+    let brojac = 0;
+    upravniOdborStrelicaDesno.addEventListener('click', (e)=>{
+        
+        clanoviUpravnogOdbora[brojac].classList.remove("visible");
+        if(brojac==brClanovaUpravnogOdbora-1){
+            brojac=-1;
+        }
+        clanoviUpravnogOdbora[brojac+1].classList.add("visible");
+        brojac = brojac+1;
+    })
+    upravniOdborStrelicaLevo.addEventListener('click', (e)=>{
+        clanoviUpravnogOdbora[brojac].classList.remove("visible");
+        if(brojac==0){
+            brojac=brClanovaUpravnogOdbora;
+        }
+        clanoviUpravnogOdbora[brojac-1].classList.add("visible");
+        brojac = brojac-1;
+    })
+}
+slideMembersUpravnogOdbora();
+
 const navUl1 = document.getElementById("nav-ul1");
 
 function hamburger(){

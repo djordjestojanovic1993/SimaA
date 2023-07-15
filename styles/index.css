@@ -284,6 +284,9 @@ nav ul li:hover > ul{
     font-size: calc(.5vw + 10px);
     text-align: justify;
 }
+#upravni-odbor-strelica-levo, #upravni-odbor-strelica-desno{
+    display: none;
+}
 #upravni-odbor{
     width: 100%;
     height: 120vh;
@@ -371,6 +374,10 @@ nav ul li:hover > ul{
     position: relative;
     width: 100%;
     height: 50%;
+}
+.upravni-odbor-2-red-2-clana{
+    display: flex;
+    gap: 90px;
 }
 .clan-uo-border{
     width: 270px;
