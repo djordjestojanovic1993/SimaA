@@ -18,7 +18,7 @@ const title = document.getElementById('title');
 
 window.addEventListener('scroll', (e)=>{
     for(let i=0; i<300; i++){
-        if(window.pageYOffset>i+100){
+        if(window.pageYOffset>i+0){
             title.style.opacity = 1-i/300;
         }
     }

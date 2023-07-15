@@ -487,3 +487,78 @@
         padding: 0;
     }
 }
+@media (max-width: 768px){
+    #hero{
+        height: 100vh;
+        min-height: 800px;
+        background-position: center;
+        /* background-size: 150%; */
+        background-image: url(/./pictures/backgrounds/poz-relefon.jpg) ;
+    }
+    #title{
+        /* display: flex; */
+        /* flex-direction: column-reverse; */
+        top: 200px;
+        width: 80%;
+        padding: 0 20px;
+        justify-content: center;
+        align-items: center;
+    }
+    #title h1{
+        font-size: calc(2.8vw + 14px);
+        letter-spacing: 5px;
+    }
+    #sima{
+        height: 350px;
+        position: absolute;
+        margin: 0;
+        width: 300px;
+        top: -350px;
+        right: 50%;
+        transform: translate(50%, 0);
+    }
+    #sima img{
+        width: 100%;
+        height: 100%;
+        /* transform: scaleX(-1); */
+        opacity: 0.8;
+    }
+    #news{
+        min-height: 1100px;
+    }
+    #konkursi-naslov{
+        top: 4%;
+    }
+    #konkursi{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .konkurs{
+        height: 270px;
+        width: 80%;
+        margin: auto;
+    }
+    .konkurs-sadrzaj{
+        display: flex;
+    }
+    .konkrs-picture{
+        width: 75%;
+        height: 80%;
+        top: 0;
+    }
+    .konkurs-text{
+        height: 95%;
+        top: 0;
+    }
+    .konkurs-text h2{
+    }
+    .konkurs-text h5{
+        padding: 1% 5%;
+    }
+    .konkurs-text p{
+        padding: 3% 7%;
+    }
+}
+@media (max-width: 768px){
+   
+}
