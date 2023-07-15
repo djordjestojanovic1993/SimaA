@@ -499,7 +499,7 @@
     }
     .konkurs{
         height: 190px;
-        width: 400px;
+        width: 360px;
     }
     #upravni-odbor-strelica-levo{
         left: 4%;
@@ -507,30 +507,34 @@
     #upravni-odbor-strelica-desno{
         right: 4%;
     }
+    #patrijarh-border{
+        width: 260px;
+        height: 320px;
+    }
     #patrijarh-opis{
-        width: 350px;
+        width: 330px;
         padding: 10px 10px 10px 0;
     }
     #patrijarh-opis h2{
-        font-size: 24px;
+        font-size: 22px;
         padding: 20px 0 15px 0;
     }
     #patrijarh-opis p{
-        font-size: 20px;
+        font-size: 18px;
         padding: 5px 0;
         width: 85%;
         margin: auto;
     }
     .clan-uo-opis{
-        width: 350px;
+        width: 330px;
         padding: 20px 0 15px 0;
     }
     .clan-uo-opis h2{
-        font-size: 24px;
+        font-size: 22px;
         padding: 20px 0 15px 0;
     }
     .clan-uo-opis p{
-        font-size: 20px;
+        font-size: 18px;
         padding: 5px 0;
         width: 90%;
         margin: auto;
