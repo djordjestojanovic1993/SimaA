@@ -221,6 +221,11 @@
     #about-pictures-enlarged-img{
         width: 700px;
     }
+    #x{
+        top: 3px;
+        right: 2px;
+        border: 4px solid wheat;
+    }
     #mapa-border{
         height: 250px;
         width: 370px;
@@ -506,8 +511,6 @@
         align-items: center;
         justify-content: center;
     }
-    #about-pictures{
-    }
     #about-pictures-enlarged{
         height: fit-content;
         display: flex;
@@ -578,8 +581,24 @@
         width: 90%;
         margin: auto;
     }
-    #about-pictures-enlarged-img{
-        height: 55%;
+    #about{
+        gap: 30px;
     }
-
+    #about-text{
+        width: 380px;
+    }
+    #ap2{
+        display: none;
+    }
+    #about-pictures-enlarged-img{
+        width: 380px;
+    }
+    #kontakt{
+        font-size: 14px;
+        gap: 15px;
+    }
+    #mapa-border{
+        height: 180px;
+        width: 200px;
+    }
 }
