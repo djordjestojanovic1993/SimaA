@@ -585,6 +585,7 @@ nav ul li:hover > ul{
     min-height: 350px;
     background-color: rgb(92, 91, 91);
     display: flex;
+    position: relative;
 }
 #kontakt{
     height: 50%;

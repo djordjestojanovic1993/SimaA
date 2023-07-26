@@ -526,6 +526,17 @@
     }
 }
 @media (max-width: 600px){
+    #div-hero{
+        position: relative;
+        margin-left: 00px;
+    }
+    #div-hero a{
+        order: 2;
+    }
+    #arrow-hero{
+        position: absolute;
+        left: -10px;
+    }
     #news{
         min-height: 800px;
     }
@@ -561,10 +572,14 @@
         padding: 20px 0 15px 0;
     }
     #patrijarh-opis p{
-        font-size: 18px;
+        font-size: 20px;
         padding: 5px 0;
-        width: 85%;
+        width: 90%;
         margin: auto;
+    }
+    .clan-uo-border{
+        width: 260px;
+        height: 320px;
     }
     .clan-uo-opis{
         width: 330px;
@@ -583,9 +598,17 @@
     }
     #about{
         gap: 30px;
+        min-height: 1000px;
     }
     #about-text{
         width: 380px;
+    }
+    .a-picture{
+        width: 350px;
+        height: 800px;
+    }
+    #about-text p{
+        font-size: calc(1vw + 12px);
     }
     #ap2{
         display: none;
@@ -600,5 +623,61 @@
     #mapa-border{
         height: 180px;
         width: 200px;
+    }
+}
+
+@media (max-width: 425px){
+    .konkurs{
+        height: 190px;
+        width: 340px;
+    }
+    #patrijarh-opis{
+        width: 315px;
+    }
+    #upravni-odbor-strelica-levo{
+        left: calc(3% - 5px);
+    }
+    #upravni-odbor-strelica-desno{
+        right: calc(3% - 5px);
+    }
+    #about-text{
+        width: 340px;
+    }
+    .a-picture{
+        width: 340px;
+        height: 1000px;
+    }
+    #about-pictures-enlarged-img{
+        width: 340px;
+    }
+    #contact{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        min-height: 600px;
+        padding: 0;
+        margin: 0;
+    }
+    #kontakt{
+        height: 50%;
+        width: 100%;
+        top: 0%;
+        transform: translate(0, 0);
+        font-size: 18px;
+    }
+    #mapa-border{
+        height: 50%;
+        width: 100%;
+        top: 0;
+        transform: translate(0, 0);
+        display: flex;
+        align-items: end;
+        justify-content: center;
+        box-shadow: 0 0 0;
+    }
+    #mapa{
+        width: 300px;
+        height: 200px;
+        box-shadow: 5px 5px 20px 15px rgb(53, 53, 53);
     }
 }
