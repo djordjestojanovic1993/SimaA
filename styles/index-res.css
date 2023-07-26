@@ -646,7 +646,6 @@
     }
     .a-picture{
         width: 340px;
-        height: 1000px;
     }
     #about-pictures-enlarged-img{
         width: 340px;
@@ -680,5 +679,56 @@
         width: 300px;
         height: 200px;
         box-shadow: 5px 5px 20px 15px rgb(53, 53, 53);
+    }
+}
+
+@media (max-width: 375px){
+    .konkurs{
+        height: 190px;
+        width: 280px;
+    }
+    #upravni-odbor-strelica-levo{
+        left: calc(3% - 12px);
+    }
+    #upravni-odbor-strelica-desno{
+        right: calc(3% - 12px);
+    }
+    #patrijarh-border{
+        width: 230px;
+        height: 300px;
+    }
+    #patrijarh-opis{
+        width: 260px;
+    }
+    #patrijarh-opis p{ 
+        width: 95%;
+        font-size: 16.5px;
+    }
+    .clan-uo-border{
+        width: 230px;
+        height: 300px;
+    }
+    .clan-uo-opis{
+        width: 260px;
+    }
+    .clan-uo-opis p{
+        font-size: 15px;
+    }
+    #about-text{
+        width: 300px;
+    }
+    .a-picture{
+        width: 300px;
+    }
+    #about-pictures-enlarged-img{
+        width: 300px;
+    }
+    #mapa{
+        width: 270px;
+        height: 180px;
+        box-shadow: 5px 5px 20px 15px rgb(53, 53, 53);
+    }
+    #kontakt{
+        font-size: 16px;
     }
 }
