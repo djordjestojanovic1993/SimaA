@@ -332,7 +332,7 @@
         min-height: 800px;
         background-position: center;
         /* background-size: 150%; */
-        background-image: url(/./pictures/backgrounds/poz-relefon.jpg) ;
+        background-image: url('../pictures/backgrounds/poz-relefon.jpg') ;
     }
     #title{
         /* display: flex; */
