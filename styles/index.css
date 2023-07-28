@@ -3,18 +3,18 @@
     padding: 0px;
 }
 
-/* @font-face {
-    src: url(font/MYRIADPRO-REGULAR.OTF);
+ @font-face {
+    src: url(../font/MYRIADPRO-REGULAR.OTF);
     font-family: MYRIADPRO-REGULAR;
-}
+} 
 @font-face {
-    src: url(font/MYRIADPRO-SEMIBOLD.OTF);
+    src: url(../font/MYRIADPRO-SEMIBOLD.OTF);
     font-family: MYRIADPRO-BOLD;
 }
 @font-face {
-    src: url(font/MYRIADPRO-CONDIT.OTF);
+    src: url(../font/MYRIADPRO-CONDIT.OTF);
     font-family: MYRIADPRO-CONDIT;
-} */
+} 
 
 html{
     scroll-behavior: smooth;
@@ -25,7 +25,7 @@ html{
     transform: translate(0, -50%);
 }
 header{
-    /* font-family: MYRIADPRO-REGULAR; */
+    font-family: MYRIADPRO-REGULAR;
     height: 60px;
     width: 100%;
     display: flex;

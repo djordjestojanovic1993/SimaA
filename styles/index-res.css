@@ -553,6 +553,9 @@
     }
     .konkurs-text h5{
         font-size: 16px;
+    }  
+    .konkurs-text p{
+        text-align: left;
     }
     #upravni-odbor{
         height: 100vh;
