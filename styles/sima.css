@@ -20,10 +20,11 @@
 }
 .smotuljak{
     width: 75%;
-    height: 40%;
+    height: 200px;
     margin: auto;
     background-image: url('/./pictures/sima/roll.png');
     background-size: cover;
+    background-position: center;
     cursor: pointer;
 }
 .smotuljak:hover{
@@ -43,21 +44,23 @@
     background-image: url('/./pictures/sima/paper.png');
     background-size: cover;
 }
-.smotuljak p{
+#p-in-smotuljak{
+    position: absolute;
+    top: 0;
     text-align: justify;
     padding: 30% 25%;
     color: rgb(77, 21, 21);
     font-weight: bold;
     font-size: 1.1vw;
-    overflow: hidden; 
-    animation: 
-    typing 1.1s steps(40, start),
-    blink-caret .75s step-start backwards;
+    /* overflow: hidden;  */
+    /* animation:  */
+    /* typing 1.1s steps(40, start), */
+    /* blink-caret .75s step-start backwards; */
 }
-@keyframes typing {
+/* @keyframes typing {
     from { font-size: 0.2vw; height: 10px;}
     to { font-size: 1.1vw; height: 100%;}
-  }
+  } */
 #testament-conteiner{
     height: 100vh;
     width: 100%;

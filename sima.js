@@ -15,10 +15,13 @@ window.addEventListener('scroll', (e)=>{
 
 const smotuljak = document.getElementById('smotuljak');
 const pInSmotuljak = document.getElementById('p-in-smotuljak');
+const smotuljakOkvir = document.getElementById('smotuljak-okvir');
 
 smotuljak.addEventListener('click', (e)=>{
-    smotuljak.classList.add('smotuljak-transform');
-    pInSmotuljak.classList = '';
+        smotuljak.classList.add('smotuljak-transform');
+        setTimeout(function(){
+            pInSmotuljak.classList.remove('none');
+        }, 500);
 })
 
 const tpictureimg = document.getElementsByClassName('tpictureimg');
