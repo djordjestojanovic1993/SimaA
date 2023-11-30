@@ -30,14 +30,15 @@ const testamentpicturesenlarged = document.getElementById('testament-pictures-en
 const testamentpicturesenlargedimg = document.getElementById('testament-pictures-enlarged-img');
 const next = document.getElementById('next');
 let a;
-
-for(let i=0; i<4; i++){ 
+let brSlika = tpictureimg.length;
+for(let i=0; i<brSlika; i++){ 
     tpictureimg[i].addEventListener('click', (e)=>{
     let src = tpictureimg[i].src;
     a = i;
     testamentpicturesenlargedimg.src = src;
     testamentpicturesenlargedborder.classList = 'visible';
     testamentpicturesenlarged.classList = 'visible';
+    console.log(a)
 })
 testamentpicturesenlargedborder.addEventListener('click', (e)=>{
     testamentpicturesenlargedborder.classList = 'hiden';
@@ -45,17 +46,20 @@ testamentpicturesenlargedborder.addEventListener('click', (e)=>{
 })
 }
 
-    next.addEventListener('click', (e)=>{
-        let src = tpictureimg[a+1].src;
-        testamentpicturesenlargedimg.src = src;
-        console.log(testamentpicturesenlargedimg.src);
-        if(a < 2){
-            a = a+1;
-        }else{
-            a=-1;
-        }
+next.addEventListener('click', (e)=>{
+    if(a != 2){
+        console.log("cao")
+    }
+    let src = tpictureimg[a+1].src;
+    testamentpicturesenlargedimg.src = src;
+    console.log(testamentpicturesenlargedimg.src);
+    if(a < 2){
+        a = a+1;
+    }else{
+        a=-1;
+    }
         
-    })
+})
 
 
 

@@ -135,6 +135,9 @@
     transform: translate(-50%, -50%);
     z-index: 2;
     transition: visibility 0.4s, opacity 0.4s linear;
+    display: flex;
+    align-items: center;
+    gap: 100px;
 }
 #testament-pictures-enlarged-img{
     width: 100%;
@@ -145,7 +148,6 @@
     width: 50px;
     height: 50px;
     background-color: aqua;
-    position: absolute;
 }
 #proba1{
     height: 100vh;
@@ -155,4 +157,9 @@ h1{
     text-align: center;
     color: forestgreen;
     margin: 30px 0 50px;
+}
+#asd{
+    height: 100px;
+    width: 1900px;
+    background-color: red;
 }
