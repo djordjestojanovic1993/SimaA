@@ -232,7 +232,16 @@ body{
     cursor: pointer;
 }
 .none{
-    display: none;
+    display: none !important;
+}
+.form-around{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,.3);
 }
 .form{
   border: 1px solid black;
@@ -243,6 +252,8 @@ body{
   gap: 50px;
   position: absolute;
   background-color: white;
+  border-radius: 20px;
+  min-width: 600px;
 }
 .form-type form {
   display: flex;
@@ -302,6 +313,8 @@ body{
 .form-inputs{
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   width: 100%;
 }
@@ -310,13 +323,26 @@ body{
   outline: none;
   border-radius: 15px;
   padding: 1em;
-  background-color: #ddd;
-  box-shadow: inset 2px 5px 10px rgba(0,0,0,0.3);
+  background-color: #ededed;
+  box-shadow: inset 1px 2px 10px rgba(0,0,0,0.3);
   transition: 300ms ease-in-out;
   width: 90%;
 }
-.form-input:nth-child(2){
+.form-input:nth-child(3){
+  /* height: 70px; */
+}
+#form-input-text{
   height: 70px;
+}
+.choose-date{
+  display: flex;
+  gap: 30px;
+}
+.choose-date input{
+  /* background-color: red; */
+  /* height: 50px; */
+  width: 50%;
+  /* margin: auto; */
 }
 
 .form-input:focus {
@@ -325,10 +351,14 @@ body{
   box-shadow: 4px 4px 12px #969696,
              -4px -4px 12px #ffffff;
 }
-.add-btn {
+.buttons{
+  display: flex;
+  gap: 20px;
+}
+.form-btn {
   color: #090909;
   padding: 10px 45px;
-  font-size: 18px;
+  font-size: 14px;
   border-radius: 0.5em;
   background: #e8e8e8;
   border: 1px solid #e8e8e8;
@@ -338,8 +368,24 @@ body{
               cursor: pointer;
  }
  
- .add-btn:hover {
+ .form-btn:hover {
   color: #666;
   box-shadow: inset 4px 4px 12px #c5c5c5,
               inset -4px -4px 12px #ffffff;
+ }
+ #add-btn{
+  background-color: #3aa856;
+  color: white;
+ }
+ #add-btn:hover{
+  box-shadow: inset 4px 4px 12px #143a1d,
+              inset -2px -2px 8px #ffffff;
+ }
+ #clear-btn{
+  background-color: rgb(224, 43, 43);
+  color: white;
+ }
+ #clear-btn:hover{
+  box-shadow: inset 4px 4px 12px rgb(134, 26, 26),
+              inset -3px -3px 12px #ffffff;
  }

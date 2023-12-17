@@ -38,7 +38,7 @@ async function showAdvertisements(){
     }catch (error) {
         console.log("Došlo je do greške prilikom prikaza konkursa ");
     }
-    addEventListenerToDeleteButtons();
+    // addEventListenerToDeleteButtons();
 }
 showAdvertisements();
 
@@ -80,3 +80,23 @@ async function addEventListenerAdvertisementSubmitButton(){
 }
 addEventListenerAdvertisementSubmitButton();
 
+function showForm(){
+    let addBtn = document.getElementById('add-btn');
+    let form = document.getElementById('form');
+    let formAround = form.parentElement;
+    addBtn.addEventListener('click', (e)=>{
+        console.log('ada')
+        formAround.classList.remove('none');
+    })
+}
+showForm();
+
+function closeForm(){
+    let clearBtn = document.getElementById('clear-btn');
+    console.log(clearBtn)
+    clearBtn.addEventListener('click', ()=>{
+        console.log(clearBtn)
+        location.reload();
+    })
+}
+closeForm();

@@ -28,8 +28,8 @@
                 <input class="search-input" type="search" placeholder="Search" />
             </div>
             <button type="button" class="add-button">
-                <span class="add-button__text">Dodaj</span>
-                <span class="add-button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                <span class="add-button__text" >Dodaj</span>
+                <span class="add-button__icon" id="add-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
             </button>
         </div>
         <div class="advertisement-list" id="advertisement-list">
@@ -51,30 +51,44 @@
             </div>
         </div>
     </div>
-    <div class="form">
-        <div class="form-type">
-            <form>
-                <label>
-                    <input type="radio" name="radio" checked="" value="konkurs">
-                    <span>Konkurs</span>
-                </label>
-                <label>
-                    <input type="radio" name="radio" value="vest">
-                    <span>Vest</span>
-                </label>
-                <label>
-                    <input type="radio" name="radio" value="stipendista">
-                    <span>Stipendista</span>
-                </label>
-            </form>
+    <div class="form-around none" id="form-around">
+        <div class="form" id="form">
+            <div class="form-type">
+                <form>
+                    <label>
+                        <input type="radio" name="radio" checked="" value="konkurs">
+                        <span>Konkurs</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="radio" value="vest">
+                        <span>Vest</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="radio" value="stipendista">
+                        <span>Stipendista</span>
+                    </label>
+                </form>
+            </div>
+            <div class="form-inputs">
+                
+                <button type="button" class="add-button">
+                    <span class="add-button__text" >Dodaj sliku</span>
+                    <span class="add-button__icon" id="add-picure-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                </button>
+                <input type="text" autocomplete="off" name="text" class="form-input" placeholder="Naslov">
+                <input type="text" autocomplete="off" name="text" class="form-input" placeholder="Text" id="form-input-text">
+                <div class="choose-date">
+                    <p>Vazi do:</p>
+                    <input type="date" class="form-input" value="ad">
+                </div>
+            </div>
+            <div class="buttons">
+                <div class="form-btn" id="add-btn">Dodaj</div>
+                <div class="form-btn" id="clear-btn">Odustani</div>
+            </div>
         </div>
-        <div class="form-inputs">
-            <input type="text" autocomplete="off" name="text" class="form-input" placeholder="Naslov">
-            <input type="text" autocomplete="off" name="text" class="form-input" placeholder="Text">
-            <input type="text" autocomplete="off" name="text" class="form-input" placeholder="Username">
-        </div>
-        <div class="add-btn">Dodaj</div>
     </div>
+    
     <div class="advertisement-form none">
         <h1>Dodajte konkurs</h1>
         <div class="advertisement-form-conteiner-inputs">
