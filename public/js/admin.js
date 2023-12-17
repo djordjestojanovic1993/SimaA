@@ -38,7 +38,6 @@ async function showAdvertisements(){
     }catch (error) {
         console.log("Došlo je do greške prilikom prikaza konkursa ");
     }
-    // addEventListenerToDeleteButtons();
 }
 showAdvertisements();
 
