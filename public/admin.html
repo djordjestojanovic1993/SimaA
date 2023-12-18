@@ -42,13 +42,6 @@
                     </div>
                 </div>
             </template>
-            <div class="advertisement" id="advertisement">
-                <input type="text" class="advertisement-list-title" value="Neki konkurs" disabled>
-                <div class="advertisement-icons">
-                    <i class="fa fa-wrench" aria-hidden="true"></i>
-                    <i class="fa fa-trash" aria-hidden="true"></i>
-                </div>
-            </div>
         </div>
     </div>
     <div class="form-around none" id="form-around">
@@ -79,11 +72,11 @@
                 <input type="text" autocomplete="off" name="text" class="form-input" placeholder="Text" id="form-second-input">
                 <div class="choose-date">
                     <p>Vazi do:</p>
-                    <input type="date" class="form-input"id="form-third-input">
+                    <input type="date" class="form-input"id="form-third-input" pattern="\d{4}">
                 </div>
             </div>
             <div class="buttons">
-                <div class="form-btn" id="add-btn">Dodaj</div>
+                <div class="form-btn" id="add-btn-form">Dodaj</div>
                 <div class="form-btn" id="clear-btn">Odustani</div>
             </div>
         </div>

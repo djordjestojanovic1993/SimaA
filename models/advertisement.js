@@ -14,6 +14,15 @@ const advertisementSchema = new mongoose.Schema({
         type:String,
         required: true,
         default: "Text"
+    },
+    date:{
+        type:String,
+        default: ""
+    },
+    type:{
+        type:String,
+        required: true,
+        default: "Vrsta"
     }
 }, {collection: 'advertisements'})
 
@@ -34,7 +43,9 @@ const addAdvertisements = async function(advertisementData){
     let newAdvertisements = new AdvertisementModel({
         _id: new mongoose.Types.ObjectId(),
         title: advertisementData.title,
-        text: advertisementData.text
+        text: advertisementData.text,
+        date: advertisementData.date,
+        type: advertisementData.type
     });
 
     return newAdvertisements.save();

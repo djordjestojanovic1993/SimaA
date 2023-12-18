@@ -373,11 +373,11 @@ body{
   box-shadow: inset 4px 4px 12px #c5c5c5,
               inset -4px -4px 12px #ffffff;
  }
- #add-btn{
+ #add-btn, #add-btn-form{
   background-color: #3aa856;
   color: white;
  }
- #add-btn:hover{
+ #add-btn:hover, #add-btn-form:hover{
   box-shadow: inset 4px 4px 12px #143a1d,
               inset -2px -2px 8px #ffffff;
  }

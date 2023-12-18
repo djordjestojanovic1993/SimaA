@@ -39,7 +39,8 @@ async function showAdvertisements(){
 }
 showAdvertisements();
 
-async function addAdvertisementInDB(title, text){
+async function addAdvertisementInDB(title, text, date, type){
+    console.log(date)
     let response = await fetch('/advertisement/new', {
         method:'POST',
         headers: {
@@ -47,7 +48,9 @@ async function addAdvertisementInDB(title, text){
         },
         body:JSON.stringify({
             title: title,
-            text: text
+            text: text,
+            date: date,
+            type: type
         })
     })
     
@@ -58,24 +61,31 @@ async function addAdvertisementInDB(title, text){
 }
 
 async function addEventListenerAdvertisementSubmitButton(){
-    const advertisementSubmitButton = document.getElementById('advertisement-submit');
-
+    const advertisementSubmitButton = document.getElementById('add-btn-form');
     if(advertisementSubmitButton.hasClickListener != true){
         advertisementSubmitButton.addEventListener('click', async function(){
-            const titleInput = document.getElementById('advertisement-title');
-            const textInput = document.getElementById('advertisement-text');
+            const titleInput = document.getElementById('form-first-input');
+            const textInput = document.getElementById('form-second-input');
+            const dateInput = document.getElementById('form-third-input');
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
             const title = titleInput.value;
             const text = textInput.value;
+            const date = dateInput.value;
+            let type = radioButtons[0].value;
+            for(let radioButton of radioButtons){
+                if (radioButton.checked){
+                    type = radioButton.value;
+                }
+            }
             try {
                 // console.log(title + "\n" + text)
-                await addAdvertisementInDB(title, text);
+                await addAdvertisementInDB(title, text, date, type);
             } catch (error) {
                 console.log("Došlo je do greške: gggggg");
             }
         })
     }
 }
-addEventListenerAdvertisementSubmitButton();
 
 function showForm(){
     let addBtn = document.getElementById('add-btn');
@@ -83,7 +93,8 @@ function showForm(){
     let formAround = form.parentElement;
     addBtn.addEventListener('click', (e)=>{
         formAround.classList.remove('none');
-        a();
+        whenRadioButtonIsChanged();
+        addEventListenerAdvertisementSubmitButton();
     })
 }
 showForm();
@@ -111,6 +122,7 @@ function changeForm(radioButton){
         formThirdInput.disabled = 'true';
         formFirstInput.placeholder = 'Naslov'
         formSecondInput.placeholder = 'Text'
+        console.log(formThirdInput.value)
         formThirdInput.value = ''
     }else{
         formFirstInput.placeholder = 'Ime i Prezime'
@@ -120,8 +132,8 @@ function changeForm(radioButton){
     }
 }
 
-function a(){
-    var radioButtons = document.querySelectorAll('input[type="radio"]');
+function whenRadioButtonIsChanged(){
+    const radioButtons = document.querySelectorAll('input[type="radio"]');
     for(let radioButton of radioButtons){
         radioButton.addEventListener('change',()=>{
             changeForm(radioButton);
