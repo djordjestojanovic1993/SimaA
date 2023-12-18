@@ -331,7 +331,7 @@ body{
 .form-input:nth-child(3){
   /* height: 70px; */
 }
-#form-input-text{
+#form-second-input{
   height: 70px;
 }
 .choose-date{

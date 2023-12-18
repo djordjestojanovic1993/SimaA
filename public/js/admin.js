@@ -21,13 +21,11 @@ function readAdvertisementsFromDB() {
 async function showAdvertisements(){
     try{
         let advertisements = await readAdvertisementsFromDB();
-        console.log(advertisements);
         const advertisementTemplate = document.getElementById('advertisement-template');
         const advertisementpPototype = advertisementTemplate.content.getElementById('advertisement');
         const aca = document.getElementsByClassName('advertisement');
         const advertisementList = document.getElementById('advertisement-list');
         for(let advertisement of advertisements){
-            console.log(advertisement.title)
             const clone = advertisementpPototype.cloneNode(true);
             clone.getElementsByClassName('advertisement-list-title')[0].value = advertisement.title;
             clone.getElementsByClassName('advertisement-list-title')[0].disabled = 'true';
@@ -55,7 +53,7 @@ async function addAdvertisementInDB(title, text){
     
     if(response.status == 201){
         let data = await response.json();
-        console.log(data);
+        // console.log(data);
     }
 }
 
@@ -84,18 +82,49 @@ function showForm(){
     let form = document.getElementById('form');
     let formAround = form.parentElement;
     addBtn.addEventListener('click', (e)=>{
-        console.log('ada')
         formAround.classList.remove('none');
+        a();
     })
 }
 showForm();
 
 function closeForm(){
     let clearBtn = document.getElementById('clear-btn');
-    console.log(clearBtn)
+    // console.log(clearBtn)
     clearBtn.addEventListener('click', ()=>{
-        console.log(clearBtn)
         location.reload();
     })
 }
 closeForm();
+
+function changeForm(radioButton){
+    let formFirstInput = document.getElementById('form-first-input');
+    let formSecondInput = document.getElementById('form-second-input');
+    let formThirdInput = document.getElementById('form-third-input');
+
+    if(radioButton.value == 'konkurs'){
+        formThirdInput.disabled = '';
+        formFirstInput.placeholder = 'Naslov'
+        formSecondInput.placeholder = 'Text'
+
+    }else if(radioButton.value == 'vest'){
+        formThirdInput.disabled = 'true';
+        formFirstInput.placeholder = 'Naslov'
+        formSecondInput.placeholder = 'Text'
+        formThirdInput.value = ''
+    }else{
+        formFirstInput.placeholder = 'Ime i Prezime'
+        formSecondInput.placeholder = 'Opis'
+        formThirdInput.disabled = 'true';
+        formThirdInput.value = ''
+    }
+}
+
+function a(){
+    var radioButtons = document.querySelectorAll('input[type="radio"]');
+    for(let radioButton of radioButtons){
+        radioButton.addEventListener('change',()=>{
+            changeForm(radioButton);
+        })
+    }
+}
