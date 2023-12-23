@@ -32,6 +32,7 @@ async function showAdvertisements(){
             clone.id = advertisement._id;
             advertisementList.appendChild(clone);
         }
+        addEventListenerToDeleteBtns();
 
     }catch (error) {
         console.log("Došlo je do greške prilikom prikaza konkursa ");
@@ -57,6 +58,18 @@ async function addAdvertisementInDB(title, text, date, type){
     if(response.status == 201){
         let data = await response.json();
         // console.log(data);
+        showSuccessfullyAdded();
+    }
+}
+
+function showSuccessfullyAdded(){
+    let successfullyAddedDiv = document.getElementById('successfully-added-div');
+    let formAround = document.getElementById('form-around');
+    successfullyAddedDiv.classList.remove('none');
+    if(successfullyAddedDiv.hasClickListener != true){
+        successfullyAddedDiv.addEventListener('click', ()=>{
+            location.reload();
+        })
     }
 }
 
@@ -138,5 +151,57 @@ function whenRadioButtonIsChanged(){
         radioButton.addEventListener('change',()=>{
             changeForm(radioButton);
         })
+    }
+}
+
+function addEventListenerToDeleteBtns(){
+    let advertisementDeleteBtns = document.getElementsByClassName('advertisement-delete-btn');
+    let sureWantDeleteYesBtns = document.getElementsByClassName('sure-want-delete-yes');
+
+    for(let delBtn of advertisementDeleteBtns){  
+        if(delBtn.hasClickListener != true){
+            delBtn.addEventListener('click', ()=>{
+                let advertisement = delBtn.parentElement.parentElement;
+                let sureWantDeleteDivs = advertisement.getElementsByClassName('sure-want-delete');
+                sureWantDeleteDivs[0].classList.remove('none');
+                
+                 let sureWantDeleteNo = sureWantDeleteDivs[0].getElementsByClassName('sure-want-delete-no');
+                 if(sureWantDeleteNo[0].hasClickListener != true){
+                    sureWantDeleteNo[0].addEventListener('click', ()=>{
+                        sureWantDeleteDivs[0].classList.add('none');
+                    })
+                 }
+            addEventListenetToYesDeleteBtn(sureWantDeleteDivs[0], advertisement);
+            })
+        }
+    }
+}
+
+function addEventListenetToYesDeleteBtn(sureWantDeleteDiv, advertisement){
+    let sureWantDeleteYes = sureWantDeleteDiv.getElementsByClassName('sure-want-delete-yes');
+    
+    if(sureWantDeleteYes[0].hasClickListener != true){
+        sureWantDeleteYes[0].addEventListener('click',()=>{
+            let ID = advertisement.id;
+            deleteAdvertisementFromDB(ID);
+            location.reload();
+            
+        })
+    }
+}
+
+async function deleteAdvertisementFromDB(ID){
+    let response = await fetch('/advertisement/delete', {
+        method:'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({
+            ID: ID
+        })
+    })
+    
+    if(response.status == 201){
+        let data = await response.json();
     }
 }

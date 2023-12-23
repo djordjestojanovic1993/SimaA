@@ -38,7 +38,11 @@
                     <input type="text" class="advertisement-list-title">
                     <div class="advertisement-icons">
                         <i class="fa fa-wrench" aria-hidden="true"></i>
-                        <i class="fa fa-trash" aria-hidden="true"></i>
+                        <i class="fa fa-trash advertisement-delete-btn" aria-hidden="true"></i>
+                    </div>
+                    <div id="sure-want-delete" class="none sure-want-delete">
+                        <div class="sure-want-delete-yes">Obrisi</div>
+                        <div class="sure-want-delete-no">Odustani</div>
                     </div>
                 </div>
             </template>
@@ -78,6 +82,10 @@
             <div class="buttons">
                 <div class="form-btn" id="add-btn-form">Dodaj</div>
                 <div class="form-btn" id="clear-btn">Odustani</div>
+            </div>
+            <div class="successfully-added none" id="successfully-added-div">
+                <p>Uspesno ste dodali</p>
+                <div class="successfully-added-btn">OK</div>
             </div>
         </div>
     </div>

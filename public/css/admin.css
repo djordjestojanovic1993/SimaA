@@ -17,11 +17,15 @@ body{
     padding: 30px;
     border-radius: 30px;
 }
+.none{
+    display: none !important;
+}
 .search-and-add{
     width: 100%;
     height: fit-content;
     display: flex;
     justify-content: space-between;
+    /* position: absolute; */
 }
 .search {
     display: flex;
@@ -200,11 +204,14 @@ body{
     border-radius: 20px;
     min-height: 600px;
     box-sizing: border-box;
+    max-height: 400px;
+    overflow-y: auto;
     /* border: 1px solid red; */
 }
 .advertisement{
     padding: 25px 20px;
     width: 800px;
+    position: relative;
     /* height: 80px; */
     /* background-color: rgb(250, 235, 215); */
     display: flex;
@@ -231,9 +238,18 @@ body{
     color: red;
     cursor: pointer;
 }
-.none{
-    display: none !important;
-}
+#sure-want-delete{
+  position: absolute;
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  background-color: white;
+  right: 0;
+ }
+ .sure-want-delete-yes{
+  background-color: red;
+  color: white;
+ }
 .form-around{
   width: 100%;
   height: 100%;
@@ -355,7 +371,7 @@ body{
   display: flex;
   gap: 20px;
 }
-.form-btn {
+.form-btn, .sure-want-delete-yes, .sure-want-delete-no {
   color: #090909;
   padding: 10px 45px;
   font-size: 14px;
@@ -373,19 +389,35 @@ body{
   box-shadow: inset 4px 4px 12px #c5c5c5,
               inset -4px -4px 12px #ffffff;
  }
- #add-btn, #add-btn-form{
+ #add-btn, #add-btn-form,  .successfully-added-btn, .sure-want-delete-no{
   background-color: #3aa856;
   color: white;
  }
- #add-btn:hover, #add-btn-form:hover{
+ #add-btn:hover, #add-btn-form:hover,  .successfully-added-btn:hover, .sure-want-delete-no:hover{
   box-shadow: inset 4px 4px 12px #143a1d,
               inset -2px -2px 8px #ffffff;
  }
- #clear-btn{
+ #clear-btn, .sure-want-delete-yes{
   background-color: rgb(224, 43, 43);
   color: white;
  }
- #clear-btn:hover{
+ #clear-btn:hover, .sure-want-delete-yes:hover{
   box-shadow: inset 4px 4px 12px rgb(134, 26, 26),
               inset -3px -3px 12px #ffffff;
+ }
+ .successfully-added{
+  /* background-color: gray; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 20px;
+  background-color: white;
+  padding: 10px 100px;
+  border-radius: 15px;
+ }
+ .successfully-added-btn{
+  padding: 8px 40px;
+  border-radius: 5px;
  }

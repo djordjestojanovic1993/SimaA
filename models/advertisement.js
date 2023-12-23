@@ -51,8 +51,20 @@ const addAdvertisements = async function(advertisementData){
     return newAdvertisements.save();
 }
 
+const deleteAdvertismentById = async function(id){
+    try {
+        const result = await AdvertisementModel.deleteOne({ _id: id });
+        console.log(result);
+        return result;
+      } catch (error) {
+        console.error('Error deleting data:', error);
+        throw error;
+      }
+}
+
 module.exports = {
     model : AdvertisementModel,
     getAdvertisements,
-    addAdvertisements
+    addAdvertisements,
+    deleteAdvertismentById
 }
