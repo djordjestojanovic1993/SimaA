@@ -28,11 +28,22 @@ async function showAdvertisements(){
         for(let advertisement of advertisements){
             const clone = advertisementpPototype.cloneNode(true);
             clone.getElementsByClassName('advertisement-list-title')[0].value = advertisement.title;
+            clone.getElementsByClassName('advertisement-list-date')[0].value = advertisement.date;
+            clone.getElementsByClassName('advertisement-list-text')[0].value = advertisement.text;
             clone.getElementsByClassName('advertisement-list-title')[0].disabled = 'true';
+            clone.getElementsByClassName('advertisement-list-date')[0].disabled = 'true';
+            if(advertisement.type == 'vest'){
+                clone.getElementsByClassName('advertisement-type-img')[0].src = 'pictures/admin/news.png';
+            }else if(advertisement.type == 'stipendista'){
+                clone.getElementsByClassName('advertisement-type-img')[0].src = 'pictures/admin/person.png';
+            }else{
+                clone.getElementsByClassName('advertisement-type-img')[0].src = 'pictures/admin/competition.png';
+            }
             clone.id = advertisement._id;
             advertisementList.appendChild(clone);
         }
         addEventListenerToDeleteBtns();
+        addEventListenerToChangeBtns();
 
     }catch (error) {
         console.log("Došlo je do greške prilikom prikaza konkursa ");
@@ -154,6 +165,38 @@ function whenRadioButtonIsChanged(){
     }
 }
 
+function addEventListenerToChangeBtns(){
+    let advertisementChangeBtns = document.getElementsByClassName('advertisement-change-btn');
+
+    for(let changeBtn of advertisementChangeBtns){
+        if(changeBtn.hasClickListener != true){
+            changeBtn.addEventListener('click', (e)=>{
+                let advertisement = changeBtn.parentElement.parentElement.parentElement;
+                activateAdvertisementForChange(advertisement);
+            })
+        }
+    }
+}
+
+function activateAdvertisementForChange(advertisement){
+    let invisiblePart = advertisement.getElementsByClassName('advertisement-invisible-part');
+    invisiblePart[0].classList.remove('none');
+    let title = advertisement.getElementsByClassName('advertisement-list-title');
+    advertisement.getElementsByClassName('advertisement-icons')[0].classList.add('none');
+    title[0].disabled = '';
+    title[0].classList.add('form-input')
+    activateChangeAdvertisementNoButton(advertisement);
+}
+
+function activateChangeAdvertisementNoButton(advertisement){
+    let noBtn = advertisement.getElementsByClassName('dont-save-change-btn');
+    if(noBtn[0].hasClickListener != true){
+        noBtn[0].addEventListener('click', ()=>{
+            location.reload();
+        })
+    }
+}
+
 function addEventListenerToDeleteBtns(){
     let advertisementDeleteBtns = document.getElementsByClassName('advertisement-delete-btn');
     let sureWantDeleteYesBtns = document.getElementsByClassName('sure-want-delete-yes');
@@ -161,7 +204,7 @@ function addEventListenerToDeleteBtns(){
     for(let delBtn of advertisementDeleteBtns){  
         if(delBtn.hasClickListener != true){
             delBtn.addEventListener('click', ()=>{
-                let advertisement = delBtn.parentElement.parentElement;
+                let advertisement = delBtn.parentElement.parentElement.parentElement;
                 let sureWantDeleteDivs = advertisement.getElementsByClassName('sure-want-delete');
                 sureWantDeleteDivs[0].classList.remove('none');
                 
@@ -191,6 +234,7 @@ function addEventListenetToYesDeleteBtn(sureWantDeleteDiv, advertisement){
 }
 
 async function deleteAdvertisementFromDB(ID){
+    console.log(ID)
     let response = await fetch('/advertisement/delete', {
         method:'POST',
         headers: {

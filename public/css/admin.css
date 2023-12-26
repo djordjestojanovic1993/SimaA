@@ -215,16 +215,52 @@ body{
     /* height: 80px; */
     /* background-color: rgb(250, 235, 215); */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* align-items: center; */
     border-radius: 20px;
     border: 1px solid black;
 }
+.advertisement-visible-part{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.advertisement-type-img{
+  width: 50px;
+}
 .advertisement-list-title{
-    height: 50%;
+  text-align: center;
+  max-width: 300px;
+}
+.advertisement-invisible-part{
+  width: 100%;
+  padding: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  /* display: flex;
+  justify-content: center; */
+}
+.advertisement-invisible-part-btns{
+  display: flex;
+  gap: 20px;
+}
+.advertisement input:hover{
+  box-shadow: 0 0 0 0 rgb(0 48 73 / 10%);
+}
+.advertisement input{
     border: 0;
     font-size: 20px;
     background-color: white;
+    /* background-color: #ededed; */
+}
+.advertisement-list-date{
+  font-size: 16px !important;
+  /* background-color: red !important; */
+  width: 100px;
+  text-align: center;
 }
 .advertisement-icons{
     display: flex;
@@ -334,18 +370,15 @@ body{
   gap: 20px;
   width: 100%;
 }
-.form-input {
+.form-input{
   border: none;
   outline: none;
   border-radius: 15px;
   padding: 1em;
-  background-color: #ededed;
+  background-color: #ededed !important;
   box-shadow: inset 1px 2px 10px rgba(0,0,0,0.3);
   transition: 300ms ease-in-out;
   width: 90%;
-}
-.form-input:nth-child(3){
-  /* height: 70px; */
 }
 #form-second-input{
   height: 70px;
@@ -355,23 +388,19 @@ body{
   gap: 30px;
 }
 .choose-date input{
-  /* background-color: red; */
-  /* height: 50px; */
   width: 50%;
-  /* margin: auto; */
 }
-
 .form-input:focus {
   background-color: white;
   transform: scale(1.01);
   box-shadow: 4px 4px 12px #969696,
-             -4px -4px 12px #ffffff;
+             -4px -4px 12px #ffffff !important;
 }
 .buttons{
   display: flex;
   gap: 20px;
 }
-.form-btn, .sure-want-delete-yes, .sure-want-delete-no {
+.form-btn, .sure-want-delete-yes, .sure-want-delete-no, .save-change-btn, .dont-save-change-btn {
   color: #090909;
   padding: 10px 45px;
   font-size: 14px;
@@ -389,19 +418,19 @@ body{
   box-shadow: inset 4px 4px 12px #c5c5c5,
               inset -4px -4px 12px #ffffff;
  }
- #add-btn, #add-btn-form,  .successfully-added-btn, .sure-want-delete-no{
+ #add-btn, #add-btn-form,  .successfully-added-btn, .sure-want-delete-no, .save-change-btn{
   background-color: #3aa856;
   color: white;
  }
- #add-btn:hover, #add-btn-form:hover,  .successfully-added-btn:hover, .sure-want-delete-no:hover{
+ #add-btn:hover, #add-btn-form:hover,  .successfully-added-btn:hover, .sure-want-delete-no:hover, .save-change-btn:hover{
   box-shadow: inset 4px 4px 12px #143a1d,
               inset -2px -2px 8px #ffffff;
  }
- #clear-btn, .sure-want-delete-yes{
+ #clear-btn, .sure-want-delete-yes, .dont-save-change-btn{
   background-color: rgb(224, 43, 43);
   color: white;
  }
- #clear-btn:hover, .sure-want-delete-yes:hover{
+ #clear-btn:hover, .sure-want-delete-yes:hover, .dont-save-change-btn:hover{
   box-shadow: inset 4px 4px 12px rgb(134, 26, 26),
               inset -3px -3px 12px #ffffff;
  }
