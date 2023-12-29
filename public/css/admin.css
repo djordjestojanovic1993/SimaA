@@ -370,6 +370,9 @@ body{
   gap: 20px;
   width: 100%;
 }
+#preview-img{
+  height: 150px;
+}
 .form-input{
   border: none;
   outline: none;

@@ -1,6 +1,7 @@
 const express = require('express');
 const controller = require('../controlers/advertisement');
 const router = express.Router();
+const upload = require("../libs/multerConfig")
 
 
 router.get('/', controller.getAdvertisements);

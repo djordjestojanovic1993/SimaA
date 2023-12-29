@@ -17,6 +17,7 @@ async function getAdvertisements(req, res, next) {
 async function addAdvertisements(req, res, next) {
     try {
       const advertisementsData = req.body;
+      console.log(advertisementsData)
       const newAdvertisements = await model.addAdvertisements(advertisementsData);
       res.status(201).json(newAdvertisements);
     } catch (error) {

@@ -82,9 +82,11 @@
                 </form>
             </div>
             <div class="form-inputs">
+                <img id="preview-img" class="none">
                 <button type="button" class="add-button">
-                    <span class="add-button__text" >Dodaj sliku</span>
-                    <span class="add-button__icon" id="add-picure-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                    <span class="add-button__text">Dodaj sliku</span>
+                    <span class="add-button__icon" id="add-picture-btn"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                    <input type="file" id="imageInput" style="display: none;">
                 </button>
                 <input type="text" autocomplete="off" name="text" class="form-input" placeholder="Naslov" id="form-first-input">
                 <input type="text" autocomplete="off" name="text" class="form-input" placeholder="Text" id="form-second-input">

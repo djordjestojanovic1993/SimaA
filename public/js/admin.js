@@ -52,25 +52,49 @@ async function showAdvertisements(){
 showAdvertisements();
 
 async function addAdvertisementInDB(title, text, date, type){
-    console.log(date)
-    let response = await fetch('/advertisement/new', {
-        method:'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body:JSON.stringify({
-            title: title,
-            text: text,
-            date: date,
-            type: type
-        })
-    })
     
-    if(response.status == 201){
+    const formData = new FormData();
+    // let formData = await dodajSliku();
+    formData.append('title', title);
+    formData.append('text', text);
+    formData.append('date', date);
+    formData.append('type', type);
+    console.log(formData);
+
+    try{
+
+        const options = {
+            method: 'POST',
+            body: formData
+        };
+        let response = await fetch("/advertisement/new", options);
         let data = await response.json();
-        // console.log(data);
+        console.log(data);
         showSuccessfullyAdded();
+
+    }catch(err){
+        alert("Greska");
+        console.log(err)
     }
+    
+    // let response = await fetch('/advertisement/new', {
+    //     method:'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body:JSON.stringify({
+    //         title: title,
+    //         text: text,
+    //         date: date,
+    //         type: type
+    //     })
+    // })
+    
+    // if(response.status == 201){
+    //     let data = await response.json();
+    //     // console.log(data);
+        // showSuccessfullyAdded();
+    // }
 }
 
 function showSuccessfullyAdded(){
@@ -119,6 +143,7 @@ function showForm(){
         formAround.classList.remove('none');
         whenRadioButtonIsChanged();
         addEventListenerAdvertisementSubmitButton();
+        dodajSliku();
     })
 }
 showForm();
@@ -248,4 +273,89 @@ async function deleteAdvertisementFromDB(ID){
     if(response.status == 201){
         let data = await response.json();
     }
+}
+
+async function handleImage(event) {
+    const selectedImage = event.target.files[0];
+    let previewImg = document.getElementById('preview-img');
+    previewImg.classList.remove('none')
+    let resizedBlob;
+    // const preview = input.parentElement.querySelector("img");
+        if (event.target.files && event.target.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            previewImg.src = e.target.result;
+            // previewImg.style.display="block";
+        };
+        reader.readAsDataURL(event.target.files[0]);
+        }
+    if (selectedImage) {
+        try{
+            resizedBlob = await resizeImage(selectedImage, 1000, 500);
+        }catch(err){
+            alert("Greske pokusajte ponovo")
+            console.log(err)
+        }
+    }
+    const formData = new FormData();
+    console.log(resizedBlob)
+    console.log(selectedImage.name)
+    formData.append('image', resizedBlob, selectedImage.name);
+    console.log(formData)
+    return formData;
+}
+
+async function dodajSliku(){
+    let addPictureBtn = document.getElementById('add-picture-btn');
+    let data;
+    
+    
+    if(addPictureBtn.hasClickListener != true){
+        addPictureBtn.addEventListener('click', async ()=>{
+            document.getElementById('imageInput').click();
+
+        });
+    }
+    
+    document.getElementById('imageInput').addEventListener('change',async (e)=>{
+       data = await handleImage(e);
+       console.log('dodata s;ika')
+    });  
+    console.log(data)
+    return data;
+}
+
+async function resizeImage(file, maxWidth, maxHeight) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+
+        img.onload = function () {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+
+            // Calculate the new dimensions while maintaining the aspect ratio
+            let newWidth = img.width;
+            let newHeight = img.height;
+            if (newWidth > maxWidth) {
+                newHeight = (maxWidth / newWidth) * newHeight;
+                newWidth = maxWidth;
+            }
+            if (newHeight > maxHeight) {
+                newWidth = (maxHeight / newHeight) * newWidth;
+                newHeight = maxHeight;
+            }
+
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+
+            ctx.drawImage(img, 0, 0, newWidth, newHeight);
+
+            // Convert the canvas to a blob and resolve the promise with the blob
+            canvas.toBlob(resolve, 'image/jpeg', 0.9); // You can change the format and quality here
+        };
+
+        img.onerror = reject;
+
+        img.src = URL.createObjectURL(file);
+    });
 }
