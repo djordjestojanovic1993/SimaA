@@ -21,7 +21,10 @@ app.use('/advertisement', routerAdvertisement);
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-
+app.use(function(err, req, res, next){
+    console.log("Greska na serveru! " + err);
+    res.status(500).send("Doslo je do greske na serveru");
+});
 
 
 module.exports = app;

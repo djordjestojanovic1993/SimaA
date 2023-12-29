@@ -5,7 +5,7 @@ const upload = require("../libs/multerConfig")
 
 
 router.get('/', controller.getAdvertisements);
-router.post('/new', controller.addAdvertisements);
+router.post('/new', upload.single("image"), controller.addAdvertisements);
 router.post("/delete", controller.deleteAdvertisments);
 
 

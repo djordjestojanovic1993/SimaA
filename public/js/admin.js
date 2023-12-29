@@ -1,26 +1,27 @@
-function readAdvertisementsFromDB() {
+async function readAdvertisementsFromDB() {
     const url = '/advertisement';
-  
-    return new Promise(async (resolve, reject) => {
-      try {
+    try {
         const response = await fetch(url);
-  
+
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+            throw new Error('Network response was not ok');
         }
-  
+
         const data = await response.json();
-        resolve(data);
-      } catch (error) {
+        return data;
+    } catch (error) {
         console.error('There was a problem fetching the data:', error);
-        reject(error);
-      }
-    });
+        return null;
+    }
+    
   }
 
 async function showAdvertisements(){
     try{
         let advertisements = await readAdvertisementsFromDB();
+        if(advertisements == null){
+            throw new Error("Greska, nije moguce dohvatiti konkurse!");
+        }
         const advertisementTemplate = document.getElementById('advertisement-template');
         const advertisementpPototype = advertisementTemplate.content.getElementById('advertisement');
         const aca = document.getElementsByClassName('advertisement');
@@ -53,14 +54,25 @@ showAdvertisements();
 
 async function addAdvertisementInDB(title, text, date, type){
     
+    const imageInput = document.getElementById('imageInput');
+    let resizedBlob;
     const formData = new FormData();
     // let formData = await dodajSliku();
     formData.append('title', title);
     formData.append('text', text);
     formData.append('date', date);
     formData.append('type', type);
-    console.log(formData);
-
+    if (imageInput.files && imageInput.files[0]) {
+        try{
+            resizedBlob = await resizeImage(imageInput.files[0], 1000, 500);
+        }catch(err){
+            alert("Greske pokusajte ponovo")
+            console.log(err)
+        }
+    }
+    console.log(resizedBlob)
+    formData.append('image', resizedBlob, imageInput.files[0].name);
+    console.log(formData)
     try{
 
         const options = {
@@ -280,49 +292,29 @@ async function handleImage(event) {
     let previewImg = document.getElementById('preview-img');
     previewImg.classList.remove('none')
     let resizedBlob;
-    // const preview = input.parentElement.querySelector("img");
-        if (event.target.files && event.target.files[0]) {
+    if (event.target.files && event.target.files[0]) {
         const reader = new FileReader();
         reader.onload = function(e) {
             previewImg.src = e.target.result;
             // previewImg.style.display="block";
         };
         reader.readAsDataURL(event.target.files[0]);
-        }
-    if (selectedImage) {
-        try{
-            resizedBlob = await resizeImage(selectedImage, 1000, 500);
-        }catch(err){
-            alert("Greske pokusajte ponovo")
-            console.log(err)
-        }
     }
-    const formData = new FormData();
-    console.log(resizedBlob)
-    console.log(selectedImage.name)
-    formData.append('image', resizedBlob, selectedImage.name);
-    console.log(formData)
-    return formData;
 }
 
 async function dodajSliku(){
     let addPictureBtn = document.getElementById('add-picture-btn');
-    let data;
-    
     
     if(addPictureBtn.hasClickListener != true){
         addPictureBtn.addEventListener('click', async ()=>{
             document.getElementById('imageInput').click();
-
         });
     }
     
     document.getElementById('imageInput').addEventListener('change',async (e)=>{
-       data = await handleImage(e);
-       console.log('dodata s;ika')
+       await handleImage(e);
     });  
-    console.log(data)
-    return data;
+    return;
 }
 
 async function resizeImage(file, maxWidth, maxHeight) {
