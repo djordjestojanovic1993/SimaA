@@ -88,25 +88,6 @@ async function addAdvertisementInDB(title, text, date, type){
         alert("Greska");
         console.log(err)
     }
-    
-    // let response = await fetch('/advertisement/new', {
-    //     method:'POST',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     body:JSON.stringify({
-    //         title: title,
-    //         text: text,
-    //         date: date,
-    //         type: type
-    //     })
-    // })
-    
-    // if(response.status == 201){
-    //     let data = await response.json();
-    //     // console.log(data);
-        // showSuccessfullyAdded();
-    // }
 }
 
 function showSuccessfullyAdded(){
