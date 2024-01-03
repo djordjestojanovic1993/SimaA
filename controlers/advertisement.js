@@ -15,9 +15,14 @@ async function getAdvertisements(req, res, next) {
 }
 
 async function addAdvertisements(req, res, next) {
+  const advertisementsData = req.body;
+  const slika = req.file.filename;
+  advertisementsData.slika = slika;
     try {
-      const advertisementsData = req.body;
-      console.log(advertisementsData)
+      if(!req.file.filename){
+          throw new Error("Nema slike ucesnika")
+      }
+      // console.log(advertisementsData)
       const newAdvertisements = await model.addAdvertisements(advertisementsData);
       res.status(201).json(newAdvertisements);
     } catch (error) {

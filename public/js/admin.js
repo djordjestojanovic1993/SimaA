@@ -29,10 +29,14 @@ async function showAdvertisements(){
         for(let advertisement of advertisements){
             const clone = advertisementpPototype.cloneNode(true);
             clone.getElementsByClassName('advertisement-list-title')[0].value = advertisement.title;
+            if(advertisement.date != ""){
+                clone.getElementsByClassName('advertisement-list-date')[0].classList.remove('none')
+                clone.getElementsByClassName('advertisement-list-date')[0].value = advertisement.date;
+
+            }
             clone.getElementsByClassName('advertisement-list-date')[0].value = advertisement.date;
             clone.getElementsByClassName('advertisement-list-text')[0].value = advertisement.text;
             clone.getElementsByClassName('advertisement-list-title')[0].disabled = 'true';
-            clone.getElementsByClassName('advertisement-list-date')[0].disabled = 'true';
             if(advertisement.type == 'vest'){
                 clone.getElementsByClassName('advertisement-type-img')[0].src = 'pictures/admin/news.png';
             }else if(advertisement.type == 'stipendista'){
@@ -45,6 +49,7 @@ async function showAdvertisements(){
         }
         addEventListenerToDeleteBtns();
         addEventListenerToChangeBtns();
+        activateSearch();
 
     }catch (error) {
         console.log("Došlo je do greške prilikom prikaza konkursa ");
@@ -70,9 +75,9 @@ async function addAdvertisementInDB(title, text, date, type){
             console.log(err)
         }
     }
-    console.log(resizedBlob)
+    // console.log(resizedBlob)
     formData.append('image', resizedBlob, imageInput.files[0].name);
-    console.log(formData)
+    // console.log(formData)
     try{
 
         const options = {
@@ -81,7 +86,7 @@ async function addAdvertisementInDB(title, text, date, type){
         };
         let response = await fetch("/advertisement/new", options);
         let data = await response.json();
-        console.log(data);
+        // console.log(data);
         showSuccessfullyAdded();
 
     }catch(err){
@@ -196,14 +201,33 @@ function addEventListenerToChangeBtns(){
     }
 }
 
-function activateAdvertisementForChange(advertisement){
+async function activateAdvertisementForChange(advertisement){
     let invisiblePart = advertisement.getElementsByClassName('advertisement-invisible-part');
     invisiblePart[0].classList.remove('none');
     let title = advertisement.getElementsByClassName('advertisement-list-title');
     advertisement.getElementsByClassName('advertisement-icons')[0].classList.add('none');
     title[0].disabled = '';
-    title[0].classList.add('form-input')
+    title[0].classList.add('form-input');
+    advertisement.getElementsByClassName('advertisement-type-img')[0].classList.add('none');
+    let advImg = advertisement.getElementsByClassName('advertisement-img-view');
+    advertisement.getElementsByClassName('advertisement-list-date')[0].disabled = '';
+    advertisement.getElementsByClassName('advertisement-list-date')[0].classList.add('form-input')
+    
+    advImg[0].classList.remove('none');
+    let advertisements = await readAdvertisementsFromDB();
+    for(let advert of advertisements){
+        if(advertisement.id == advert._id){
+            if(advert.img != 'Slika'){
+                let path = "pictures/upload/" + advert.img;
+                console.log(path)
+                advImg[0].src = path;
+
+            }
+            
+        }
+    }
     activateChangeAdvertisementNoButton(advertisement);
+    activateChangeAdvertisementYesButton(advertisement);
 }
 
 function activateChangeAdvertisementNoButton(advertisement){
@@ -211,6 +235,22 @@ function activateChangeAdvertisementNoButton(advertisement){
     if(noBtn[0].hasClickListener != true){
         noBtn[0].addEventListener('click', ()=>{
             location.reload();
+        })
+    }
+}
+function activateChangeAdvertisementYesButton(advertisement){
+    let yesBtn = advertisement.getElementsByClassName('save-change-btn');
+    let titleInput = advertisement.getElementsByClassName('advertisement-list-title');
+    let textInput = advertisement.getElementsByClassName('advertisement-list-text');
+    let dateInput = advertisement.getElementsByClassName('advertisement-list-date');
+    if(yesBtn[0].hasClickListener != true){
+        yesBtn[0].addEventListener('click', ()=>{
+            let title = titleInput[0].value;
+            let text = textInput[0].value;
+            let date = dateInput[0].value;
+            console.log(title)
+            console.log(text)
+            console.log(date)
         })
     }
 }
@@ -331,4 +371,24 @@ async function resizeImage(file, maxWidth, maxHeight) {
 
         img.src = URL.createObjectURL(file);
     });
+}
+
+function search(){
+    let searchInput = document.getElementById('search-input')
+    let searchContent = searchInput.value.toUpperCase();
+    let advertisements = document.getElementsByClassName('advertisement');
+
+    for(advertisement of advertisements){
+        let title = advertisement.getElementsByClassName('advertisement-list-title')[0].value;
+
+        if((title.toUpperCase().indexOf(searchContent) > -1)){
+            advertisement.style.display = "";
+        }else{
+            advertisement.style.display = "none";
+        }
+    }
+}
+function activateSearch(){
+    let searchInput = document.getElementById('search-input')
+    searchInput.addEventListener('keyup', search);
 }

@@ -16,9 +16,13 @@ body{
     border: 1px solid gray;
     padding: 30px;
     border-radius: 30px;
+    min-width: 800px !important;
 }
 .none{
     display: none !important;
+}
+.red{
+  color: red !important;
 }
 .search-and-add{
     width: 100%;
@@ -223,11 +227,16 @@ body{
 }
 .advertisement-visible-part{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
+  gap: 160px;
+}
+.advertisement-img-view{
+  width: 100px;
 }
 .advertisement-type-img{
   width: 50px;
+  position: relative;
 }
 .advertisement-list-title{
   text-align: center;
@@ -257,10 +266,12 @@ body{
     /* background-color: #ededed; */
 }
 .advertisement-list-date{
-  font-size: 16px !important;
+  font-size: 15px !important;
+  margin: 10px auto 0 auto;
   /* background-color: red !important; */
-  width: 100px;
+  width: 150px !important;
   text-align: center;
+  /* background-color: red !important; */
 }
 .advertisement-icons{
     display: flex;

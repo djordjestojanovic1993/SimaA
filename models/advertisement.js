@@ -23,6 +23,10 @@ const advertisementSchema = new mongoose.Schema({
         type:String,
         required: true,
         default: "Vrsta"
+    },
+    img:{
+        type:String,
+        default: "Slika"
     }
 }, {collection: 'advertisements'})
 
@@ -45,7 +49,8 @@ const addAdvertisements = async function(advertisementData){
         title: advertisementData.title,
         text: advertisementData.text,
         date: advertisementData.date,
-        type: advertisementData.type
+        type: advertisementData.type,
+        img: advertisementData.slika
     });
 
     return newAdvertisements.save();

@@ -25,7 +25,7 @@
                     ></path>
                   </g>
                 </svg>
-                <input class="search-input" type="search" placeholder="Search" />
+                <input class="search-input" id="search-input" type="search" placeholder="Search" />
             </div>
             <button type="button" class="add-button">
                 <span class="add-button__text" >Dodaj</span>
@@ -35,10 +35,10 @@
         <div class="advertisement-list" id="advertisement-list">
             <template id="advertisement-template">
                 <div class="advertisement" id="advertisement">
+                    <img class="none advertisement-img-view" >
                     <div class="advertisement-visible-part">
                         <img class="advertisement-type-img">
                         <input type="text" class="advertisement-list-title">
-                        <input type="text" class="advertisement-list-date">
                         <div class="advertisement-icons">
                             <i class="fa fa-wrench advertisement-change-btn" aria-hidden="true"></i>
                             <i class="fa fa-trash advertisement-delete-btn" aria-hidden="true"></i>
@@ -47,8 +47,8 @@
                             <div class="sure-want-delete-yes">Obrisi</div>
                             <div class="sure-want-delete-no">Odustani</div>
                         </div>
-
                     </div>
+                    <input type="date" class="advertisement-list-date none" disabled>
                     <div class="advertisement-invisible-part none">
                         <input type="text" autocomplete="off" name="text" class="advertisement-list-text form-input">
                         <div class="advertisement-invisible-part-btns">
