@@ -33,8 +33,21 @@ async function addAdvertisements(req, res, next) {
 async function deleteAdvertisments(req, res, next){
   try{
     const advertisementsData = req.body;
+    console.log(advertisementsData)
     const deletedAdvertisements = await model.deleteAdvertismentById(advertisementsData.ID);
     res.status(201).json(deletedAdvertisements);
+
+  }catch(error){
+    next(error);
+  }
+}
+
+async function changeAdvertisment(req, res, next){
+  try{
+    const advertisementsData = req.body;
+    console.log(advertisementsData)
+    const changedAdvertisements = await model.changeAdvertisement(advertisementsData);
+    res.status(201).json(changedAdvertisements);
 
   }catch(error){
     next(error);
@@ -45,5 +58,6 @@ async function deleteAdvertisments(req, res, next){
 module.exports = {
     getAdvertisements,
     addAdvertisements,
-    deleteAdvertisments
+    deleteAdvertisments,
+    changeAdvertisment
 }

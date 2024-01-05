@@ -23,6 +23,7 @@ body{
   }
   #wrong-value-div{
     width: 100%;
+    text-align: center;
   }
   .form1 .form_front {
     display: flex;

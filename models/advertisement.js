@@ -67,9 +67,30 @@ const deleteAdvertismentById = async function(id){
       }
 }
 
+const changeAdvertisement = async function(advertisementData){
+    try {
+        console.log(advertisementData.title)
+        const dokument = await AdvertisementModel.findById(advertisementData.id);
+        if (!dokument) {
+            console.log('Dokument nije pronađen.');
+            return;
+          }
+          dokument.title = advertisementData.title;
+          dokument.text = advertisementData.text;
+          dokument.date = advertisementData.date;
+
+          await dokument.save();
+          console.log('Podaci su uspešno promenjeni.');
+      } catch (error) {
+        console.error('Error deleting data:', error);
+        throw error;
+      }
+}
+
 module.exports = {
     model : AdvertisementModel,
     getAdvertisements,
     addAdvertisements,
-    deleteAdvertismentById
+    deleteAdvertismentById,
+    changeAdvertisement
 }

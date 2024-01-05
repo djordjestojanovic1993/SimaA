@@ -248,10 +248,33 @@ function activateChangeAdvertisementYesButton(advertisement){
             let title = titleInput[0].value;
             let text = textInput[0].value;
             let date = dateInput[0].value;
-            console.log(title)
-            console.log(text)
-            console.log(date)
+            let id = advertisement.id;
+            changeAdvertisementInDB(id, title, text, date)
         })
+    }
+}
+
+async function changeAdvertisementInDB(id, title, text, date){
+
+    const formData = new FormData();
+    // let formData = await dodajSliku();
+    formData.append('title', title);
+    formData.append('text', text);
+    formData.append('date', date);
+    formData.append('id', id);
+    try{
+
+        const options = {
+            method: 'POST',
+            body: formData
+        };
+        let response = await fetch("/advertisement/change", options);
+        let data = await response.json();
+        // console.log(data);
+
+    }catch(err){
+        alert("Greska");
+        console.log(err)
     }
 }
 
