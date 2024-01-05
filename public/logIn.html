@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Admin</title>
+</head>
+<body>
+
+    <div class="container">
+        <input type="checkbox" id="signup_toggle">
+        <form class="form1">
+            <div class="form_front">
+                <div class="form_details">Login</div>
+                <div id="wrong-value-div"></div>
+                <input type="text" autocomplete="off" name="text" class="form-input" placeholder="Username" id="form-first-input">
+                <input type="text" autocomplete="off" name="text" class="form-input" placeholder="Password" id="form-password-input">
+                <div class="btn" id="btn">Login</div>
+                <span class="switch">Don't have an account? 
+                    <label class="signup_tog" for="signup_toggle">
+                        Sign Up
+                    </label>
+                </span>
+            </div>
+            <div class="form_back">
+                <div class="form_details">SignUp</div>
+                <input placeholder="Firstname" class="input" type="text">
+                <input placeholder="Username" class="input" type="text">
+                <input placeholder="Password" class="input" type="text">
+                <input placeholder="Confirm Password" class="input" type="text">
+                <button class="btn">Signup</button>
+                <span class="switch">Already have an account? 
+                    <label class="signup_tog" for="signup_toggle">
+                        Sign In
+                    </label>
+                </span>
+            </div>
+        </form>
+    </div>
+
+    <script src="./js/login.js"></script>
+
+</body>
+</html>
