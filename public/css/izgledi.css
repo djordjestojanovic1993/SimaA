@@ -7,15 +7,15 @@ body{
 }
 .advertisement{
     position: relative;
-    width: 1050px;
+    width: 940px;
     height: 600px;
     background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2%;
     box-sizing: border-box;
     cursor: pointer;
+    padding: 25px;
     box-shadow: 5px 5px 15px rgb(77, 21, 21), -2px -2px 15px rgb(197, 174, 174);
 }
 .advertisement-a{
@@ -33,6 +33,15 @@ body{
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
+    background-image: url("../pictures/g3398.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    gap: 70px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 60px;
 }
 .advertisement-border2{
     /* border-top: 2px solid rgb(77, 21, 21);
@@ -94,23 +103,33 @@ body{
 }
 
 .advertisement-full-size{
-    width: 700px;
+    width: 684px;
     height: 900px;
     background-color: white;
     box-sizing: border-box;
-    padding: 30px;
+    padding: 25px;
 }
 .advertisement-full-size-border1{
-    border: 2px solid rgb(77, 21, 21);
+    /* border: 2px solid rgb(77, 21, 21); */
     width: 100%;
     height: 100%;
     padding: 30px;
     box-sizing: border-box;
+    background-image: url("../pictures/path281.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    padding: 40px;
 
 }
 .advertisement-full-size-border2{
-    border-top: 2px solid rgb(77, 21, 21);
-    border-bottom: 2px solid rgb(77, 21, 21);
+    /* border-top: 2px solid rgb(77, 21, 21);
+    border-bottom: 2px solid rgb(77, 21, 21); */
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -124,7 +143,7 @@ body{
 .advertisement-full-size-border2 h1{
 
 }
-.advertisement-full-size-border2 p{
+.advertisement-full-size-border1 p{
  font-size: 15px;
  text-align: justify;
  max-height: 70%;
@@ -132,7 +151,7 @@ body{
 }
 .compete-btn{
     position: absolute;
-    bottom: 40px;
+    bottom: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -158,15 +177,15 @@ body{
 
 .student{
     width: 950px;
-    height: 450px;
+    height: 420px;
     display: flex;
     box-sizing: border-box;
     padding: 20px;
 }
 .student-img{
-    width: 30%;
+    width: 35%;
     box-sizing: border-box;
-    padding: 20px;
+    /* padding: 20px; */
 }
 .student-img-border1{
     /* border: 2px solid rgb(77, 21, 21); */
@@ -174,30 +193,27 @@ body{
     height: 100%;
     padding: 20px;
     box-sizing: border-box;
+    background-image: url("../pictures/path281.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .student-img-border1-img{
     width: 100%;
     height: 100%;
 }
-.student-img-border2{
-    border-top: 2px solid rgb(77, 21, 21);
-    border-bottom: 2px solid rgb(77, 21, 21);
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    display: flex;
-    align-items: center;
-}
 .student-img img{
-    height: 90%;
+    height: 100%;
 }
 .student-text{
     position: relative;
-    width: 70%;
+    width: 65%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
     padding: 0 50px;
     color: rgb(77, 21, 21);
 }
@@ -215,12 +231,33 @@ body{
     text-align: justify;
     /* padding: 10px 0; */
     margin: 10px 0;
+    max-height: 250px;
 }
 .student-btn{
     cursor: pointer;
     font-weight: bold;
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     left: 50px;
 }
-.proba{}
+.proba{
+    background-color: red;
+}
+.student-full-size{
+    width: 100%;
+    height: 100vh;
+}
+.container {
+    max-width: 800px; /* Prilagodite prema vašim potrebama */
+    margin: 20px auto;
+  }
+  
+  .slika {
+    float: left;
+    width: 200px;
+    margin-right: 20px; /* Prilagodite razmak između slike i teksta */
+  }
+  
+  .tekst {
+    margin-top: 0;
+  }
