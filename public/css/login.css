@@ -19,7 +19,7 @@ body{
     transition: all 1s ease;
   }
   .form-input{
-    width: 250px !important;
+    min-width: 250px;
   }
   #wrong-value-div{
     width: 100%;

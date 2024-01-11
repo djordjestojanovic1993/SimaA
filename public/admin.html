@@ -36,7 +36,12 @@
         <div class="advertisement-list" id="advertisement-list">
             <template id="advertisement-template">
                 <div class="advertisement" id="advertisement">
-                    <img class="none advertisement-img-view" >
+                    <div class="advertisement-change-img none">
+                        <i class="fa fa-wrench advertisement-change-img-btn" aria-hidden="true"></i>
+                        <img class="none advertisement-img-view" >
+                        <input type="file" class="imageChangeInput" style="display: none;">
+
+                    </div>
                     <div class="advertisement-visible-part">
                         <img class="advertisement-type-img">
                         <input type="text" class="advertisement-list-title ellipsis">

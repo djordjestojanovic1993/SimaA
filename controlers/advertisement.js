@@ -22,7 +22,7 @@ async function addAdvertisements(req, res, next) {
       if(!req.file.filename){
           throw new Error("Nema slike ucesnika")
       }
-      // console.log(advertisementsData)
+      console.log(advertisementsData)
       const newAdvertisements = await model.addAdvertisements(advertisementsData);
       res.status(201).json(newAdvertisements);
     } catch (error) {
@@ -42,10 +42,27 @@ async function deleteAdvertisments(req, res, next){
 }
 
 async function changeAdvertisment(req, res, next){
+  const advertisementsData = req.body;
+  const slika = req.file.filename;
+  advertisementsData.slika = slika;
   try{
-    const advertisementsData = req.body;
+    if(!req.file.filename){
+        throw new Error("Nema slike ucesnika")
+    }
     console.log(advertisementsData)
     const changedAdvertisements = await model.changeAdvertisement(advertisementsData);
+    res.status(201).json(changedAdvertisements);
+
+  }catch(error){
+    next(error);
+  }
+}
+
+async function changeAdverisementWidthoutPicture(req, res, next){
+  const advertisementsData = req.body;
+  try{
+    console.log(advertisementsData)
+    const changedAdvertisements = await model.changeAdverisementWidthoutPicture(advertisementsData);
     res.status(201).json(changedAdvertisements);
 
   }catch(error){
@@ -58,5 +75,6 @@ module.exports = {
     getAdvertisements,
     addAdvertisements,
     deleteAdvertisments,
-    changeAdvertisment
+    changeAdvertisment,
+    changeAdverisementWidthoutPicture
 }

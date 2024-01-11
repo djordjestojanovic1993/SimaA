@@ -62,7 +62,6 @@ async function addAdvertisementInDB(title, text, date, type){
     const imageInput = document.getElementById('imageInput');
     let resizedBlob;
     const formData = new FormData();
-    // let formData = await dodajSliku();
     formData.append('title', title);
     formData.append('text', text);
     formData.append('date', date);
@@ -141,7 +140,7 @@ function showForm(){
         formAround.classList.remove('none');
         whenRadioButtonIsChanged();
         addEventListenerAdvertisementSubmitButton();
-        dodajSliku();
+        addPicture();
     })
 }
 showForm();
@@ -210,26 +209,54 @@ async function activateAdvertisementForChange(advertisement){
     title[0].classList.add('form-input');
     advertisement.getElementsByClassName('advertisement-type-img')[0].classList.add('none');
     let advImg = advertisement.getElementsByClassName('advertisement-img-view');
+    let advImgChange = advertisement.getElementsByClassName('advertisement-change-img');
     advertisement.getElementsByClassName('advertisement-list-date')[0].disabled = '';
-    advertisement.getElementsByClassName('advertisement-list-date')[0].classList.add('form-input')
+    advertisement.getElementsByClassName('advertisement-list-date')[0].classList.add('form-input');
     
     advImg[0].classList.remove('none');
+    advImgChange[0].classList.remove('none');
     let advertisements = await readAdvertisementsFromDB();
     for(let advert of advertisements){
         if(advertisement.id == advert._id){
             if(advert.img != 'Slika'){
                 let path = "pictures/upload/" + advert.img;
-                console.log(path)
                 advImg[0].src = path;
-
             }
             
         }
     }
+
+    changePicture(advertisement);
     activateChangeAdvertisementNoButton(advertisement);
     activateChangeAdvertisementYesButton(advertisement);
 }
 
+async function changePicture(advertisement){
+    let advertisementChangeImgBtn = advertisement.getElementsByClassName('advertisement-change-img-btn');
+    
+    if(advertisementChangeImgBtn[0].hasClickListener != true){
+        advertisementChangeImgBtn[0].addEventListener('click', async ()=>{
+            advertisement.getElementsByClassName('imageChangeInput')[0].click();
+        });
+    }
+    
+    advertisement.getElementsByClassName('imageChangeInput')[0].addEventListener('change',async (e)=>{
+       await handleChangedImage(e, advertisement);
+    });  
+    return;
+}
+async function handleChangedImage(event, advertisement) {
+    const selectedImage = event.target.files[0];
+    let advImg = advertisement.getElementsByClassName('advertisement-img-view');
+    let resizedBlob;
+    if (event.target.files && event.target.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            advImg[0].src = e.target.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    }
+}
 function activateChangeAdvertisementNoButton(advertisement){
     let noBtn = advertisement.getElementsByClassName('dont-save-change-btn');
     if(noBtn[0].hasClickListener != true){
@@ -238,26 +265,107 @@ function activateChangeAdvertisementNoButton(advertisement){
         })
     }
 }
-function activateChangeAdvertisementYesButton(advertisement){
+async function activateChangeAdvertisementYesButton(advertisement){
+
     let yesBtn = advertisement.getElementsByClassName('save-change-btn');
     let titleInput = advertisement.getElementsByClassName('advertisement-list-title');
     let textInput = advertisement.getElementsByClassName('advertisement-list-text');
     let dateInput = advertisement.getElementsByClassName('advertisement-list-date');
+    
     if(yesBtn[0].hasClickListener != true){
-        yesBtn[0].addEventListener('click', ()=>{
+        yesBtn[0].addEventListener('click', async ()=>{
             let title = titleInput[0].value;
             let text = textInput[0].value;
             let date = dateInput[0].value;
             let id = advertisement.id;
-            changeAdvertisementInDB(id, title, text, date)
+
+            const imageInput = advertisement.getElementsByClassName('imageChangeInput');
+            let resizedBlob;
+            const formData = new FormData();
+            formData.append('title', title);
+            formData.append('text', text);
+            formData.append('date', date);
+            formData.append('id', id);
+            if (imageInput[0].files && imageInput[0].files[0]) {
+                try{
+                    resizedBlob = await resizeImage(imageInput[0].files[0], 1000, 500);
+                    console.log(resizedBlob)
+                }catch(err){
+                    alert("Greske pokusajte ponovo")
+                    console.log(err)
+                }
+            }else{
+                activateChangeAdvertisementYesButtonWidthoutPicture(advertisement);
+                return;
+            }
+            formData.append('image', resizedBlob, imageInput[0].files[0].name);
+            try{
+
+                const options = {
+                    method: 'POST',
+                    body: formData
+                };
+                let response = await fetch("/advertisement/change", options);
+                let data = await response.json();
+                console.log(data);
+        
+            }catch(err){
+                alert("Greska");
+                console.log(err)
+            }
         })
     }
+
+function activateChangeAdvertisementYesButtonWidthoutPicture(advertisement){
+    let yesBtn = advertisement.getElementsByClassName('save-change-btn');
+    let titleInput = advertisement.getElementsByClassName('advertisement-list-title');
+    let textInput = advertisement.getElementsByClassName('advertisement-list-text');
+    let dateInput = advertisement.getElementsByClassName('advertisement-list-date');
 }
+if(yesBtn[0].hasClickListener != true){
+    yesBtn[0].addEventListener('click', async ()=>{
+        let title = titleInput[0].value;
+        let text = textInput[0].value;
+        let date = dateInput[0].value;
+        let id = advertisement.id;
+
+        try {
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json', // Dodano postavljanje Content-Type na application/json
+                },
+                body: JSON.stringify({
+                    title: title,
+                    text: text,
+                    date: date,
+                    id: id
+                })
+            };
+        
+            let response = await fetch("/advertisement/changeWidthoutPicture", options);
+            let data = await response.json();
+            console.log(data);
+        } catch (err) {
+            alert("Greška");
+            console.log(err);
+        }
+
+    })
+}
+    // console.log(resizedBlob)
+    
+    // console.log(formData)
+    
+
+    
+}
+
+
 
 async function changeAdvertisementInDB(id, title, text, date){
 
     const formData = new FormData();
-    // let formData = await dodajSliku();
     formData.append('title', title);
     formData.append('text', text);
     formData.append('date', date);
@@ -346,7 +454,7 @@ async function handleImage(event) {
     }
 }
 
-async function dodajSliku(){
+async function addPicture(){
     let addPictureBtn = document.getElementById('add-picture-btn');
     
     if(addPictureBtn.hasClickListener != true){
