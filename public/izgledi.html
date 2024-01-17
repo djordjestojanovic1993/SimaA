@@ -8,6 +8,117 @@
 </head>
     <body>
 
+        <div class="registration">
+            <h1>ОБРАЗАЦ ЗА ПРИЈАВУ НА КОНКУРС ЗА СТИПЕНДИЈУ
+                ЗАДУЖБИНЕ "СИМЕ А. ИГУМАНОВА"
+            </h1>
+            <div class="input-container">
+                <input type="text" class="input" required="" id="form-name">
+                <label for="input" class="label">ИМЕ (ИМЕ ЈЕДНОГ РОДИТЕЉА) ПРЕЗИМЕ</label>
+                <div class="underline"></div>
+            </div>
+            <div class="registration-two-inputs-inline">
+                <div class="input-container">
+                    <input type="text" class="input" required="" id="form-birthplace">
+                    <label for="input" class="label">МЕСТО РОЂЕЊА</label>
+                    <div class="underline"></div>
+                </div>
+                <div class="input-container">
+                    <label for="input" class="gray">ДАТУМ РОЂЕЊА</label>
+                    <input type="date" class="input" required="" id="form-birthdate">
+                    <div class="underline"></div>
+
+                </div>
+            </div>
+            <div class="input-container">
+                <input type="text" class="input" required="" id="form-address">
+                <label for="input" class="label">МЕСТО, ОПШТИНА И АДРЕСА СТАНОВАЊА</label>
+                <div class="underline"></div>
+            </div>
+            <div class="input-container">
+                <input type="text" class="input" required="" id="form-school">
+                <label for="input" class="label">НАЗИВ И СЕДИШТЕ ШКОЛЕ/ФАКУЛТЕТА</label>
+                <div class="underline"></div>
+            </div>
+            <div class="registration-two-inputs-inline">
+                <div class="input-container">
+                    <label for="input" class="gray">ГОДИНА УПИСА ШКОЛЕ(ФАКУЛТЕТА)</label>
+                    <input type="number" min="1" max="6" id="form-schoolCurrentYear" required="" class="registration-number-input">
+                    <div class="underline"></div>
+                </div>
+                <div class="input-container">
+                    <label for="input" class="gray">КОЈИ ПУТ ЈЕ УПИСАНА</label>
+                    <input type="number" min="1" id="form-whichTimeYear" required="" class="registration-number-input">
+                    <div class="underline"></div>
+                </div>
+
+            </div>
+            <div class="registration-two-inputs-inline">
+                <div class="input-container">
+                    <input type="text" class="input" required="" id="form-phone">
+                    <label for="input" class="label">КОНТАКТ ТЕЛЕФОН - МОБИЛНИ:</label>
+                    <div class="underline"></div>
+                </div>
+                <div class="input-container">
+                    <input type="text" class="input" required="" id="form-email">
+                    <label for="input" class="label">Е-МАИЛ АДРЕСА</label>
+                    <div class="underline"></div>
+                </div>
+                
+            </div>
+            <div class="input-container">
+                <label for="input" class="gray">БРОЈ ЧЛАНОВА ДОМАЋИНСТВА</label>
+                <input type="number" min="0" required="" class="registration-number-input" id="number-members">
+                <div class="underline"></div>
+            </div>
+            <ul id="members-ul">
+                <template id="members-template">
+                    <li class="members-li" id="members-li">
+                        <div class="registration-two-inputs-inline">
+                            <div class="input-container">
+                                <input type="text" class="input" required="">
+                                <label for="input" class="label">ИМЕ, ПРЕЗИМЕ И СРОДСТВО</label>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-container">
+                                <label for="input" class="gray">УКУПНИ ПРИХОДИ ЧЛАНA</label>
+                                <input type="number" required="" class="registration-number-input money-input" id="number-members"> 
+                                <label for="input" class="gray">РСД</label>
+                            </div>
+    
+                        </div>
+                        <br>
+                        
+                        <div class="registration-two-inputs-inline">
+                            <div class="input-container">
+                                <input type="text" class="input" required="">
+                                <label for="input" class="label">ВРСТА СОЦИЈАЛНЕ ПОМОЋИ</label>
+                                <div class="underline"></div>
+                            </div>
+                            <div class="input-container">
+                                <label for="input" class="gray">ИЗНОС</label>
+                                <input type="number" required="" class="registration-number-input money-input" id="number-members"> 
+                                <label for="input" class="gray">РСД</label>
+                            </div>
+                        </div>
+                        <br>
+                        <!-- <div class="line"></div> -->
+                    </li>
+                </template>
+            </ul>
+            <div class="input-container">
+                <input type="text" class="input" required="" id="form-priestName">
+                <label for="input" class="label" >ИМЕ, ПРЕЗИМЕ И БРОЈ ТЕЛЕФОНА ПАРОХИЈСКОГ СВЕШТЕНИКА</label>
+                <div class="underline"></div>
+            </div>
+            <input type="file" id="pdfInput" style="display: none;" accept=".pdf" multiple />
+            <button onclick="dodajPDF()">Dodaj PDF</button>
+            <div class="compete-btn" id="aca">
+                Konkurisi
+            </div>
+            
+        </div>
+
       <div class="student-full-size">
         <div class="student-full-size-img">
           <div class="student-full-size-img-border">
@@ -139,7 +250,7 @@
         
 
 
-
+        <script src="./js/views.js"></script>
         
 
     </body>

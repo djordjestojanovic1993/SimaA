@@ -13,11 +13,13 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.json());
 
 const routerAdvertisement = require('./routers/advertisement');
+const routerApplication= require('./routers/application');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use('/advertisement', routerAdvertisement);
+app.use('/application', routerApplication);
 
 app.use(express.static(path.join(__dirname, 'public')));
 

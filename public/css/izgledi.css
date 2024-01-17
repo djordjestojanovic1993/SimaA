@@ -284,3 +284,106 @@ body{
 .student-full-size-text p{
     text-align: justify;
 }
+
+
+.registration{
+    width: 60%;
+    height: fit-content;
+    border: 1px solid black;
+    padding: 50px 100px 200px 100px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+}
+
+.registration h1{
+    font-size: 20px;
+    margin: 20px 0;
+    color: rgb(77, 21, 21);
+}
+.input-container {
+    position: relative;
+    margin: 1px auto;
+    width: 100%;
+  }
+  
+  .input-container input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+  }
+  
+  .input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #aaa;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .input-container input[type="text"]:focus ~ .label,
+  .input-container input[type="text"]:valid ~ .label {
+    top: -20px;
+    font-size: 16px;
+    color: rgb(77, 21, 21);
+  }
+  
+  .input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(77, 21, 21);
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+  }
+  
+  .input-container input[type="text"]:focus ~ .underline,
+  .input-container input[type="text"]:valid ~ .underline {
+    transform: scaleX(1);
+  }
+  .registration-two-inputs-inline{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+  }
+  .registration-two-inputs-inline .input-container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .gray{
+    color: #aaa;
+  }
+  .registration-number-input{
+    width: 50px;
+  }
+  #members-ul{
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+  }
+  .members-li{
+    /* display: flex; */
+    text-decoration: none;
+    width: 95%;
+    margin: auto;
+  }
+  .money-input{
+    width: 150px !important; 
+  }
+  .line{
+    border-bottom: 1px solid #aaa;
+  }
