@@ -33,73 +33,214 @@ function formValidation(){
     const formPhoneInput = document.getElementById('form-phone');
     const formEmailInput = document.getElementById('form-email');
     const formPriestNameInput = document.getElementById('form-priestName');
+    const housemebersNumberInput = document.getElementById('number-members');
+    const memberNameIputs = document.getElementsByClassName('member-name');
+    const memberSalaryIputs = document.getElementsByClassName('member-salary');
+    const memberTypeIputs = document.getElementsByClassName('member-type');
+    const memberAmountIputs = document.getElementsByClassName('member-amount');
 
-    let formName = formNameInput.value;
-    let formBirthplace = formBirthplaceInput.value;
-    let formBirthdate = formBirthdateInput.value;
-    let formAddress = formAddressInput.value;
-    let formSchool = formSchoolInput.value;
-    let formSchoolCurrentYear = formSchoolCurrentYearInput.value;
-    let formWhichTimeYear = formWhichTimeYearInput.value;
-    let formPhone = formPhoneInput.value;
-    let formEmail = formEmailInput.value;
-    let formPriestName = formPriestNameInput.value;
-
-    if(formName==''){
+    if(formNameInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formNameInput.focus();
-    }else if(formBirthplace==''){
+      return false;
+    } if(formBirthplaceInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formBirthplaceInput.focus();
-    }else if(formBirthdate==''){
+      return false;
+    } if(formBirthdateInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formBirthdateInput.focus();
-    }else if(formAddress==''){
+      return false;
+    } if(formAddressInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formAddressInput.focus();
-    }else if(formSchool==''){
+      return false;
+    } if(formSchoolInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formSchoolInput.focus();
-    }else if(formSchoolCurrentYear==''){
+      return false;
+    } if(formSchoolCurrentYearInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formSchoolCurrentYearInput.focus();
-    }else if(formWhichTimeYear==''){
+      return false;
+    } if(formWhichTimeYearInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formWhichTimeYearInput.focus();
-    }else if(formPhone==''){
+      return false;
+    } if(formPhoneInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formPhoneInput.focus();
-    }else if(formEmail==''){
+      return false;
+    } if(formEmailInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formEmailInput.focus();
-    }else if(formPriestName==''){
+      return false;
+    } if(housemebersNumberInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
+      housemebersNumberInput.focus();
+      return false;
+    } if(housemebersNumberInput.value != ''){
+      let mebersNumber = parseInt(housemebersNumberInput.value);
+      if(mebersNumber>0){
+        for(let memberName of memberNameIputs){
+          if (memberName.value == ""){
+            alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
+            memberName.focus();
+            return false;
+          }
+        }
+        for(let memberSalary of memberSalaryIputs){
+          if (memberSalary.value == ""){
+            alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
+            memberSalary.focus();
+            return false;
+          }
+        }
+        for(let memberType of memberTypeIputs){
+          if (memberType.value == ""){
+            alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
+            memberType.focus();
+            return false;
+          }
+        }
+        for(let memberAmount of memberAmountIputs){
+          if (memberAmount.value == ""){
+            alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
+            memberAmount.focus();
+            return false;
+          }
+        }
+      }
+    } if(formPriestNameInput.value==''){
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formPriestNameInput.focus();
-    }else if (!pdfInput.files && !pdfInput.files[0]) {
+      return false;
+    } if (!pdfInput.files && !pdfInput.files[0]) {
+      alert("Sva polja moraju biti popunjena i dodati PDF fajlovi");
       formEmailInput.focus();
+      return false;
     }
 
-    addInDB(formName,formBirthplace,formBirthdate,formAddress,formSchool,formSchoolCurrentYear,formWhichTimeYear,formPhone,formEmail,formPriestName);
-
-
-
-  
+    return true;
 }
 
-function dodajPDF() {
+
+
+function readValues(){
+  const formNameInput = document.getElementById('form-name');
+  const formBirthplaceInput = document.getElementById('form-birthplace');
+  const formBirthdateInput = document.getElementById('form-birthdate');
+  const formAddressInput = document.getElementById('form-address');
+  const formSchoolInput = document.getElementById('form-school');
+  const formSchoolCurrentYearInput = document.getElementById('form-schoolCurrentYear');
+  const formWhichTimeYearInput = document.getElementById('form-whichTimeYear');
+  const formPhoneInput = document.getElementById('form-phone');
+  const formEmailInput = document.getElementById('form-email');
+  const formPriestNameInput = document.getElementById('form-priestName');
+  const housemebersNumberInput = document.getElementById('number-members');
+  const memberNameIputs = document.getElementsByClassName('member-name');
+  const memberSalaryIputs = document.getElementsByClassName('member-salary');
+  const memberTypeIputs = document.getElementsByClassName('member-type');
+  const memberAmountIputs = document.getElementsByClassName('member-amount');
+
+  let formName = formNameInput.value;
+  let formBirthplace = formBirthplaceInput.value;
+  let formBirthdate = formBirthdateInput.value;
+  let formAddress = formAddressInput.value;
+  let formSchool = formSchoolInput.value;
+  let formSchoolCurrentYear = formSchoolCurrentYearInput.value;
+  let formWhichTimeYear = formWhichTimeYearInput.value;
+  let formPhone = formPhoneInput.value;
+  let formEmail = formEmailInput.value;
+  let formPriestName = formPriestNameInput.value;
+  let members=[{}];
+
+  let housemebersNumber = parseInt(housemebersNumberInput.value);
+  if(housemebersNumber>0){ 
+    for(let i=0; i<housemebersNumber; i++){
+      members[i] = {
+        name: memberNameIputs[i].value,
+        salary: memberSalaryIputs[i].value,
+        type: memberTypeIputs[i].value,
+        amounth: memberAmountIputs[i].value
+      }
+    }
+  }
+  addInDB(formName,formBirthplace,formBirthdate,formAddress,formSchool,formSchoolCurrentYear,formWhichTimeYear,formPhone,formEmail,formPriestName, members, housemebersNumber);
+}
+
+function a(){
+  let addpdfbutton = document.getElementById('add-pdf-button__icon');
+  let hasChangeListener = false;
+
+  if(addpdfbutton.hasClickListener != true){
+    addpdfbutton.addEventListener('click', ()=>{
+      addPDF(hasChangeListener)
+      hasChangeListener = true;
+    })
+  }
+
+}
+a();
+
+function addPDF(hasChangeListener) {
     const pdfInput = document.getElementById('pdfInput');
   
     // Simulacija klika na input polje za odabir datoteke
     pdfInput.click();
   
     // Uhvati događaj odabira datoteke
-    pdfInput.addEventListener('change', function() {
-      const odabraniFajlovi = pdfInput.files;
-  
-      // Provera da li su odabrani fajlovi PDF
-      for (let i = 0; i < odabraniFajlovi.length; i++) {
-        const fajl = odabraniFajlovi[i];
-        if (fajl.type === 'application/pdf') {
-          // Ovde možete dalje manipulisati s PDF fajlom, npr. poslati ga na server
-          console.log('Odabran PDF fajl:', fajl.name);
-        } else {
-          alert('Molimo odaberite samo PDF fajlove.');
+
+    if(hasChangeListener == false){
+      pdfInput.addEventListener('change', function() {
+        hasChangeListener = true;
+        const odabraniFajlovi = pdfInput.files;
+    
+        // Provera da li su odabrani fajlovi PDF
+        for (let i = 0; i < odabraniFajlovi.length; i++) {
+          const fajl = odabraniFajlovi[i];
+          if (fajl.type === 'application/pdf') {
+            // Ovde možete dalje manipulisati s PDF fajlom, npr. poslati ga na server
+            console.log('Odabran PDF fajl:', fajl.name);
+          } else {
+            alert('Molimo odaberite samo PDF fajlove.');
+          }
         }
-      }
-    });
+        showPdfImg(odabraniFajlovi);
+      });
+      
+    }
   }
 
-  async function addInDB(formName,formBirthplace,formBirthdate,formAddress,formSchool,formSchoolCurrentYear,formWhichTimeYear,formPhone,formEmail,formPriestName){
+
+ 
+
+  function showPdfImg(odabraniFajlovi){
+
+
+    const PdfFileShownTemplate = document.getElementById('Pdf-file-shown-template');
+    const PdfFileShownProtorype = PdfFileShownTemplate.content.getElementById('Pdf-file-shown');
+    const PdfFilesShown = document.getElementById('Pdf-files-shown');
+    const Pdfileshowns = document.getElementsByClassName('Pdf-file-shown');
+
+    const pdfNumber = Pdfileshowns.length;
+
+    if(pdfNumber>0){
+      for(let i=0; i<pdfNumber; i++){
+        Pdfileshowns[0].remove();
+      }
+    }
+
+    
+
+    for(odabrani of odabraniFajlovi){
+      const clone = PdfFileShownProtorype.cloneNode(true);
+      clone.getElementsByClassName('Pdf-file-shown-title')[0].innerText = odabrani.name
+      PdfFilesShown.appendChild(clone);
+    }
+  }
+
+  async function addInDB(formName,formBirthplace,formBirthdate,formAddress,formSchool,formSchoolCurrentYear,formWhichTimeYear,formPhone,formEmail,formPriestName, members, housemebersNumber){
     
     let odabraniFajlovi=[];
     const pdfInput = document.getElementById('pdfInput');
@@ -114,6 +255,8 @@ function dodajPDF() {
     formData.append('phone', formPhone);
     formData.append('eMail', formEmail);
     formData.append('priestName', formPriestName);
+    formData.append('members', JSON.stringify(members));
+    formData.append('housemebersNumber', housemebersNumber);
     if (pdfInput.files && pdfInput.files[0]) {
         try{
           odabraniFajlovi = Array.from(pdfInput.files);
@@ -125,7 +268,7 @@ function dodajPDF() {
     // console.log(resizedBlob)
     if(odabraniFajlovi.length > 0){
       odabraniFajlovi.forEach((fajl, index) => {
-        formData.append(`pdfFiles`, fajl);
+        formData.append(`pdfFiles`, fajl, fajl.name);
       });
 
       try{
@@ -148,14 +291,16 @@ function dodajPDF() {
     }
 }
 
-function asd(){
-    let aaca = document.getElementById('aca');
+function addEventListenertoSubmitBtn(){
+    let submitBtn = document.getElementById('submit-btn');
     
-    if(aaca.hasClickListener != true){
-        aaca.addEventListener('click', ()=>{
-          console.log('cao')
-          formValidation();
+    if(submitBtn.hasClickListener != true){
+      submitBtn.addEventListener('click', ()=>{
+          let check = formValidation();
+          if(check === true){
+            readValues();
+          }
         })
     }
 }
-asd()
+addEventListenertoSubmitBtn()

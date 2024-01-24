@@ -51,17 +51,44 @@ const applicationSchema = new mongoose.Schema({
         default: "e-mail"
     },
     HouseMembrs:{
+        type: [{
+            _id:false,
+            name:{
+                type:String,
+                required: true,
+                default: "Ime"
+            },
+            salary:{
+                type:String,
+                required: true,
+                default: "Primanja"
+            },
+            type:{
+                type:String,
+                required: true,
+                default: "Vrsta socijalne pomoci"
+            },
+            amounth:{
+                type:String,
+                required: true,
+                default: "Iznos pomoci"
+            }
+        }]
     },
     priestName:{
         type:String,
         required: true,
         default: "Ime Svestenika"
+    },
+    Pdfs:{
+        type: [String]
     }
 }, {collection: 'application'})
 
 const ApplicationModel = mongoose.model('Application', applicationSchema);
 
 const addAApplication = async function(advertisementData){
+
     let newAdvertisements = new ApplicationModel({
         _id: new mongoose.Types.ObjectId(),
         name: advertisementData.name,
@@ -73,7 +100,11 @@ const addAApplication = async function(advertisementData){
         schoolYear: advertisementData.schoolYear,
         phone: advertisementData.phone,
         eMail: advertisementData.eMail,
-        priestName: advertisementData.priestName
+        priestName: advertisementData.priestName,
+        HouseMembrs: advertisementData.membersArray,
+        Pdfs: advertisementData.filejsNames
+
+        
     });
 
     return newAdvertisements.save();
