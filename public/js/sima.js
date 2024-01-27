@@ -13,53 +13,89 @@ window.addEventListener('scroll', (e)=>{
     
 })
 
-const smotuljak = document.getElementById('smotuljak');
-const pInSmotuljak = document.getElementById('p-in-smotuljak');
-const smotuljakOkvir = document.getElementById('smotuljak-okvir');
+function openSimasText(){
+    const simaAboutFirstPicture = document.getElementsByClassName('sima-about-first-picture');
+    const simaAboutSecondPicture = document.getElementsByClassName('sima-about-second-picture');
+    const simaAboutSecondPictureImg = document.getElementsByClassName('sima-about-second-picture-img')
+    const simaAboutSecondPictureP = document.getElementsByClassName('sima-about-second-picture-p')
 
-smotuljak.addEventListener('click', (e)=>{
-        smotuljak.classList.add('smotuljak-transform');
+    simaAboutFirstPicture[0].addEventListener('click', ()=>{
+        simaAboutFirstPicture[0].classList.add('hidden')
+        simaAboutSecondPicture[0].classList.remove('hidden')
+        simaAboutSecondPictureImg[0].classList.add('visible')
         setTimeout(function(){
-            pInSmotuljak.classList.remove('none');
-        }, 500);
-})
+            simaAboutSecondPictureP[0].classList.remove('hidden')
 
-const tpictureimg = document.getElementsByClassName('tpictureimg');
-const testamentpicturesenlargedborder = document.getElementById('testament-pictures-enlarged-border');
-const testamentpicturesenlarged = document.getElementById('testament-pictures-enlarged');
-const testamentpicturesenlargedimg = document.getElementById('testament-pictures-enlarged-img');
-const next = document.getElementById('next');
-let a;
-let brSlika = tpictureimg.length;
-for(let i=0; i<brSlika; i++){ 
-    tpictureimg[i].addEventListener('click', (e)=>{
-    let src = tpictureimg[i].src;
-    a = i;
-    testamentpicturesenlargedimg.src = src;
-    testamentpicturesenlargedborder.classList = 'visible';
-    testamentpicturesenlarged.classList = 'visible';
-    console.log(a)
-})
-testamentpicturesenlargedborder.addEventListener('click', (e)=>{
-    testamentpicturesenlargedborder.classList = 'hiden';
-    testamentpicturesenlarged.classList = 'hiden';
-})
+        },600)
+    })
+}
+openSimasText();
+
+
+function showLargeImg(){
+    const tpictureimg = document.getElementsByClassName('tpictureimg');
+    const testamentpicturesenlargedborder = document.getElementById('testament-pictures-enlarged-border');
+    const testamentpicturesenlarged = document.getElementById('testament-pictures-enlarged');
+    const testamentpicturesenlargedimg = document.getElementById('testament-pictures-enlarged-img');
+    let avariable1;
+    let avariable2;
+    let brSlika = tpictureimg.length;
+    for(let i=0; i<brSlika; i++){ 
+        tpictureimg[i].addEventListener('click', (e)=>{
+        let src = tpictureimg[i].src;
+        avariable1 = i;
+        avariable2 = i;
+        testamentpicturesenlargedimg.src = src;
+        testamentpicturesenlargedborder.classList.remove("hidden");
+        testamentpicturesenlarged.classList.remove("hidden");
+        addEventListenerToRightArrow(brSlika, avariable1, tpictureimg, testamentpicturesenlargedimg);
+        addEventListenerToLeftArrow(brSlika, avariable2, tpictureimg, testamentpicturesenlargedimg);
+    })
+        testamentpicturesenlargedborder.addEventListener('click', (e)=>{
+            testamentpicturesenlargedborder.classList.add("hidden");
+            testamentpicturesenlarged.classList.add("hidden");
+        })
+    }
+}
+showLargeImg()
+
+function addEventListenerToRightArrow(brSlika, avariable1, tpictureimg, testamentpicturesenlargedimg){
+    console.log(avariable1)
+    const next = document.getElementById('next-picture-arrow');
+    next.addEventListener('click', (e)=>{
+        if(avariable1 == brSlika-1){
+            avariable1=-1;
+        }
+        let src = tpictureimg[avariable1+1].src;
+        testamentpicturesenlargedimg.src = src;
+        if(avariable1 < brSlika-1){
+            avariable1 = avariable1+1;
+        }else{
+            avariable1=-1;
+        }
+            
+    })
+
 }
 
-next.addEventListener('click', (e)=>{
-    if(a != 2){
-        console.log("cao")
-    }
-    let src = tpictureimg[a+1].src;
-    testamentpicturesenlargedimg.src = src;
-    console.log(testamentpicturesenlargedimg.src);
-    if(a < 2){
-        a = a+1;
-    }else{
-        a=-1;
-    }
-        
-})
+function addEventListenerToLeftArrow(brSlika, avariable2, tpictureimg, testamentpicturesenlargedimg){
+
+    const previous = document.getElementById('previous-picture-arrow');
+    previous.addEventListener('click', (e)=>{
+        if(avariable2==0){
+            avariable2=brSlika;
+        }
+        let src = tpictureimg[avariable2-1].src;
+        testamentpicturesenlargedimg.src = src;
+        if(avariable2 > 0){
+            avariable2 = avariable2-1;
+        }else{
+            avariable2=brSlika;
+        }
+            
+    })
+
+}
 
 
 

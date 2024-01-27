@@ -305,6 +305,12 @@ body{
     margin: 20px 0;
     color: rgb(77, 21, 21);
 }
+.registration-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
 .input-container {
     position: relative;
     margin: 1px auto;
@@ -462,4 +468,8 @@ body{
   #Pdf-file-shown{
     text-align: center;
     font-size: 12px;
+  }
+  .registration-remark{
+    font-size: 18px;
+    color: rgb(77, 21, 21);
   }

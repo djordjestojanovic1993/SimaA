@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const Participant = require("./advertisement");
 
 const applicationSchema = new mongoose.Schema({
     _id:{
@@ -82,32 +83,38 @@ const applicationSchema = new mongoose.Schema({
     },
     Pdfs:{
         type: [String]
+    },
+    advertisement:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Advertisement",
+        required: true,
     }
 }, {collection: 'application'})
 
 const ApplicationModel = mongoose.model('Application', applicationSchema);
 
-const addAApplication = async function(advertisementData){
+const addAApplication = async function(applicationData){
 
-    let newAdvertisements = new ApplicationModel({
+    let newApplication = new ApplicationModel({
         _id: new mongoose.Types.ObjectId(),
-        name: advertisementData.name,
-        birthPlace: advertisementData.birthPlace,
-        birthDate: advertisementData.birthDate,
-        address: advertisementData.address,
-        school: advertisementData.school,
-        schoolCurrentYear: advertisementData.schoolCurrentYear,
-        schoolYear: advertisementData.schoolYear,
-        phone: advertisementData.phone,
-        eMail: advertisementData.eMail,
-        priestName: advertisementData.priestName,
-        HouseMembrs: advertisementData.membersArray,
-        Pdfs: advertisementData.filejsNames
+        name: applicationData.name,
+        birthPlace: applicationData.birthPlace,
+        birthDate: applicationData.birthDate,
+        address: applicationData.address,
+        school: applicationData.school,
+        schoolCurrentYear: applicationData.schoolCurrentYear,
+        schoolYear: applicationData.schoolYear,
+        phone: applicationData.phone,
+        eMail: applicationData.eMail,
+        priestName: applicationData.priestName,
+        HouseMembrs: applicationData.membersArray,
+        Pdfs: applicationData.filejsNames,
+        advertisement: applicationData.advertisementID
 
         
     });
 
-    return newAdvertisements.save();
+    return newApplication.save();
 }
 
 module.exports = {

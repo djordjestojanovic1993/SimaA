@@ -142,6 +142,7 @@ function readValues(){
   const memberSalaryIputs = document.getElementsByClassName('member-salary');
   const memberTypeIputs = document.getElementsByClassName('member-type');
   const memberAmountIputs = document.getElementsByClassName('member-amount');
+  let registrationForm = document.getElementsByClassName('registration-form');
 
   let formName = formNameInput.value;
   let formBirthplace = formBirthplaceInput.value;
@@ -153,6 +154,7 @@ function readValues(){
   let formPhone = formPhoneInput.value;
   let formEmail = formEmailInput.value;
   let formPriestName = formPriestNameInput.value;
+  let advertisementID = registrationForm[0].id;
   let members=[{}];
 
   let housemebersNumber = parseInt(housemebersNumberInput.value);
@@ -166,7 +168,7 @@ function readValues(){
       }
     }
   }
-  addInDB(formName,formBirthplace,formBirthdate,formAddress,formSchool,formSchoolCurrentYear,formWhichTimeYear,formPhone,formEmail,formPriestName, members, housemebersNumber);
+  addInDB(formName,formBirthplace,formBirthdate,formAddress,formSchool,formSchoolCurrentYear,formWhichTimeYear,formPhone,formEmail,formPriestName, members, housemebersNumber, advertisementID);
 }
 
 function a(){
@@ -240,7 +242,7 @@ function addPDF(hasChangeListener) {
     }
   }
 
-  async function addInDB(formName,formBirthplace,formBirthdate,formAddress,formSchool,formSchoolCurrentYear,formWhichTimeYear,formPhone,formEmail,formPriestName, members, housemebersNumber){
+  async function addInDB(formName,formBirthplace,formBirthdate,formAddress,formSchool,formSchoolCurrentYear,formWhichTimeYear,formPhone,formEmail,formPriestName, members, housemebersNumber, advertisementID){
     
     let odabraniFajlovi=[];
     const pdfInput = document.getElementById('pdfInput');
@@ -257,6 +259,7 @@ function addPDF(hasChangeListener) {
     formData.append('priestName', formPriestName);
     formData.append('members', JSON.stringify(members));
     formData.append('housemebersNumber', housemebersNumber);
+    formData.append('advertisementID', advertisementID)
     if (pdfInput.files && pdfInput.files[0]) {
         try{
           odabraniFajlovi = Array.from(pdfInput.files);
