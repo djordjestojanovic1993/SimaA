@@ -226,15 +226,37 @@
     gap: 2vw;
     padding: 0 0 100px 0;
     background-color: rgb(250, 235, 215);
+    position: relative;
 }
-.galery img{
+.galery-img{
     width: 20%;
+    height: auto;
     cursor: pointer;
     box-shadow: 5px 5px 15px 5px rgb(158, 132, 97), -3px -3px 10px rgb(255, 255, 255);
     filter: sepia(0.7);
 }
-.galery img:hover{
+.galery-img:hover{
     filter: none;
     transform: scale(1.05);
     transition: .8s;
+}
+#galery-pictures-enlarged-border{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    background-color: rgba(77, 21, 21, 0.9);
+}
+.red{
+    background-color: red;
+}
+#galery-pictures-enlarged{
+    width: fit-content;
+    height: fit-content;
+    position: fixed;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+#galery-pictures-enlarged img{
+    width: 1000px;
 }

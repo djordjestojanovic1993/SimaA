@@ -99,4 +99,25 @@ function addEventListenerToLeftArrow(brSlika, avariable2, tpictureimg, testament
 
 
 
+const apictureimg = document.getElementsByClassName('galery-img');
+const aboutpicturesenlarged = document.getElementById('galery-pictures-enlarged');
+const aboutpicturesenlargedimg = document.getElementById('galery-pictures-enlarged-img');
+const aboutpicturesenlargedborder = document.getElementById('galery-pictures-enlarged-border');
+const x = document.getElementById('x');
 
+for(let i=0; i<apictureimg.length; i++){
+    apictureimg[i].addEventListener('click', (e)=>{
+        let src =apictureimg[i].src;
+        aboutpicturesenlargedimg.src = src;
+        aboutpicturesenlargedborder.classList.remove('none')
+        aboutpicturesenlarged.classList.remove('none')
+    })
+    aboutpicturesenlargedborder.addEventListener('click', (e)=>{
+        aboutpicturesenlargedborder.classList.add('none')
+        aboutpicturesenlarged.classList.add('none')
+    })
+    x.addEventListener('click', (e)=>{
+        aboutpicturesenlargedborder.classList.add('none')
+        aboutpicturesenlarged.classList.add('none')
+    })
+}
