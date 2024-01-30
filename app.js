@@ -12,14 +12,21 @@ const app = express();
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.json());
 
+
 const routerAdvertisement = require('./routers/advertisement');
 const routerApplication= require('./routers/application');
+const routerPages = require('./routers/pages');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 app.use('/advertisement', routerAdvertisement);
 app.use('/application', routerApplication);
+app.use('/pages', routerPages)
+
+app.get('/news_page', (req, res) => {
+    res.render('news');
+  });
 
 app.use(express.static(path.join(__dirname, 'public')));
 

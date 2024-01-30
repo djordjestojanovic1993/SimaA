@@ -19,10 +19,15 @@ const title = document.getElementById('title');
 window.addEventListener('scroll', (e)=>{
     for(let i=0; i<300; i++){
         if(window.pageYOffset>i+0){
-            title.style.opacity = 1-i/300;
+            title.style.opacity = 1-i/450;
         }
     }
 })
+
+// const probamejs = document.getElementById('probamejs')
+// probamejs.addEventListener('click', ()=>{
+//     window.location.href = '/ejs_page';
+// })
 
 const apictureimg = document.getElementsByClassName('a-picture-img');
 const aboutpicturesenlarged = document.getElementById('about-pictures-enlarged');
@@ -96,7 +101,7 @@ function hamburger(){
 
     const openList = function(){
         line1.style.transform = "rotate(45deg)";
-        line2.style.transform = "scaleY(0)";
+        line2.style.transform = "scaleY(0) li";
         line3.style.transform = "rotate(-45deg)";
         list.style.display = "flex";
         if(!nav.classList.contains('scrolled')){
@@ -110,8 +115,8 @@ function hamburger(){
         line2.style.transform = "scaleY(1)";
         line3.style.transform = "rotate(0deg)";
         list.style.display = "none";
-        navUl1.style.opacity = "0";
-        navUl1.style.visibility = "hidden";
+        // navUl1.style.opacity = "0";
+        // navUl1.style.visibility = "hidden";
         if(addedScrolled){
             nav.classList.remove('scrolled');
             addedScrolled = false;

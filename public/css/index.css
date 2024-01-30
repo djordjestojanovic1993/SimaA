@@ -37,19 +37,19 @@ nav{
     width: 100%;
     height: 100%;
     transition: 0.8s;
+    display: flex;
+    justify-content: center;
 }
 #nav-ul{
     list-style: none;
     display: flex;
     justify-content: center;
     height: 100%;
-    width: 70%;
-    left: 30%;
 }
 #nav-ul i{
     display: none;
     color: rgb(250, 235, 215);
-    font-size: 24px;
+    font-size: 18px;
     height: 100%;
     z-index: 20;
 }
@@ -69,7 +69,7 @@ nav ul li a{
     color: rgb(250, 235, 215);
     transition: all 0.5s ease 0s;
     text-decoration: none;
-    font-size: calc(.6vw + 10px);
+    font-size: calc(.6vw + 8px);
     display: block;
     padding: 0 20px;
     height: 100%;
@@ -96,7 +96,6 @@ nav ul li a:hover{
     text-decoration: none;
     color: rgb(77, 21, 21);
     background-color: rgb(250, 235, 215);
-    color: rgb(77, 21, 21);
 }
 nav ul li:focus-within > ul,
 nav ul li:hover > ul{

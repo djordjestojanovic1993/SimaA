@@ -59,7 +59,6 @@ const addAdvertisements = async function(advertisementData){
 const deleteAdvertismentById = async function(id){
     try {
         const result = await AdvertisementModel.deleteOne({ _id: id });
-        console.log(result);
         return result;
       } catch (error) {
         console.error('Error deleting data:', error);
@@ -81,6 +80,7 @@ const changeAdvertisement = async function(advertisementData){
 
           await dokument.save();
           console.log('Podaci su uspešno promenjeni.');
+          return dokument;
       } catch (error) {
         console.error('Error deleting data:', error);
         throw error;
@@ -106,11 +106,23 @@ const changeAdverisementWidthoutPicture = async function(advertisementData){
       }
 }
 
+const getAdvertisementsBytype = async function (type) {
+    try {
+      // Koristimo Mongoose funkciju find() za pretragu
+      const advertisements = await AdvertisementModel.find({ type: type });
+  
+      return advertisements;
+    } catch (error) {
+      throw error;
+    }
+  }
+
 module.exports = {
     model : AdvertisementModel,
     getAdvertisements,
     addAdvertisements,
     deleteAdvertismentById,
     changeAdvertisement,
-    changeAdverisementWidthoutPicture
+    changeAdverisementWidthoutPicture,
+    getAdvertisementsBytype
 }

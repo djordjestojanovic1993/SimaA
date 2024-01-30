@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/news.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/css/index-res.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="hamburger">
+                <span id="line1" class="line"></span>
+                <span id="line2" class="line"></span>
+                <span id="line3" class="line"></span>
+            </div>
+            <ul id="nav-ul" class="center-y-axis">
+                <li>
+                    <div id="div-hero">
+                        <a href="#hero" id="Zaduzbina" class="nav-a">Задужбина</a> <i id="arrow-hero" class="fa fa-angle-down" aria-hidden="true"></i>
+                    </div>
+                    
+                    <ul id="nav-ul1">
+                        <li><a href="#upravni-odbor" id="uo-nav" class="nav-a">Uprava</a></li>
+                        <li><a href="#about" class="nav-a">Istorijat</a></li>
+                    </ul>
+                </li>
+                <li><a href="sima.html" class="nav-a">Сима Игуманов</a></li>
+                <li><a href="/pages/news_page" class="nav-a">Vesti</a></li>
+                <li><a href="#" class="nav-a">Stipendisti</a></li>
+                <li><a href="#" class="nav-a">Donacije</a></li>
+                <li><a href="#contact" class="nav-a">Контакт</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="content">
+            <h1 class="content-h1">Стипендисти</h1>
+            <div class="students-conteiner">
+                <% if( advertisements.length > 0 ){ %>
+                    <% for(let i=0; i<advertisements.length; i++){ %>
+                        <%- include("student", {name:advertisements[i].title, subTitle:advertisements[i].title, description:advertisements[i].text, img:"/pictures/upload/" + advertisements[i].img}) %>
+
+                    <% } %>
+
+                <% } %>
+
+            </div>
+        </div>
+
+    </main>
+    <!-- <script src="/js/news.js"></script> -->
+    </body>
+</html>

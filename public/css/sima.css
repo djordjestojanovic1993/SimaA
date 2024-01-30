@@ -246,9 +246,7 @@
     position: fixed;
     top: 0;
     background-color: rgba(77, 21, 21, 0.9);
-}
-.red{
-    background-color: red;
+    transition: visibility 0.3s, opacity 0.3s linear;
 }
 #galery-pictures-enlarged{
     width: fit-content;
@@ -256,6 +254,7 @@
     position: fixed;
     top: 50%;
     transform: translate(0, -50%);
+    transition: visibility 0.6s, opacity 0.6s linear;
 }
 #galery-pictures-enlarged img{
     width: 1000px;

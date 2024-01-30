@@ -24,6 +24,7 @@ async function addAdvertisements(req, res, next) {
       }
       console.log(advertisementsData)
       const newAdvertisements = await model.addAdvertisements(advertisementsData);
+      console.log(newAdvertisements)
       res.status(201).json(newAdvertisements);
     } catch (error) {
       next(error);
@@ -49,8 +50,8 @@ async function changeAdvertisment(req, res, next){
     if(!req.file.filename){
         throw new Error("Nema slike ucesnika")
     }
-    console.log(advertisementsData)
     const changedAdvertisements = await model.changeAdvertisement(advertisementsData);
+    console.log(changedAdvertisements)
     res.status(201).json(changedAdvertisements);
 
   }catch(error){
@@ -69,6 +70,7 @@ async function changeAdverisementWidthoutPicture(req, res, next){
     next(error);
   }
 }
+
 
 
 module.exports = {

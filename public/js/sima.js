@@ -109,15 +109,15 @@ for(let i=0; i<apictureimg.length; i++){
     apictureimg[i].addEventListener('click', (e)=>{
         let src =apictureimg[i].src;
         aboutpicturesenlargedimg.src = src;
-        aboutpicturesenlargedborder.classList.remove('none')
-        aboutpicturesenlarged.classList.remove('none')
+        aboutpicturesenlargedborder.classList.remove('hidden')
+        aboutpicturesenlarged.classList.remove('hidden')
     })
     aboutpicturesenlargedborder.addEventListener('click', (e)=>{
-        aboutpicturesenlargedborder.classList.add('none')
-        aboutpicturesenlarged.classList.add('none')
+        aboutpicturesenlargedborder.classList.add('hidden')
+        aboutpicturesenlarged.classList.add('hidden')
     })
     x.addEventListener('click', (e)=>{
-        aboutpicturesenlargedborder.classList.add('none')
-        aboutpicturesenlarged.classList.add('none')
+        aboutpicturesenlargedborder.classList.add('hidden')
+        aboutpicturesenlarged.classList.add('hidden')
     })
 }

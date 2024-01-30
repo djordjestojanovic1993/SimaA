@@ -68,7 +68,7 @@ async function addAdvertisementInDB(title, text, date, type){
     formData.append('type', type);
     if (imageInput.files && imageInput.files[0]) {
         try{
-            resizedBlob = await resizeImage(imageInput.files[0], 1000, 500);
+            resizedBlob = await resizeImage(imageInput.files[0], 500, 1000);
         }catch(err){
             alert("Greske pokusajte ponovo")
             console.log(err)
@@ -85,7 +85,7 @@ async function addAdvertisementInDB(title, text, date, type){
         };
         let response = await fetch("/advertisement/new", options);
         let data = await response.json();
-        // console.log(data);
+        console.log(data);
         showSuccessfullyAdded();
 
     }catch(err){
@@ -288,7 +288,7 @@ async function activateChangeAdvertisementYesButton(advertisement){
             formData.append('id', id);
             if (imageInput[0].files && imageInput[0].files[0]) {
                 try{
-                    resizedBlob = await resizeImage(imageInput[0].files[0], 1000, 500);
+                    resizedBlob = await resizeImage(imageInput[0].files[0], 500, 1000);
                     console.log(resizedBlob)
                 }catch(err){
                     alert("Greske pokusajte ponovo")
