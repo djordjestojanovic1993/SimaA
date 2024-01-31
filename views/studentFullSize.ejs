@@ -3,11 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/izgledi.css">
+    <link rel="stylesheet" type="text/css" href="/css/students.css">
 </head>
 
     <body>
-        
+        <div class="student-full-size">
+            <div class="student-full-size-img">
+                <div class="student-full-size-img-border">
+                    <img src="/pictures/staratelji/funkcioner3.jpg" alt="Opis slike" class="slika">
+                </div> 
+            </div>
+            <div class="student-full-size-text">
+              <h1><%= name %></h1>
+              <h4><%= subTitle %></h4>
+              <p class="tekst">
+                <%= text %>
+      
+              </p>
+    
+            </div>
+            
+        </div>
 
         <script src="./js/views.js"></script>
     </body>

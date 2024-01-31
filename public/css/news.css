@@ -2,7 +2,6 @@ body{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-image: url('../pictures/png/pozadina-01.png');
 }
 nav{
     background-color: rgb(77, 21, 21) !important;
@@ -11,99 +10,115 @@ nav{
     background-color: rgb(77, 21, 21) !important;
 
 }
-main{
+.news-conteiner{
     width: 100%;
     min-height: 100vh;
-    padding: 60px 0 0 0px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('../pictures/png/pozadina-01.png');
-}
-.content{
-    height: 100%;
-    width: 100%;
-    padding: 5% 10%;
-}
-.content-h1{
-    color: rgb(77, 21, 21);
-    font-size: 44px;
-}
-.students-conteiner{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 150px 0 0 0;
+    background-image: url('../pictures/png/pozadina-01.png');
+}
+.news-conteiner-row{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px 0;
+    width: 100%;
+}
+.advertisement{
+    position: relative;
+    width: 660px;
+    height: 420px;
+    background-color: white;
+    display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 17px;
+    box-shadow: 5px 5px 15px rgb(77, 21, 21), -2px -2px 15px rgb(197, 174, 174);
+}
+.advertisement-a{
+    position: absolute;
+    width: 100%;
+    /* height: 90%; */
+}
+.advertisement:hover{
+    box-shadow: inset -2px -2px 15px rgb(77, 21, 21), inset 5px 5px 15px rgb(197, 174, 174);
+    transition: 1.1s all;
+}
+.advertisement-border1{
+    /* border: 2px solid rgb(77, 21, 21); */
     width: 100%;
     height: 100%;
-}
-.student{
-    width: 80%;
-    height: 420px;
-    display: flex;
-    /* box-sizing: border-box; */
-    padding: 5% 0;
-}
-.student-img{
-    width: 35%;
-    box-sizing: border-box;
-    /* padding: 20px; */
-}
-.student-img-border1{
-    /* border: 2px solid rgb(77, 21, 21); */
-    width: 300px;
-    height: 402px;
     padding: 20px;
     box-sizing: border-box;
-    background-image: url("../pictures/path281.png");
+    background-image: url("../pictures/g3398.png");
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    justify-content: center;
+    gap: 50px;
     align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 60px;
 }
-.student-img img{
-    width: 100%;
-    max-height: 100%;
-}
-.student-text{
+.advertisement-img{
+    width: 40%;
+    height: 100%;
+    overflow: hidden;
     position: relative;
-    width: 65%;
+    /* display: flex; */
+}
+.advertisement-img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.advertisement-text{
+    position: relative;
+    width: 60%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
-    padding: 0 50px;
+    justify-content: start;
+    gap: 10px;
     color: rgb(77, 21, 21);
+    /* overflow: hidden; */
 }
-.student-text h4{
+.advertisement-text h2{
+    font-size: 30px;
     margin: 0;
-    font-size: 28px;
+    text-align: justify;
+    height: 50px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.student-text h6{
+.advertisement-text h5{
+    font-size: 18px;
     margin: 0;
-    font-size: 21px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 65px;
+}
+.advertisement-text p{
+    margin: 0;
+    text-align: justify;
+    /* white-space: nowrap; */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 230px !important;
 
 }
-.student-text p{
-    overflow: hidden;
-    text-overflow: ellipsis !important;
-    text-align: justify;
-    /* padding: 10px 0; */
-    margin: 10px 0;
-    max-height: 250px;
-    font-size: 18px;
-}
-.student-btn{
-    cursor: pointer;
-    font-weight: bold;
-    position: absolute;
-    bottom: 15px;
-    left: 50px;
-    font-size: 18px;
-}
-.reverse{
-    display: flex;
-    flex-direction: row-reverse;
+.background-maroon{
+    /* background-color: rgb(77, 21, 21) !important; */
+
 }

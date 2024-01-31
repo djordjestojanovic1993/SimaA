@@ -116,6 +116,27 @@ const getAdvertisementsBytype = async function (type) {
       throw error;
     }
   }
+  const getAdvertisementsByID = async function (id) {
+    try {
+      // Koristimo Mongoose funkciju find() za pretragu
+      const advertisements = await AdvertisementModel.find({ _id: id });
+  
+      return advertisements;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  const getAdvertisementsByTypes = async function (types) {
+    try {
+      // Koristimo Mongoose funkciju find() sa $in operatorom za pretragu po više vrednosti
+      const advertisements = await AdvertisementModel.find({ type: { $in: types } });
+  
+      return advertisements;
+    } catch (error) {
+      throw error;
+    }
+  };
 
 module.exports = {
     model : AdvertisementModel,
@@ -124,5 +145,7 @@ module.exports = {
     deleteAdvertismentById,
     changeAdvertisement,
     changeAdverisementWidthoutPicture,
-    getAdvertisementsBytype
+    getAdvertisementsBytype,
+    getAdvertisementsByTypes,
+    getAdvertisementsByID
 }

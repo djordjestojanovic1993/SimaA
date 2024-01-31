@@ -24,9 +24,6 @@ app.use('/advertisement', routerAdvertisement);
 app.use('/application', routerApplication);
 app.use('/pages', routerPages)
 
-app.get('/news_page', (req, res) => {
-    res.render('news');
-  });
 
 app.use(express.static(path.join(__dirname, 'public')));
 
