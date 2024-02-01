@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/students.css">
+    <link rel="stylesheet" type="text/css" href="/css/students-res.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
     <link rel="stylesheet" type="text/css" href="/css/index-res.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -41,7 +42,9 @@
             <div class="students-conteiner">
                 <% if( advertisements.length > 0 ){ %>
                     <% for(let i=0; i<advertisements.length; i++){ %>
-                        <%- include("student", {name:advertisements[i].title, subTitle:advertisements[i].title, description:advertisements[i].text, img:"/pictures/upload/" + advertisements[i].img, id:advertisements[i]._id, href:"/pages/students/" + advertisements[i]._id}) %>
+                        <% let formatiranTekst = advertisements[i].text.replace(/%20/g, ' ').replace(/%0A/g, '\n'); %>
+                        <% formatiranTekst  = formatiranTekst.replace(/\\n/g, '\n')%>
+                        <%- include("student", {name:advertisements[i].title, subTitle:advertisements[i].title, description:formatiranTekst, img:"/pictures/upload/" + advertisements[i].img, id:advertisements[i]._id, href:"/pages/students/" + advertisements[i]._id}) %>
                         <% if(i != advertisements.length-1){ %>
                             <div class="student-border-bottom">
                                 <img src="/pictures/png/sara-01.png">
@@ -83,6 +86,5 @@
             <div id="mapa-preko"></div>
         </div>
     </div>
-    <!-- <script src="/js/news.js"></script> -->
     </body>
 </html>

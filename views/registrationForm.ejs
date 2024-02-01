@@ -3,13 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/izgledi.css">
+    <link rel="stylesheet" type="text/css" href="/css/news.css">
 </head>
 
     <body>
+        <div class="registration-content">
+            <div class="registration" >
+                <h1>ОБРАЗАЦ ЗА ПРИЈАВУ НА КОНКУРС ЗА СТИПЕНДИЈУ
+                    ЗАДУЖБИНЕ "СИМЕ А. ИГУМАНОВА"
+                </h1>
+                <form id=<%= id %> class="registration-form">
+                    <div class="input-container">
+                        <input type="text" class="input" required="" id="form-name">
+                        <label for="input" class="label">ИМЕ (ИМЕ ЈЕДНОГ РОДИТЕЉА) ПРЕЗИМЕ</label>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="registration-two-inputs-inline">
+                        <div class="input-container">
+                            <input type="text" class="input" required="" id="form-birthplace">
+                            <label for="input" class="label">МЕСТО РОЂЕЊА</label>
+                            <div class="underline"></div>
+                        </div>
+                        <div class="input-container">
+                            <label for="input" class="gray">ДАТУМ РОЂЕЊА</label>
+                            <input type="date" class="input" required="" id="form-birthdate">
+                            <div class="underline"></div>
         
+                        </div>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="input" required="" id="form-address">
+                        <label for="input" class="label">МЕСТО, ОПШТИНА И АДРЕСА СТАНОВАЊА</label>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" class="input" required="" id="form-school">
+                        <label for="input" class="label">НАЗИВ И СЕДИШТЕ ШКОЛЕ/ФАКУЛТЕТА</label>
+                        <div class="underline"></div>
+                    </div>
+                    <div class="registration-two-inputs-inline">
+                        <div class="input-container">
+                            <label for="input" class="gray">ГОДИНА УПИСА ШКОЛЕ(ФАКУЛТЕТА)</label>
+                            <input type="number" min="1" max="6" id="form-schoolCurrentYear" required="" class="registration-number-input">
+                            <div class="underline"></div>
+                        </div>
+                        <div class="input-container">
+                            <label for="input" class="gray">КОЈИ ПУТ ЈЕ УПИСАНА</label>
+                            <input type="number" min="1" id="form-whichTimeYear" required="" class="registration-number-input">
+                            <div class="underline"></div>
+                        </div>
+        
+                    </div>
+                    <div class="registration-two-inputs-inline">
+                        <div class="input-container">
+                            <input type="text" class="input" required="" id="form-phone">
+                            <label for="input" class="label">КОНТАКТ ТЕЛЕФОН - МОБИЛНИ:</label>
+                            <div class="underline"></div>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" class="input" required="" id="form-email">
+                            <label for="input" class="label">Е-МАИЛ АДРЕСА</label>
+                            <div class="underline"></div>
+                        </div>
+                        
+                    </div>
+                    <div class="input-container">
+                        <label for="input" class="gray" id="">БРОЈ ЧЛАНОВА ДОМАЋИНСТВА</label>
+                        <input type="number" min="0" required="" class="registration-number-input" id="number-members">
+                        <div class="underline"></div>
+                    </div>
+                    <ul id="members-ul">
+                        <template id="members-template">
+                            <li class="members-li" id="members-li">
+                                <div class="registration-two-inputs-inline">
+                                    <div class="input-container">
+                                        <input type="text" class="input member-name" required="">
+                                        <label for="input" class="label">ИМЕ, ПРЕЗИМЕ И СРОДСТВО</label>
+                                        <div class="underline"></div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="input" class="gray">УКУПНИ ПРИХОДИ ЧЛАНA</label>
+                                        <input type="number" required="" min="0" class="registration-number-input money-input member-salary" id="number-members"> 
+                                        <label for="input" class="gray">РСД</label>
+                                    </div>
+            
+                                </div>
+                                <br>
+                                
+                                <div class="registration-two-inputs-inline">
+                                    <div class="input-container">
+                                        <input type="text" class="input member-type" required="">
+                                        <label for="input" class="label">ВРСТА СОЦИЈАЛНЕ ПОМОЋИ</label>
+                                        <div class="underline"></div>
+                                    </div>
+                                    <div class="input-container">
+                                        <label for="input" class="gray">ИЗНОС</label>
+                                        <input type="number" required="" min="0" class="registration-number-input money-input member-amount" id="number-members"> 
+                                        <label for="input" class="gray">РСД</label>
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- <div class="line"></div> -->
+                            </li>
+                        </template>
+                    </ul>
+                    <div class="input-container">
+                        <input type="text" class="input" required="" id="form-priestName">
+                        <label for="input" class="label" >ИМЕ, ПРЕЗИМЕ И БРОЈ ТЕЛЕФОНА ПАРОХИЈСКОГ СВЕШТЕНИКА</label>
+                        <div class="underline"></div>
+                    </div>
+                    <p class="registration-remark">Уз попуњен Образац прилажем документа којимa се доказују наведени подаци у
+                        обрасцу: извод из матичне књиге рођених, уверење о пребивалишту, потврду о упису
+                        у наведену школу или факултет, потврду о висини новчаних примања чланова
+                        домаћинства (зарада, пензије, све врсте социјалних додатака, катастарски приход) и
+                        друга документа којима поткрепљујем своје тврдње.</p>
+                    <input type="file" id="pdfInput" style="display: none;" accept=".pdf" multiple />
+                    <button type="button" class="add-button">
+                        <span class="add-button__text">Dodaj PDF</span>
+                        <span class="add-button__icon" id="add-pdf-button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                      </button>
+                    <div id="Pdf-files-shown">
+                        <template id="Pdf-file-shown-template">
+                            <div id="Pdf-file-shown" class="Pdf-file-shown">
+                                <img src="/pictures/ikonice/PDF_file_icon.svg.png">
+                                <p class="Pdf-file-shown-title"></p>
+                            </div>
+        
+                        </template>
+                    </div>
+                    <p class="registration-remark">
+                        *Задужбина задржава право провере наведених података пре утврђивања
+                        конкурсне листе добитника стипендије.
+                    </p>
+                    <div class="compete-btn" id="submit-btn">
+                        Konkurisi
+                    </div>
+    
+                </form>
+                
+            </div>
 
-        <script src="./js/views.js"></script>
+        </div>
+        <script src="/js/registrationForm.js"></script>
     </body>
 
 </html>

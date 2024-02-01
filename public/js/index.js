@@ -24,10 +24,6 @@ window.addEventListener('scroll', (e)=>{
     }
 })
 
-// const probamejs = document.getElementById('probamejs')
-// probamejs.addEventListener('click', ()=>{
-//     window.location.href = '/ejs_page';
-// })
 
 const apictureimg = document.getElementsByClassName('a-picture-img');
 const aboutpicturesenlarged = document.getElementById('about-pictures-enlarged');

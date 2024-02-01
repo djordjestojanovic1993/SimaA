@@ -1,0 +1,195 @@
+@media (max-width: 1023px){
+    .content-h1{
+        font-size: 36px;
+        margin-left: 7%;
+    }
+    .student{
+        width: 0%;
+        min-width: 750px;
+    }
+    .student-img-border1{
+        /* border: 2px solid rgb(77, 21, 21); */
+        width: 220px;
+        height: 308px;
+        box-sizing: content-box;
+    }
+    .student-text h4{
+        font-size: 24px;
+    }
+    .student-text h6{
+        font-size: 16px;
+    }
+    .student-text p{
+        font-size: 16px;
+        max-height: 290px;
+    }
+    .student-btn{
+        bottom: 15px;
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 768px){
+    .student{
+        min-width: min-content;
+        width: 80%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .student-img{
+        width: 420px;
+        box-sizing: content-box;
+    }
+    .student-img-border1{
+        /* border: 2px solid rgb(77, 21, 21); */
+        width: 309.5px;
+        height: 429px;
+        padding: 20px;
+        box-sizing: content-box;
+    }
+    .student-text{
+        position: relative;
+        width: 90%;
+        max-width: none;
+        padding: 15px 0 35px 0;
+    }
+    .student-btn{
+        left: 70%;
+    }
+
+}
+@media (max-width: 421px){
+    .student-img{
+        width: 330px;
+        box-sizing: content-box;
+    }
+    .student-img-border1{
+        width: 300px;
+        height: 402px;
+    }
+}
+@media (max-width: 350px){
+    .student-img{
+        width: 250px;
+        box-sizing: content-box;
+    }
+    .student-img-border1{
+        width: 250px;
+        height: 295px;
+    }
+}
+
+/* student full size */
+
+@media (min-width: 2000px){
+    .student-full-size-text{
+        font-size: 1vw;
+    }
+}
+@media (max-width: 1600px){
+    .student-full-size {
+        width: 65%;
+    }
+}
+@media (max-width: 1440px){
+    .student-full-size {
+        width: 70%;
+    }
+}
+@media (max-width: 1250px){
+    .student-full-size {
+        width: 80%;
+    }
+    .student-full-size-text p{
+        font-size: calc(1vw + 6px);
+    }
+    .student-full-size-text h1{
+        font-size: calc(2.5vw + 6px);
+    }
+    .student-full-size-text h4{
+        font-size: calc(1.5vw + 6px);
+    }
+}
+@media (max-width: 1024px){
+    .student-full-size-img-border{
+        margin-right: 50px;
+        margin-bottom: 50px;
+    }
+    .student-full-size-text p{
+        font-size: calc(1vw + 8px);
+    }
+
+}
+@media (max-width: 800px){
+    .student-full-size {
+        width: 90%;
+    }
+    .student-full-size-text h1{
+        font-size: calc(2.5vw + 8px);
+    }
+    .student-full-size-text h4{
+        font-size: calc(1.5vw + 8px);
+    }
+}
+@media (max-width: 700px){
+    .student-full-size-img-border{
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+}
+@media (max-width: 600px){
+    .student-full-size-img-border{
+        width: 250px;
+        height: 335px;
+    }
+    .student-full-size-text h1{
+        margin: 0 0 0 290px;
+    }
+    .student-full-size-text h4{
+        margin: 10px 0 20px 290px;
+    }
+    .student-full-size-text p{
+        font-size: calc(1vw + 10px);
+    }
+    .student-full-size-text h1{
+        font-size: calc(2.5vw + 14px);
+    }
+    .student-full-size-text h4{
+        font-size: calc(1.5vw + 10px);
+    }
+}
+@media (max-width: 500px){
+    .student-full-size{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .student-full-size-img-border{
+        width: 300px;
+        height: 402px;
+    }
+    .student-full-size-text h1{
+        margin: 0;
+        font-size: 30px;
+    }
+    .student-full-size-text h4{
+        margin: 10px 0 20px 0px;
+        font-size: 20;
+    }
+    .student-full-size-text p{
+        font-size: 16px;
+    }
+    .student-full-size-img-border{
+        margin: 0 0 20px 0;
+    }
+}
+@media (max-width: 350px){
+    .student-full-size-img-border{
+        width: 250px;
+        height: 335px;
+    }
+}

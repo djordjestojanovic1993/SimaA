@@ -51,7 +51,23 @@ async function showOnePage(req, res, next){
       } catch (error) {
         next(error);
       }
-      res.render('studentFullSize', {name: Student[0].title, subTitle: Student[0].title, text: Student[0].text, img: "/pictures/upload/" + Student[0].img});
+      res.render('studentFullSize', {student:Student, img: "/pictures/upload/" + Student[0].img});
+    }else if(page == "news"){
+      let news;
+      try {
+        news = await model.getAdvertisementsByID(id);
+  
+        if(news === null){
+          throw new Error("Greska, nije moguce dohvatiti ucenike!");
+        }
+  
+        
+      } catch (error) {
+        next(error);
+      }
+      res.render('advertisementFullSize', {news:news, href:"/pages/registrationForm/" + news[0]._id});
+    }else if(page == "registrationForm"){
+      res.render('registrationForm', {id:id});
     }
 }
 

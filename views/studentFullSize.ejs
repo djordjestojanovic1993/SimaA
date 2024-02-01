@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="/css/students.css">
+    <link rel="stylesheet" type="text/css" href="/css/students-res.css">
 </head>
 
     <body>
         <div class="student-full-size">
             <div class="student-full-size-img">
                 <div class="student-full-size-img-border">
-                    <img src="/pictures/staratelji/funkcioner3.jpg" alt="Opis slike" class="slika">
+                    
+                    <img src=<%= img %> alt="Opis slike" class="slika">
                 </div> 
             </div>
             <div class="student-full-size-text">
-              <h1><%= name %></h1>
-              <h4><%= subTitle %></h4>
+              <h1><%= student[0].title %></h1>
+              <h4><%= student[0].title %></h4>
               <p class="tekst">
-                <%= text %>
+                <%= student[0].text %>
       
               </p>
     
@@ -25,7 +27,6 @@
             
         </div>
 
-        <script src="./js/views.js"></script>
     </body>
 
 </html>

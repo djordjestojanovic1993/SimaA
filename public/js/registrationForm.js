@@ -1,26 +1,31 @@
-let numberMembersInput = document.getElementById('number-members');
-let membersUl = document.getElementById('members-ul')
-const memberTemplate = document.getElementById('members-template');
-numberMembersInput.addEventListener('change', ()=>{
-    while (membersUl.firstChild) {
-        membersUl.removeChild(membersUl.firstChild);
-      }
+function addMembersFields(){
 
-      const memberPototype = memberTemplate.content.getElementById('members-li');
-      const memberList = document.getElementById('members-ul');
+    let numberMembersInput = document.getElementById('number-members');
+    let membersUl = document.getElementById('members-ul')
+    const memberTemplate = document.getElementById('members-template');
+    numberMembersInput.addEventListener('change', ()=>{
+        while (membersUl.firstChild) {
+            membersUl.removeChild(membersUl.firstChild);
+          }
+    
+          const memberPototype = memberTemplate.content.getElementById('members-li');
+          const memberList = document.getElementById('members-ul');
+    
+    
+          let numberMembers = numberMembersInput.value;
+          if(numberMembers>0){
+            for(let i=0; i<numberMembers; i++){
+              
+                const clone = memberPototype.cloneNode(true);
+                memberList.appendChild(clone);
+      
+            }
+    
+          }
+    })
 
-
-      let numberMembers = numberMembersInput.value;
-      if(numberMembers>0){
-        for(let i=0; i<numberMembers; i++){
-          
-            const clone = memberPototype.cloneNode(true);
-            memberList.appendChild(clone);
-  
-        }
-
-      }
-})
+}
+addMembersFields();
 
 function formValidation(){
     const formNameInput = document.getElementById('form-name');
@@ -124,68 +129,66 @@ function formValidation(){
     return true;
 }
 
-
-
 function readValues(){
-  const formNameInput = document.getElementById('form-name');
-  const formBirthplaceInput = document.getElementById('form-birthplace');
-  const formBirthdateInput = document.getElementById('form-birthdate');
-  const formAddressInput = document.getElementById('form-address');
-  const formSchoolInput = document.getElementById('form-school');
-  const formSchoolCurrentYearInput = document.getElementById('form-schoolCurrentYear');
-  const formWhichTimeYearInput = document.getElementById('form-whichTimeYear');
-  const formPhoneInput = document.getElementById('form-phone');
-  const formEmailInput = document.getElementById('form-email');
-  const formPriestNameInput = document.getElementById('form-priestName');
-  const housemebersNumberInput = document.getElementById('number-members');
-  const memberNameIputs = document.getElementsByClassName('member-name');
-  const memberSalaryIputs = document.getElementsByClassName('member-salary');
-  const memberTypeIputs = document.getElementsByClassName('member-type');
-  const memberAmountIputs = document.getElementsByClassName('member-amount');
-  let registrationForm = document.getElementsByClassName('registration-form');
-
-  let formName = formNameInput.value;
-  let formBirthplace = formBirthplaceInput.value;
-  let formBirthdate = formBirthdateInput.value;
-  let formAddress = formAddressInput.value;
-  let formSchool = formSchoolInput.value;
-  let formSchoolCurrentYear = formSchoolCurrentYearInput.value;
-  let formWhichTimeYear = formWhichTimeYearInput.value;
-  let formPhone = formPhoneInput.value;
-  let formEmail = formEmailInput.value;
-  let formPriestName = formPriestNameInput.value;
-  let advertisementID = registrationForm[0].id;
-  let members=[{}];
-
-  let housemebersNumber = parseInt(housemebersNumberInput.value);
-  if(housemebersNumber>0){ 
-    for(let i=0; i<housemebersNumber; i++){
-      members[i] = {
-        name: memberNameIputs[i].value,
-        salary: memberSalaryIputs[i].value,
-        type: memberTypeIputs[i].value,
-        amounth: memberAmountIputs[i].value
+    const formNameInput = document.getElementById('form-name');
+    const formBirthplaceInput = document.getElementById('form-birthplace');
+    const formBirthdateInput = document.getElementById('form-birthdate');
+    const formAddressInput = document.getElementById('form-address');
+    const formSchoolInput = document.getElementById('form-school');
+    const formSchoolCurrentYearInput = document.getElementById('form-schoolCurrentYear');
+    const formWhichTimeYearInput = document.getElementById('form-whichTimeYear');
+    const formPhoneInput = document.getElementById('form-phone');
+    const formEmailInput = document.getElementById('form-email');
+    const formPriestNameInput = document.getElementById('form-priestName');
+    const housemebersNumberInput = document.getElementById('number-members');
+    const memberNameIputs = document.getElementsByClassName('member-name');
+    const memberSalaryIputs = document.getElementsByClassName('member-salary');
+    const memberTypeIputs = document.getElementsByClassName('member-type');
+    const memberAmountIputs = document.getElementsByClassName('member-amount');
+    let registrationForm = document.getElementsByClassName('registration-form');
+  
+    let formName = formNameInput.value;
+    let formBirthplace = formBirthplaceInput.value;
+    let formBirthdate = formBirthdateInput.value;
+    let formAddress = formAddressInput.value;
+    let formSchool = formSchoolInput.value;
+    let formSchoolCurrentYear = formSchoolCurrentYearInput.value;
+    let formWhichTimeYear = formWhichTimeYearInput.value;
+    let formPhone = formPhoneInput.value;
+    let formEmail = formEmailInput.value;
+    let formPriestName = formPriestNameInput.value;
+    let advertisementID = registrationForm[0].id;
+    let members=[{}];
+  
+    let housemebersNumber = parseInt(housemebersNumberInput.value);
+    if(housemebersNumber>0){ 
+      for(let i=0; i<housemebersNumber; i++){
+        members[i] = {
+          name: memberNameIputs[i].value,
+          salary: memberSalaryIputs[i].value,
+          type: memberTypeIputs[i].value,
+          amounth: memberAmountIputs[i].value
+        }
       }
     }
-  }
-  addInDB(formName,formBirthplace,formBirthdate,formAddress,formSchool,formSchoolCurrentYear,formWhichTimeYear,formPhone,formEmail,formPriestName, members, housemebersNumber, advertisementID);
-}
-
-function a(){
-  let addpdfbutton = document.getElementById('add-pdf-button__icon');
-  let hasChangeListener = false;
-
-  if(addpdfbutton.hasClickListener != true){
-    addpdfbutton.addEventListener('click', ()=>{
-      addPDF(hasChangeListener)
-      hasChangeListener = true;
-    })
+    addInDB(formName,formBirthplace,formBirthdate,formAddress,formSchool,formSchoolCurrentYear,formWhichTimeYear,formPhone,formEmail,formPriestName, members, housemebersNumber, advertisementID);
   }
 
-}
-a();
+  function addEventListeneraddpdfbutton(){
+    let addpdfbutton = document.getElementById('add-pdf-button__icon');
+    let hasChangeListener = false;
+  
+    if(addpdfbutton.hasClickListener != true){
+      addpdfbutton.addEventListener('click', ()=>{
+        addPDF(hasChangeListener)
+        hasChangeListener = true;
+      })
+    }
+  
+  }
+  addEventListeneraddpdfbutton();
 
-function addPDF(hasChangeListener) {
+  function addPDF(hasChangeListener) {
     const pdfInput = document.getElementById('pdfInput');
   
     // Simulacija klika na input polje za odabir datoteke
@@ -214,11 +217,7 @@ function addPDF(hasChangeListener) {
     }
   }
 
-
- 
-
   function showPdfImg(odabraniFajlovi){
-
 
     const PdfFileShownTemplate = document.getElementById('Pdf-file-shown-template');
     const PdfFileShownProtorype = PdfFileShownTemplate.content.getElementById('Pdf-file-shown');
@@ -307,4 +306,3 @@ function addEventListenertoSubmitBtn(){
     }
 }
 addEventListenertoSubmitBtn()
-

@@ -3,13 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/izgledi.css">
+    <link rel="stylesheet" type="text/css" href="/css/news.css">
 </head>
 
     <body>
-        
+        <div class="advertisement-full-size-content">
+            <div class="advertisement-full-size" id= <%= news[0]._id %>>
+                <div class="advertisement-full-size-border1">
+                        <h1><%= news[0].title %></h1>
+                        <p>
+                            <%= news[0].text %>
+                        </p>
+                        <% if(news[0].type == "konkurs"){ %>
+                            <div class="compete-btn">
+                                <a href= <%= href %>>
+                                    Конкуриши
 
-        <script src="./js/views.js"></script>
+                                </a>
+                            </div>
+
+                        <% } %>
+                    </div>
+            </div>
+
+        </div>
+
     </body>
 
 </html>

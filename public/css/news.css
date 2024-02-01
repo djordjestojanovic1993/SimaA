@@ -41,9 +41,10 @@ nav{
     box-shadow: 5px 5px 15px rgb(77, 21, 21), -2px -2px 15px rgb(197, 174, 174);
 }
 .advertisement-a{
-    position: absolute;
     width: 100%;
-    /* height: 90%; */
+    height: 100%;
+    text-decoration: none;
+    color: rgb(77, 21, 21);
 }
 .advertisement:hover{
     box-shadow: inset -2px -2px 15px rgb(77, 21, 21), inset 5px 5px 15px rgb(197, 174, 174);
@@ -89,7 +90,7 @@ nav{
     flex-direction: column;
     align-items: center;
     justify-content: start;
-    gap: 10px;
+    gap: 0px;
     color: rgb(77, 21, 21);
     /* overflow: hidden; */
 }
@@ -99,6 +100,9 @@ nav{
     text-align: justify;
     height: 50px;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    /* white-space: nowrap; */
     text-overflow: ellipsis;
 }
 .advertisement-text h5{
@@ -108,6 +112,9 @@ nav{
     overflow: hidden;
     text-overflow: ellipsis;
     height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .advertisement-text p{
     margin: 0;
@@ -118,7 +125,292 @@ nav{
     height: 230px !important;
 
 }
-.background-maroon{
-    /* background-color: rgb(77, 21, 21) !important; */
+
+
+.advertisement-full-size-content{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../pictures/png/pozadina-01.png');
+    background-size: cover;
+    color: rgb(77, 21, 21);
+}
+.advertisement-full-size{
+    width: 684px;
+    height: 900px;
+    background-color: white;
+    box-sizing: border-box;
+    padding: 25px;
+}
+.advertisement-full-size-border1{
+    /* border: 2px solid rgb(77, 21, 21); */
+    width: 100%;
+    height: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+    background-image: url("../pictures/path281.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-position: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    padding: 40px;
 
 }
+.advertisement-full-size-border1 h1{
+    margin: 0;
+    padding: 10px 0;
+    font-size: 36px;
+}
+.advertisement-full-size-border1 p{
+    font-size: 17px;
+    text-align: justify;
+    max-height: 75%;
+    overflow-y: scroll;
+    padding: 0 10px;
+}
+.advertisement-full-size-border1 p::-webkit-scrollbar {
+    width: 4px;
+}
+.advertisement-full-size-border1 p::-webkit-scrollbar-thumb {
+    background-color: rgba(77, 21, 21, .7); 
+    border-radius: 6px; 
+}
+.compete-btn{
+    position: absolute;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    background-image: linear-gradient(to top, #D8D9DB 0%, #fff 80%, #FDFDFD 100%);
+    border-radius: 30px;
+    border: 1px solid #8F9092;
+    transition: all 0.2s ease;
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(77, 21, 21);
+    text-shadow: 0 1px #fff;
+
+}
+.compete-btn a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: rgb(77, 21, 21);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.compete-btn:hover{
+    box-shadow: 0 4px 3px 1px #FCFCFC, 0 6px 8px #D6D7D9, 0 -4px 4px #CECFD1, 0 -6px 4px #FEFEFE, inset 0 0 3px 3px #CECFD1;
+}
+
+
+.registration-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../pictures/png/pozadina-01.png');
+    background-size: cover;
+    padding: 20px 0;
+}
+.registration{
+    width: 60%;
+    height: fit-content;
+    border: 1px solid black;
+    padding: 50px 100px 200px 100px;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    box-shadow: 5px 5px 15px rgb(151, 134, 134), -2px -2px 15px rgb(197, 174, 174);
+}
+
+.registration h1{
+    font-size: 20px;
+    margin: 20px 0;
+    color: rgb(77, 21, 21);
+}
+.registration-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+}
+.input-container {
+    position: relative;
+    margin: 1px auto;
+    width: 100%;
+  }
+  
+  .input-container input[type="text"] {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    padding: 5px 0;
+    background-color: transparent;
+    outline: none;
+  }
+  
+  .input-container .label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #aaa;
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+  
+  .input-container input[type="text"]:focus ~ .label,
+  .input-container input[type="text"]:valid ~ .label {
+    top: -20px;
+    font-size: 16px;
+    color: rgb(77, 21, 21);
+  }
+  
+  .input-container .underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background-color: rgb(77, 21, 21);
+    transform: scaleX(0);
+    transition: all 0.3s ease;
+  }
+  
+  .input-container input[type="text"]:focus ~ .underline,
+  .input-container input[type="text"]:valid ~ .underline {
+    transform: scaleX(1);
+  }
+  .registration-two-inputs-inline{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+  }
+  .registration-two-inputs-inline .input-container{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .gray{
+    color: #aaa;
+  }
+  .registration-number-input{
+    width: 50px;
+  }
+  #members-ul{
+    padding: 0;
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+  }
+  .members-li{
+    /* display: flex; */
+    text-decoration: none;
+    width: 95%;
+    margin: auto;
+  }
+  .money-input{
+    width: 150px !important; 
+  }
+  .line{
+    border-bottom: 1px solid #aaa;
+  }
+  .add-button {
+    position: relative;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #34974d;
+    background-color: #3aa856;
+    border-radius: 7px;
+    padding: 0 4px 0 0;
+  }
+  
+  .add-button, .add-button__icon, .add-button__text {
+    transition: all 0.3s;
+  }
+  
+  .add-button .add-button__text {
+    transform: translateX(30px);
+    color: #fff;
+    font-weight: 600;
+  }
+  
+  .add-button .add-button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    /* background-color: #34974d; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px;
+  }
+  
+  .add-button .svg {
+    width: 30px;
+    stroke: #fff;
+  }
+  
+  .add-button:hover {
+    background: #34974d;
+  }
+  
+  .add-button:hover .button__text {
+    color: transparent;
+  }
+  
+  .add-button:hover .add-button__icon {
+    width: 148px;
+    transform: translateX(0);
+    background: #34974d;
+  }
+  
+  .add-button:active .add-button__icon {
+    background-color: #2e8644;
+  }
+  
+  .add-button:active {
+    border: 1px solid #2e8644;
+  }
+  #Pdf-files-shown{
+    max-width: 800px;
+    height: fit-content;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    overflow-x: auto;
+  }
+  #Pdf-file-shown img{
+    width: 50px;
+  }
+  #Pdf-file-shown{
+    text-align: center;
+    font-size: 12px;
+  }
+  .registration-remark{
+    font-size: 18px;
+    color: rgb(77, 21, 21);
+  }
