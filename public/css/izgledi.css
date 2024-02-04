@@ -473,3 +473,9 @@ body{
     font-size: 18px;
     color: rgb(77, 21, 21);
   }
+  .skrolabilan-div {
+    width: 300px; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+  }

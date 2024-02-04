@@ -46,7 +46,7 @@
     }
     .student-img-border1{
         /* border: 2px solid rgb(77, 21, 21); */
-        width: 309.5px;
+        width: 310px;
         height: 429px;
         padding: 20px;
         box-sizing: content-box;
@@ -105,7 +105,7 @@
         width: 80%;
     }
     .student-full-size-text p{
-        font-size: calc(1vw + 6px);
+        font-size: calc(1vw + 8px);
     }
     .student-full-size-text h1{
         font-size: calc(2.5vw + 6px);
@@ -120,7 +120,7 @@
         margin-bottom: 50px;
     }
     .student-full-size-text p{
-        font-size: calc(1vw + 8px);
+        font-size: calc(1vw + 10px);
     }
 
 }
@@ -153,7 +153,7 @@
         margin: 10px 0 20px 290px;
     }
     .student-full-size-text p{
-        font-size: calc(1vw + 10px);
+        font-size: calc(1vw + 12px);
     }
     .student-full-size-text h1{
         font-size: calc(2.5vw + 14px);
@@ -167,6 +167,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding: 60px 0 0 0;
     }
     .student-full-size-img-border{
         width: 300px;
@@ -174,17 +175,22 @@
     }
     .student-full-size-text h1{
         margin: 0;
-        font-size: 30px;
+        font-size: 40px;
     }
     .student-full-size-text h4{
         margin: 10px 0 20px 0px;
         font-size: 20;
     }
     .student-full-size-text p{
-        font-size: 16px;
+        font-size: 18px;
+        padding:  0 0 30px 0;
     }
     .student-full-size-img-border{
         margin: 0 0 20px 0;
+    }
+    .tekst{
+        width: 95%;
+        margin: auto;
     }
 }
 @media (max-width: 350px){

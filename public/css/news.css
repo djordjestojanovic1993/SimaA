@@ -30,7 +30,7 @@ nav{
 .advertisement{
     position: relative;
     width: 660px;
-    height: 420px;
+    height: 421px;
     background-color: white;
     display: flex;
     justify-content: center;
@@ -54,7 +54,6 @@ nav{
     /* border: 2px solid rgb(77, 21, 21); */
     width: 100%;
     height: 100%;
-    padding: 20px;
     box-sizing: border-box;
     background-image: url("../pictures/g3398.png");
     background-repeat: no-repeat;
@@ -68,7 +67,7 @@ nav{
 }
 .advertisement-img{
     width: 40%;
-    height: 100%;
+    height: 95%;
     overflow: hidden;
     position: relative;
     /* display: flex; */
@@ -97,24 +96,21 @@ nav{
 .advertisement-text h2{
     font-size: 30px;
     margin: 0;
-    text-align: justify;
-    height: 50px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    /* white-space: nowrap; */
-    text-overflow: ellipsis;
+    width: 100%; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+    text-align: center;
 }
 .advertisement-text h5{
     font-size: 18px;
     margin: 0;
+    margin: 5px 0 10px 0;
+    width: 100%; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
     text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 65px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .advertisement-text p{
     margin: 0;
@@ -122,7 +118,7 @@ nav{
     /* white-space: nowrap; */
     overflow: hidden;
     text-overflow: ellipsis;
-    height: 230px !important;
+    height: 210px !important;
 
 }
 
@@ -138,41 +134,37 @@ nav{
     color: rgb(77, 21, 21);
 }
 .advertisement-full-size{
-    width: 684px;
-    height: 900px;
+    width: 900px;
+    height: 1206px;
     background-color: white;
-    box-sizing: border-box;
     padding: 25px;
+    margin: 10px 0;
 }
 .advertisement-full-size-border1{
-    /* border: 2px solid rgb(77, 21, 21); */
     width: 100%;
     height: 100%;
-    padding: 30px;
+    padding: 80px;
     box-sizing: border-box;
     background-image: url("../pictures/path281.png");
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-position: center; */
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    box-sizing: border-box;
-    padding: 40px;
 
 }
 .advertisement-full-size-border1 h1{
     margin: 0;
-    padding: 10px 0;
-    font-size: 36px;
+    padding: 10px 0 30px 0;
+    font-size: 44px;
 }
 .advertisement-full-size-border1 p{
-    font-size: 17px;
+    font-size: 20px;
     text-align: justify;
-    max-height: 75%;
+    max-height: 80%;
     overflow-y: scroll;
-    padding: 0 10px;
+    padding: 5px 15px;
 }
 .advertisement-full-size-border1 p::-webkit-scrollbar {
     width: 4px;
@@ -183,7 +175,7 @@ nav{
 }
 .compete-btn{
     position: absolute;
-    bottom: 50px;
+    bottom: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -227,7 +219,7 @@ nav{
     padding: 20px 0;
 }
 .registration{
-    width: 60%;
+    width: 1000px;
     height: fit-content;
     border: 1px solid black;
     padding: 50px 100px 200px 100px;
@@ -242,9 +234,10 @@ nav{
 }
 
 .registration h1{
-    font-size: 20px;
+    font-size: 28px;
     margin: 20px 0;
     color: rgb(77, 21, 21);
+    text-align: center;
 }
 .registration-form{
     display: flex;
@@ -327,6 +320,12 @@ nav{
     text-decoration: none;
     width: 95%;
     margin: auto;
+    border-bottom: 2px solid #aaa;
+    border-right: 2px solid #aaa;
+    border-left: 2px solid #aaa;
+    border-top: 2px solid #aaa;
+    padding: 12px;
+    margin-top: 10px;
   }
   .money-input{
     width: 150px !important; 
@@ -400,8 +399,8 @@ nav{
     height: fit-content;
     display: flex;
     gap: 20px;
-    justify-content: center;
     overflow-x: auto;
+    box-sizing: border-box;
   }
   #Pdf-file-shown img{
     width: 50px;
@@ -413,4 +412,5 @@ nav{
   .registration-remark{
     font-size: 18px;
     color: rgb(77, 21, 21);
+    text-align: justify;
   }

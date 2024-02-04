@@ -1,0 +1,506 @@
+@media (min-width: 1800px){
+    .advertisement{
+        width: 38.9vw;
+        height: 24vw;
+        box-sizing: content-box;
+    }
+    .advertisement-text h2{
+        font-size: 1.5vw;
+        margin: 0;
+    }
+    .advertisement-text h5{
+        font-size: 1vw;
+    }
+    .advertisement-text p{
+        height: 11.5vw !important;
+        font-size: 1vw;
+    }
+
+}
+@media (max-width: 1439px){
+    .news-conteiner-row{
+        gap: 15px;
+        padding: 50px 0 0 0;
+    }
+    .advertisement{
+        width: 580px;
+        height: 371px;
+    }
+    .advertisement-border1{
+        gap: 20px;
+        padding: 40px;
+    }
+    .advertisement-text p{
+        height: 180px !important;
+    }
+    
+
+}
+@media (max-width: 1200px){
+    .news-conteiner{
+        padding: 80px 0 20px 0;
+    }
+    .news-conteiner-row{
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        padding: 30px 0 0 0;
+    }
+    .advertisement{
+        width: 660px;
+        height: 421px;
+    }
+    .advertisement-border1{
+        gap: 40px;
+        padding: 50px;
+    }
+    .advertisement-text p{
+        height: 230px !important;
+    }
+
+}
+@media (max-width: 700px){
+    .advertisement{
+        width:370px;
+        height: 496px;
+        box-sizing: content-box;
+    }
+    .advertisement-border1{
+        flex-direction: column;
+        background-image: url("../pictures/path281.png");
+        padding: 22px 0 0px 0;
+        gap: 15px;
+    }
+    .advertisement-img{
+        width: 100%;
+        height: 50%;
+    }
+    .advertisement-img img{
+        width: 90%;
+        max-height: 100%;
+    }
+    .advertisement-text{
+        width: 85%;
+    }
+    .advertisement-text h2{
+        font-size: 26px;
+    }
+    .advertisement-text h5{
+        font-size: 15px;
+    }
+    .advertisement-text p{
+        height: 200px !important;
+    }
+
+}
+@media (max-width: 420px){
+    .advertisement{
+        padding: 10px;
+        width:321px;
+        height: 430px;
+    }
+    .advertisement-img{
+        width: 100%;
+        height: 45%;
+    }
+    .advertisement-text h2{
+        font-size: 22px;
+    }
+    .advertisement-text h5{
+        font-size: 14px;
+    }
+    .advertisement-text p{
+        height: 180px !important;
+    }
+
+}
+@media (max-width: 374px){
+    .advertisement{
+        padding: 6px;
+        width:275px;
+        height: 369px;
+    }
+    .advertisement-text h2{
+        font-size: 20px;
+    }
+    .advertisement-text h5{
+        font-size: 13px;
+        margin: 2px 0 5px 0;
+    }
+    .advertisement-text p{
+        height: 160px !important;
+        font-size: 14px;
+    }
+
+}
+
+
+/* adverisement full size */
+@media (min-width: 1600px){ 
+    .advertisement-full-size{
+        width: 46vw;
+        height: 61.65vw;
+        padding: 2vw;
+        margin: 1.5vw 0;
+    }
+    .advertisement-full-size-border1{
+        padding: 4vw;
+    
+    }
+    .advertisement-full-size-border1 h1{
+        padding: 0vw 0 0 0;
+        font-size: 3vw;
+    }
+    .advertisement-full-size-border1 p{
+        font-size: 1.1vw;
+        padding: .5vw .6vw;
+    }
+    .compete-btn{
+        bottom: 3vw;
+        width: 10vw;
+        height: 3vw;
+        font-size: 1vw;
+    }
+}
+@media (max-width: 1023px){ 
+    .advertisement-full-size{
+        width: 680px;
+        height: 911px;
+    }
+    .advertisement-full-size-border1{
+        padding: 40px 30px;
+    }
+    .advertisement-full-size-border1 h1{
+        margin: 0;
+        padding: 10px 0;
+        font-size: 38px;
+    }
+    .advertisement-full-size-border1 p{
+        font-size: 18px;
+        max-height: 78%;
+    }
+    .compete-btn{
+        bottom: 40px;
+        width: 130px;
+        height: 45px;
+    }
+}
+@media (max-width: 767px){ 
+    .advertisement-full-size{
+        padding: 6px;
+    }
+    .advertisement-full-size{
+        width: 522.5px;
+        height: 700px;
+    }
+    .advertisement-full-size-border1{
+        padding: 20px 5px;
+    }
+    .advertisement-full-size-border1 p::-webkit-scrollbar {
+        width: 2px;
+    }
+    .advertisement-full-size-border1 h1{
+        padding: 15px 0 0 0 ;
+        font-size: 28px;
+    }
+    .advertisement-full-size-border1 p{
+        font-size: 16px;
+        max-height: 75%;
+    }
+
+    .compete-btn{
+        bottom: 35px;
+    }
+}
+@media (max-width: 549px){ 
+    .advertisement-full-size{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        padding: 0;
+        margin:0;
+    }
+    .advertisement-full-size-border1{
+        background-image: url('../pictures/png/pozadina-01.png');
+        padding: 0 0 70px 0;
+    }
+    .compete-btn{
+        bottom: 20px;
+    }
+
+}
+
+/* registration form */
+
+@media (min-width: 1700px){ 
+    .registration{
+        width: 50vw;
+        padding: 2.5vw 5vw 10vw 5vw;
+        gap: 2.5vw;
+    }
+    .registration h1{
+        font-size: 1.4vw;
+        margin: 1vw 0;
+    }
+    .registration-form{
+        gap: 2.5vw;
+    }.input-container input[type="text"] {
+        font-size: 1vw;
+    }
+    .input-container input[type="text"]:focus ~ .label,
+  .input-container input[type="text"]:valid ~ .label {
+    top: -1vw;
+    font-size: .8vw;
+  }
+  .registration-two-inputs-inline{
+    gap: 1.5vw;
+  }
+  .registration-two-inputs-inline .input-container{
+    gap: 1vw;
+  }
+  .registration-number-input{
+    width: 2.5vw;
+  }
+  .members-li{
+    padding: .6vw;
+    margin-top: .5vw;
+  }
+  .money-input{
+    width: 7.5vw !important; 
+  }
+  .add-button {
+    width: 7.5vw;
+    height: 2vw;
+    border-radius: .35vw;
+    padding: 0 .2vw 0 0;
+  }
+  .add-button .add-button__icon {
+    width: 1.95vw;
+    left: 0vw;
+  }
+  .add-button .svg {
+    width: 1.5vw;
+  }
+  .add-button:hover .add-button__icon {
+    width: 7.4vw;
+  }
+  #Pdf-files-shown{
+    max-width: 40vw;
+    gap: 1vw;
+  }
+  #Pdf-file-shown img{
+    width: 2.5vw;
+  }
+  #Pdf-file-shown{
+    font-size: .6vw;
+  }
+  .registration-remark{
+    font-size: .9vw;
+  }
+
+}
+@media (max-width: 1023px){ 
+    .registration{
+        width: 750px;
+        padding: 50px 50px 100px 50px;
+        gap: 30px;
+    }
+    .registration h1{
+        font-size: 24px;
+    }  
+    .registration-form{
+        gap: 30px;
+    }
+    .input-container input[type="text"] {
+        font-size: 18px;
+      }
+      .input-container .label {
+        font-size: 15px;
+      }
+      .money-input{
+        width: 100px !important; 
+      }
+      .gray{
+        font-size: 15px;
+      }
+      .registration-remark{
+        font-size: 15px;
+      }
+      .compete-btn{
+          width: 180px;
+          height: 50px;
+          font-size: 16px;
+      }
+      #Pdf-files-shown{
+        max-width: 600px;
+      }
+
+}
+@media (max-width: 767px){ 
+    .registration{
+        width: 600px;
+        padding: 30px 30px 100px 30px;
+        gap: 20px;
+    }
+    .registration h1{
+        font-size: 20px;
+    }  
+    .registration-form{
+        gap: 30px;
+    }
+    .input-container input[type="text"] {
+        font-size: 16px;
+      }
+      .input-container .label {
+        font-size: 14px;
+      }
+      .money-input{
+        width: 80px !important; 
+      }
+      .gray{
+        font-size: 14px;
+      }
+      .registration-remark{
+        font-size: 13px;
+      }
+      .add-button {
+        width: 120px;
+        height: 40px;
+      }
+  
+      .add-button .add-button__text {
+        transform: translateX(20px);
+        font-size: 12px;
+      }
+      
+      .add-button .add-button__icon {
+        position: absolute;
+        left: -18px;
+        width: 20px;
+      }
+  
+      .add-button:hover .add-button__icon {
+        width: 120px;
+        transform: translateX(18px);
+      }
+      .compete-btn{
+          width: 160px;
+          height: 50px;
+          font-size: 14px;
+      }
+      #Pdf-files-shown{
+        max-width: 550px;
+      }
+}
+@media (max-width: 610px){ 
+    .registration{
+        width: 400px;
+        padding: 20px 20px 100px 20px;
+        gap: 20px;
+    }
+    .registration h1{
+        font-size: 17px;
+    }  
+    .input-container input[type="text"] {
+        font-size: 14px;
+    }
+      .input-container .label {
+        font-size: 13px;
+    }
+      .input-container input[type="text"]:focus ~ .label,
+      .input-container input[type="text"]:valid ~ .label {
+        top: -15px;
+        font-size: 13px;
+      }
+      .money-input{
+        width: 80px !important; 
+      }
+      .registration-two-inputs-inline{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+      }
+      .members-li{
+        width: 87%;
+        padding: 20px;
+        margin-top: 10px;
+      }
+      .registration-two-inputs-inline-li{
+        gap: 8px !important;
+      }
+      .input-container-priest{
+        margin-top: 20px;
+      }
+      .input-container-priest .label {
+        top: -20px;
+      }
+    .input-container-priest input[type="text"]:focus ~ .label,
+    .input-container-priest input[type="text"]:valid ~ .label {
+        top: -40px;
+    }
+      .gray{
+        font-size: 13px;
+      }
+      .registration-remark{
+        font-size: 13px;
+      }
+      #Pdf-files-shown{
+        max-width: 380px;
+      }
+      .compete-btn{
+          height: 40px;
+          font-size: 13px;
+      }
+
+}
+@media (max-width: 410px){ 
+    .registration{
+        width: 310px;
+        padding: 10px 12px 100px 12px;
+        gap: 12px;
+    }
+    .registration h1{
+        font-size: 15px;
+    }  
+    .input-container input[type="text"] {
+        font-size: 13px;
+    }
+    .input-container .label {
+      font-size: 12px;
+    }
+  .input-container input[type="text"]:focus ~ .label,
+  .input-container input[type="text"]:valid ~ .label {
+    top: -14px;
+    font-size: 12px;
+  }
+  .money-input{
+    width: 70px !important; 
+  }
+  .members-li{
+    width: 87%;
+    padding: 20px 15px 5px 15px;
+    margin-top: 8px;
+  }
+  .input-container-priest .label {
+    top: -15px;
+  }
+  .input-container-priest input[type="text"]:focus ~ .label,
+  .input-container-priest input[type="text"]:valid ~ .label {
+      top: -30px;
+  }
+  .gray{
+    font-size: 12px;
+  }
+  .registration-remark{
+    font-size: 12px;
+  }
+  #Pdf-files-shown{
+    max-width: 280px;
+  }
+  #Pdf-file-shown img{
+    width: 40px;
+  }
+
+}
