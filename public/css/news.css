@@ -3,7 +3,7 @@ body{
     margin: 0;
     box-sizing: border-box;
 }
-nav{
+header{
     background-color: rgb(77, 21, 21) !important;
 }
 #nav-ul1 li{
@@ -324,7 +324,7 @@ nav{
     border-right: 2px solid #aaa;
     border-left: 2px solid #aaa;
     border-top: 2px solid #aaa;
-    padding: 12px;
+    padding: 22px;
     margin-top: 10px;
   }
   .money-input{

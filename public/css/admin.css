@@ -424,6 +424,9 @@ cursor: text;
   transition: 300ms ease-in-out;
   width: 90%;
 }
+.advertisement-list-subtitle{
+  text-align: center;
+}
 #form-second-input{
   height: 150px;
 }

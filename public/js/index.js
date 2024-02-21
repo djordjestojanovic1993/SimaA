@@ -1,14 +1,14 @@
 
-const nav = document.getElementsByTagName('nav');
+const header = document.getElementsByTagName('header');
 const navul1 = document.getElementById('nav-ul1');
 
 window.addEventListener('scroll', (e)=>{
     if(window.pageYOffset>80){
-        nav[0].style.backgroundColor = 'rgb(77, 21, 21)';
+        header[0].style.backgroundColor = 'rgb(77, 21, 21)';
         navul1.style.backgroundColor = 'rgb(77, 21, 21)';
     }
     else{
-        nav[0].style.backgroundColor = 'transparent';
+        header[0].style.backgroundColor = 'transparent';
         navul1.style.backgroundColor = 'transparent';
     }
     

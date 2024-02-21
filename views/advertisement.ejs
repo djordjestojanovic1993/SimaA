@@ -9,6 +9,7 @@
 
     <body>
         <div class="advertisement" id=<%= id %>>
+          <% let text = decodeURIComponent(description.replace(/%0A/g, "\n").replace(/%09/g, "\t").replace(/%20/g, " ")) %>
           <a href=<%= href %> class="advertisement-a">
             <div class="advertisement-border1">
               <div class="advertisement-img">
@@ -22,7 +23,7 @@
                   <%= subTitle %>
                 </h5>
                 <p>
-                  <%= description %>
+                  <%= text %>
                 </p>
               </div>
             </div>

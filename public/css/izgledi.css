@@ -473,9 +473,16 @@ body{
     font-size: 18px;
     color: rgb(77, 21, 21);
   }
-  .skrolabilan-div {
-    width: 300px; 
-    overflow: hidden; 
-    white-space: nowrap; 
-    text-overflow: ellipsis; 
+  .registered-candidates-list{
+    width: 80%;
+    height: 80vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .canidat{
+    background-color: red;
+    width: 90%;
+    height: 400px;
   }

@@ -11,21 +11,15 @@
 </head>
 <body>
     <header>
+        <div id="logo">
+            <img src="../pictures/png/path38.png">
+        </div>
         <nav>
-            <div id="hamburger">
-                <span id="line1" class="line"></span>
-                <span id="line2" class="line"></span>
-                <span id="line3" class="line"></span>
-            </div>
             <ul id="nav-ul" class="center-y-axis">
-                <li>
-                    <div id="div-hero">
-                        <a href="/index.html" id="Zaduzbina" class="nav-a">Задужбина</a> <i id="arrow-hero" class="fa fa-angle-down" aria-hidden="true"></i>
-                    </div>
-                    
+                <li><a href="/index.html" id="Zaduzbina">Задужбина</a>
                     <ul id="nav-ul1">
-                        <li><a href="/index.html#upravni-odbor" id="uo-nav" class="nav-a">Uprava</a></li>
-                        <li><a href="/index.html#about" class="nav-a">Istorijat</a></li>
+                        <li><a href="#upravni-odbor" id="uo-nav" class="nav-a">Uprava</a></li>
+                        <li><a href="#about" class="nav-a">Istorijat</a></li>
                     </ul>
                 </li>
                 <li><a href="/sima.html" class="nav-a">Сима Игуманов</a></li>
@@ -44,7 +38,7 @@
                     <% for(let i=0; i<advertisements.length; i++){ %>
                         <% let formatiranTekst = advertisements[i].text.replace(/%20/g, ' ').replace(/%0A/g, '\n'); %>
                         <% formatiranTekst  = formatiranTekst.replace(/\\n/g, '\n')%>
-                        <%- include("student", {name:advertisements[i].title, subTitle:advertisements[i].title, description:formatiranTekst, img:"/pictures/upload/" + advertisements[i].img, id:advertisements[i]._id, href:"/pages/students/" + advertisements[i]._id}) %>
+                        <%- include("student", {name:advertisements[i].title, subTitle:advertisements[i].subtitle, description:formatiranTekst, img:"/pictures/upload/" + advertisements[i].img, id:advertisements[i]._id, href:"/pages/students/" + advertisements[i]._id}) %>
                         <% if(i != advertisements.length-1){ %>
                             <div class="student-border-bottom">
                                 <img src="/pictures/png/sara-01.png">

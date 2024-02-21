@@ -13,7 +13,20 @@
                 <div class="advertisement-full-size-border1">
                         <h1><%= news[0].title %></h1>
                         <p>
-                            <%= news[0].text %>
+                            <% let slova = "" %>
+                            <% news[0].text = decodeURIComponent(news[0].text.replace(/%0A/g, "<br>")); %>
+                            <% for (let i = 0; i < news[0].text.length; i++) { %>
+                                <% if (news[0].text.substring(i, i + 4) === '<br>') { %>
+                                    <br>
+                                    <% i += 3; %>
+                                    <%= slova %>
+                                    <% slova = '' %>
+                                <% } else { %>
+                                    <% slova += news[0].text[i] %>
+                                <% } %>
+                            <% } %>
+                            <br>
+                            <%= slova %>
                         </p>
                         <% if(news[0].type == "konkurs"){ %>
                             <div class="compete-btn">

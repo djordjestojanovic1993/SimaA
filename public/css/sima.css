@@ -7,12 +7,25 @@
     visibility: hidden;
     opacity: 0;
 }
+header{
+    background-color: rgb(77, 21, 21);
+    position: fixed;
+    top: 0;
+}
+#nav-ul1 li{
+    background-color: rgb(77, 21, 21);
+}
 #sima-hero{
     width: 100%;
-    height: 100vh;
+    height: 36vw;
     display: flex;
-    background-image: url('/public/pictures/backgrounds/pozadina3.jpg');
+    /* padding: 160px 0 0 0; */
+    background-image: url('../pictures/png/sima.png');
     background-size: cover;
+    margin-top: 100px;
+}
+#sima-hero-background{
+    position: absolute;
 }
 #sima-about{
     height: 100%;

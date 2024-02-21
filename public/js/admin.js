@@ -35,7 +35,8 @@ async function showAdvertisements(){
 
             }
             clone.getElementsByClassName('advertisement-list-date')[0].value = advertisement.date;
-            clone.getElementsByClassName('advertisement-list-text')[0].value = advertisement.text;
+            clone.getElementsByClassName('advertisement-list-text')[0].value = decodeURIComponent(advertisement.text);
+            clone.getElementsByClassName('advertisement-list-subtitle')[0].value = advertisement.subtitle;
             clone.getElementsByClassName('advertisement-list-title')[0].disabled = 'true';
             if(advertisement.type == 'vest'){
                 clone.getElementsByClassName('advertisement-type-img')[0].src = 'pictures/admin/news.png';
@@ -43,12 +44,14 @@ async function showAdvertisements(){
                 clone.getElementsByClassName('advertisement-type-img')[0].src = 'pictures/admin/person.png';
             }else{
                 clone.getElementsByClassName('advertisement-type-img')[0].src = 'pictures/admin/competition.png';
+                clone.getElementsByClassName('advertisement-files-btn')[0].classList.remove('none');
             }
             clone.id = advertisement._id;
             advertisementList.appendChild(clone);
         }
         addEventListenerToDeleteBtns();
         addEventListenerToChangeBtns();
+        addEventListenerToshowAdvertisementFiles();
         activateSearch();
 
     }catch (error) {
@@ -57,12 +60,15 @@ async function showAdvertisements(){
 }
 showAdvertisements();
 
-async function addAdvertisementInDB(title, text, date, type){
+
+
+async function addAdvertisementInDB(title, text, date, type, subtitle){
     
     const imageInput = document.getElementById('imageInput');
     let resizedBlob;
     const formData = new FormData();
     formData.append('title', title);
+    formData.append('subtitle', subtitle);
     formData.append('text', text);
     formData.append('date', date);
     formData.append('type', type);
@@ -112,9 +118,11 @@ async function addEventListenerAdvertisementSubmitButton(){
             const titleInput = document.getElementById('form-first-input');
             const textInput = document.getElementById('form-second-input');
             const dateInput = document.getElementById('form-third-input');
+            const subtitleInput = document.getElementById('form-subtitle-input');
             const radioButtons = document.querySelectorAll('input[type="radio"]');
             const title = titleInput.value;
-            const text = textInput.value;
+            const subtitle = subtitleInput.value;
+            const text = encodeURIComponent(textInput.value);
             const date = dateInput.value;
             let type = radioButtons[0].value;
             for(let radioButton of radioButtons){
@@ -124,7 +132,7 @@ async function addEventListenerAdvertisementSubmitButton(){
             }
             try {
                 // console.log(title + "\n" + text)
-                await addAdvertisementInDB(title, text, date, type);
+                await addAdvertisementInDB(title, text, date, type, subtitle);
             } catch (error) {
                 console.log("Došlo je do greške: gggggg");
             }
@@ -199,6 +207,19 @@ function addEventListenerToChangeBtns(){
         }
     }
 }
+function addEventListenerToshowAdvertisementFiles(){
+    let advertisementFilesBtns = document.getElementsByClassName('advertisement-files-btn');
+
+    for(let filesBtn of advertisementFilesBtns){
+        if(filesBtn.hasClickListener != true){
+            filesBtn.addEventListener('click', (e)=>{
+                let advertisement = filesBtn.parentElement.parentElement.parentElement;
+                console.log(advertisement);
+            })
+        }
+    }
+
+}
 
 async function activateAdvertisementForChange(advertisement){
     let invisiblePart = advertisement.getElementsByClassName('advertisement-invisible-part');
@@ -269,13 +290,15 @@ async function activateChangeAdvertisementYesButton(advertisement){
 
     let yesBtn = advertisement.getElementsByClassName('save-change-btn');
     let titleInput = advertisement.getElementsByClassName('advertisement-list-title');
+    let subtitleInput = advertisement.getElementsByClassName('advertisement-list-subtitle');
     let textInput = advertisement.getElementsByClassName('advertisement-list-text');
     let dateInput = advertisement.getElementsByClassName('advertisement-list-date');
     
     if(yesBtn[0].hasClickListener != true){
         yesBtn[0].addEventListener('click', async ()=>{
             let title = titleInput[0].value;
-            let text = textInput[0].value;
+            let subtitle = subtitleInput[0].value;
+            let text = encodeURIComponent(textInput[0].value);
             let date = dateInput[0].value;
             let id = advertisement.id;
 
@@ -283,6 +306,7 @@ async function activateChangeAdvertisementYesButton(advertisement){
             let resizedBlob;
             const formData = new FormData();
             formData.append('title', title);
+            formData.append('subtitle', subtitle);
             formData.append('text', text);
             formData.append('date', date);
             formData.append('id', id);
@@ -319,13 +343,15 @@ async function activateChangeAdvertisementYesButton(advertisement){
 function activateChangeAdvertisementYesButtonWidthoutPicture(advertisement){
     let yesBtn = advertisement.getElementsByClassName('save-change-btn');
     let titleInput = advertisement.getElementsByClassName('advertisement-list-title');
+    let subtitleInput = advertisement.getElementsByClassName('advertisement-list-subtitle');
     let textInput = advertisement.getElementsByClassName('advertisement-list-text');
     let dateInput = advertisement.getElementsByClassName('advertisement-list-date');
 }
 if(yesBtn[0].hasClickListener != true){
     yesBtn[0].addEventListener('click', async ()=>{
         let title = titleInput[0].value;
-        let text = textInput[0].value;
+        let text = encodeURIComponent(textInput[0].value);
+        let subtitle = subtitleInput[0].value;
         let date = dateInput[0].value;
         let id = advertisement.id;
 
@@ -337,6 +363,7 @@ if(yesBtn[0].hasClickListener != true){
                 },
                 body: JSON.stringify({
                     title: title,
+                    subtitle: subtitle,
                     text: text,
                     date: date,
                     id: id

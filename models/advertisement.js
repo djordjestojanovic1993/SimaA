@@ -10,6 +10,11 @@ const advertisementSchema = new mongoose.Schema({
         required: true,
         default: "Naslov"
     },
+    subtitle:{
+        type:String,
+        required: true,
+        default: "Podnaslov"
+    },
     text:{
         type:String,
         required: true,
@@ -47,6 +52,7 @@ const addAdvertisements = async function(advertisementData){
     let newAdvertisements = new AdvertisementModel({
         _id: new mongoose.Types.ObjectId(),
         title: advertisementData.title,
+        subtitle: advertisementData.subtitle,
         text: advertisementData.text,
         date: advertisementData.date,
         type: advertisementData.type,
@@ -74,6 +80,7 @@ const changeAdvertisement = async function(advertisementData){
             return;
           }
           dokument.title = advertisementData.title;
+          dokument.subtitle = advertisementData.subtitle;
           dokument.text = advertisementData.text;
           dokument.date = advertisementData.date;
           dokument.img = advertisementData.slika;
@@ -88,6 +95,7 @@ const changeAdvertisement = async function(advertisementData){
 }
 
 const changeAdverisementWidthoutPicture = async function(advertisementData){
+  console.log(advertisementData.subtitle)
     try {
         const dokument = await AdvertisementModel.findById(advertisementData.id);
         if (!dokument) {
@@ -95,6 +103,7 @@ const changeAdverisementWidthoutPicture = async function(advertisementData){
             return;
           }
           dokument.title = advertisementData.title;
+          dokument.subtitle = advertisementData.subtitle;
           dokument.text = advertisementData.text;
           dokument.date = advertisementData.date;
 

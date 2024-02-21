@@ -17,9 +17,22 @@
             </div>
             <div class="student-full-size-text">
               <h1><%= student[0].title %></h1>
-              <h4><%= student[0].title %></h4>
+              <h4><%= student[0].subtitle %></h4>
               <p class="tekst">
-                <%= student[0].text %>
+                <% let slova = "" %>
+                <% student[0].text = decodeURIComponent(student[0].text.replace(/%0A/g, "<br>")); %>
+                <% for (let i = 0; i < student[0].text.length; i++) { %>
+                    <% if (student[0].text.substring(i, i + 4) === '<br>') { %>
+                        <br>
+                        <% i += 3; %>
+                        <%= slova %>
+                        <% slova = '' %>
+                    <% } else { %>
+                        <% slova += student[0].text[i] %>
+                    <% } %>
+                <% } %>
+                <br>
+                <%= slova %>
       
               </p>
     
