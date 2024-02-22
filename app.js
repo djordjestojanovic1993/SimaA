@@ -21,7 +21,6 @@ const routerPages = require('./routers/pages');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
-
 app.use('/advertisement', routerAdvertisement);
 app.use('/application', routerApplication);
 app.use('/pages', routerPages)
