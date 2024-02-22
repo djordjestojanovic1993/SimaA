@@ -50,6 +50,7 @@ main{
     display: flex;
     /* box-sizing: border-box; */
     padding:  0;
+    
 }
 .student-img{
     width: 35%;
