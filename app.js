@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 //povezi mongoose sa bazom
-mongoose.connect('mongodb://127.0.0.1:27017/simaAigumanov');
+mongoose.connect('mongodb+srv://djordjestojanovic:v6sOSDm9bRSELqHC@sima.ytrctvz.mongodb.net/sima?retryWrites=true&w=majority&appName=sima');
 
 const app = express();
 
