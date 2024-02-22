@@ -16,6 +16,7 @@ app.use(express.json());
 
 const routerAdvertisement = require('./routers/advertisement');
 const routerApplication= require('./routers/application');
+
 const routerPages = require('./routers/pages');
 
 app.set('view engine', 'ejs');
