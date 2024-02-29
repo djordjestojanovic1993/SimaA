@@ -8,12 +8,12 @@
     opacity: 0;
 }
 header{
-    background-color: rgb(77, 21, 21);
+    background-color: rgb(54, 12, 11);
     position: fixed;
     top: 0;
 }
 #nav-ul1 li{
-    background-color: rgb(77, 21, 21);
+    background-color: rgb(54, 12, 11);
 }
 #sima-hero{
     width: 100%;
@@ -258,7 +258,7 @@ header{
     height: 100vh;
     position: fixed;
     top: 0;
-    background-color: rgba(77, 21, 21, 0.9);
+    background-color: rgba(54, 12, 11, .9);
     transition: visibility 0.3s, opacity 0.3s linear;
 }
 #galery-pictures-enlarged{

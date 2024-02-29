@@ -4,10 +4,10 @@ body{
     box-sizing: border-box;
 }
 header{
-    background-color: rgb(77, 21, 21) !important;
+    background-color: rgb(54, 12, 11) !important;
 }
 #nav-ul1 li{
-    background-color: rgb(77, 21, 21) !important;
+    background-color: rgb(54, 12, 11) !important;
 
 }
 .news-conteiner{
@@ -44,7 +44,7 @@ header{
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
 }
 .advertisement:hover{
     box-shadow: inset -2px -2px 15px rgb(77, 21, 21), inset 5px 5px 15px rgb(197, 174, 174);
@@ -90,7 +90,7 @@ header{
     align-items: center;
     justify-content: start;
     gap: 0px;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
     /* overflow: hidden; */
 }
 .advertisement-text h2{
@@ -131,7 +131,7 @@ header{
     align-items: center;
     background-image: url('../pictures/png/pozadina-01.png');
     background-size: cover;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
 }
 .advertisement-full-size{
     width: 900px;
@@ -170,7 +170,7 @@ header{
     width: 4px;
 }
 .advertisement-full-size-border1 p::-webkit-scrollbar-thumb {
-    background-color: rgba(77, 21, 21, .7); 
+    background-color: rgba(54, 12, 11, .7);
     border-radius: 6px; 
 }
 .compete-btn{
@@ -190,7 +190,7 @@ header{
     font-family: "Source Sans Pro", sans-serif;
     font-size: 14px;
     font-weight: 600;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
     text-shadow: 0 1px #fff;
 
 }
@@ -198,7 +198,7 @@ header{
     width: 100%;
     height: 100%;
     text-decoration: none;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -236,7 +236,7 @@ header{
 .registration h1{
     font-size: 28px;
     margin: 20px 0;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
     text-align: center;
 }
 .registration-form{
@@ -274,7 +274,7 @@ header{
   .input-container input[type="text"]:valid ~ .label {
     top: -20px;
     font-size: 16px;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
   }
   
   .input-container .underline {
@@ -283,7 +283,7 @@ header{
     left: 0;
     height: 2px;
     width: 100%;
-    background-color: rgb(77, 21, 21);
+    background-color: rgb(54, 12, 11);
     transform: scaleX(0);
     transition: all 0.3s ease;
   }
@@ -361,7 +361,6 @@ header{
     transform: translateX(109px);
     height: 100%;
     width: 39px;
-    /* background-color: #34974d; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -411,6 +410,6 @@ header{
   }
   .registration-remark{
     font-size: 18px;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
     text-align: justify;
   }

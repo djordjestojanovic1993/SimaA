@@ -4,8 +4,8 @@ const navul1 = document.getElementById('nav-ul1');
 
 window.addEventListener('scroll', (e)=>{
     if(window.pageYOffset>80){
-        header[0].style.backgroundColor = 'rgb(77, 21, 21)';
-        navul1.style.backgroundColor = 'rgb(77, 21, 21)';
+        header[0].style.backgroundColor = 'rgb(54, 12, 11)';
+        navul1.style.backgroundColor = 'rgb(54, 12, 11)';
     }
     else{
         header[0].style.backgroundColor = 'transparent';

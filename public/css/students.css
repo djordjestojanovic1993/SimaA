@@ -5,13 +5,13 @@ body{
     background-image: url('../pictures/png/pozadina-01.png');
 }
 header{
-    background-color: rgb(77, 21, 21) !important;
+    background-color: rgb(54, 12, 11) !important;
 }
 nav{
-    background-color: rgb(77, 21, 21) !important;
+    background-color: rgb(54, 12, 11) !important;
 }
 #nav-ul1 li{
-    background-color: rgb(77, 21, 21) !important;
+    background-color: rgb(54, 12, 11) !important;
 
 }
 main{
@@ -30,7 +30,7 @@ main{
     padding: 4% 0%;
 }
 .content-h1{
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
     font-size: 44px;
     padding: 0 0 4% 0;
     margin-left: 10%;
@@ -86,7 +86,7 @@ main{
     align-items: center;
     gap: 6px;
     padding: 0 25px 0 50px;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
 }
 .student-text h4{
     margin: 0;
@@ -115,7 +115,7 @@ main{
 }
 .student-btn a{
     text-decoration: none;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
 }
 .reverse{
     display: flex;
@@ -162,7 +162,7 @@ main{
     max-height: 100%;
   }
 .student-full-size-text{
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
 }
 .student-full-size-text h1{
     text-align: center;

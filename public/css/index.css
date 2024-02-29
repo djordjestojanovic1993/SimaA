@@ -116,7 +116,7 @@ nav ul li ul li a{
 nav ul li a:hover{
     transition: all 0.5s ease 0s;
     text-decoration: none;
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
     background-color: rgb(250, 235, 215);
 }
 nav ul li:focus-within > ul,
@@ -189,7 +189,7 @@ nav ul li:hover > ul{
 #title h1{
     font-size: calc(3vw + 20px);
     text-align: center;
-    color: rgba(77, 21, 21, 80%);
+    color: rgba(54, 12, 11, 80%);
     letter-spacing: 16px;
     /* width: 90%; */
 }
@@ -211,280 +211,177 @@ nav ul li:hover > ul{
     min-height: 900px;
     background-color: rgb(243, 233, 219);
     position: relative;
-    /* font-family: MYRIADPRO-REGULAR; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 #konkursi-naslov{
-    position: absolute;
-    top: 8%;
-    right: 75%;
+    margin: 0 0 0 150px;
 }
 #konkursi-naslov h2{
     font-size: calc(2vw + 18px);
-    color: rgb(77, 21, 21);
+    color: rgb(54, 12, 11);
     letter-spacing: 5px;
 }
-#konkursi{
-    height: 60%;
-    width: 100%;
+.posts-conteiner{
     display: flex;
     justify-content: center;
-    gap: 50px;
+    align-items: center;
+    gap: 25px;
+}
+.post{
     position: relative;
-    top: 55%;
-    margin: auto;
-}
-.konkurs{
-    height: 100%;
-    width: 400px;
-}
-.konkurs a{
-    text-decoration: none;
-    color: black;
-}
-.konkurs-border{
-    height: 100%;
-    width: 100%;
-    border: 3px solid rgb(77, 21, 21);
+    width: 420px;
+    height: 580px;
+    background-color: white;
     box-shadow: 5px 5px 15px rgb(77, 21, 21), -2px -2px 15px rgb(197, 174, 174);
-    transition: 1.1s all;
+    padding: 50px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-.konkurs-border:hover{
+.post:hover{
     box-shadow: inset -2px -2px 15px rgb(77, 21, 21), inset 5px 5px 15px rgb(197, 174, 174);
     transition: 1.1s all;
 }
-.konkurs-sadrzaj{
-    height: 85%;
-    width: 85%;
-    border-top: 3px solid rgb(77, 21, 21);
-    border-bottom: 3px solid rgb(77, 21, 21);
-    position: relative;
-    top: 7.5%;
-    margin: auto;
-    letter-spacing: 0.5px;
+.post a{
+    text-decoration: none;
+    color: rgb(54, 12, 11);
 }
-.konkrs-picture{
-    width: 75%;
+.post-background{
+    width: 90%;
+    height: 94%;
+    left: 5%;
+    top: 3%;
+    position: absolute;
+}
+.post-img{
     height: 30%;
-    margin: auto;
-    position: relative;
-    top: 5%;
+    display: flex;
+    justify-content: center;
 }
-.konkrs-picture img{
-    width: 100%;
-    height: 100%;
+.post-img img{
+    width: 90%;
+    max-height: 100%;
 }
-.konkurs-text{
-    width: 75%;
-    height: 60%;
-    margin: auto;
-    position: relative;
-    top: 7%;
-    overflow-y: auto;
-}
-.konkurs-text::-webkit-scrollbar {
-    width: .0px;
-}
-.konkurs-text h2{
-    text-align: center;
-    font-size: calc(.8vw + 22px);
-    font-weight: bold;
-}
-.konkurs-text h5{
-    padding: 5%;
-    font-size: 20px;
-    font-weight: bold;
-    max-height: 38px;
-    overflow-y: auto;
-    text-align: center;
-    margin-bottom: 5px;
-}
-.konkurs-text h5::-webkit-scrollbar {
-    width: .0px;
-}
-.konkurs-text p{
-    font-size: calc(.5vw + 10px);
+.post-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    /* padding: 0 20px; */
+    margin-top: 20px;
     text-align: justify;
+}
+.post-text h3{
+    font-size: 32px;
+}
+.post-text h5{
+    font-size: 20px;
+}
+.post-text p{
+    font-size: 18px;
+    padding: 5px 0 0 0;
+    max-height: 230px;
+    overflow: hidden;
 }
 #upravni-odbor-strelica-levo, #upravni-odbor-strelica-desno{
     display: none;
 }
-#upravni-odbor{
+.directors-board{
     width: 100%;
-    height: 120vh;
+    height: 80vh;
     min-height: 1100px;
-    background-color: rgb(77, 21, 21);
+    background-color: rgb(54, 12, 11);
 }
-#upravni-odbor-border{
-    height: 90%;
-    width: 94%;
-    border: 5px solid rgb(243, 233, 219);
+.directors-board-border{
+    height: fit-content;
+    width: 60%;
     margin: auto;
     display: flex;
     flex-direction: column;
+    color: rgb(54, 12, 11);
 }
-#upravni-odbor-1-red{
-    width: 100%;
-    height: 50%;
-    position: relative;
+.directors-board-border img{
+    background-color: white;
 }
-#patrijarh-border{
-    border: 5px solid rgb(243, 233, 219);
-    width: 280px;
-    height: 350px;
-    margin: auto;
-    position: relative;
-    top: 10%;
-}
-#patrijarh{
-    border: 3px solid rgb(243, 233, 219);
-    width: 93%;
-    height: 95%;
-    margin: auto;
-    position: relative;
-}
-#patrijarh-ime{
-    position: relative;
-    top: 70px;
-    color: rgb(243, 233, 219);
-    text-align: center;
-    font-size: 24px;
-    transition: visibility 0s, opacity 0.5s linear;
-}
-#patrijarh-opis{
-    cursor: pointer;
-    width: 320px;
-    height: 400px;
-    overflow-y: hidden;
-    background-color: rgb(77, 21, 21);
-    position: absolute;
-    top: -25px;
-    left: -20px;
-    transition: all 0.5s ease 0s;
-    box-shadow: 6px 6px 10px  rgb(51, 11, 11), -2px -2px 10px rgb(97, 42, 42);
-    z-index: 2;
-    font-weight: 550;
-    /* font-family: MYRIADPRO-CONDIT; */
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.6s linear;
-    color: rgb(243, 233, 219);
-    letter-spacing: 0.5px;
-    padding: 5px 0;
-}
-#patrijarh-opis h2{
-    text-align: center;
-    padding: 5% 10%;
-    font-size: 28px;
-}
-#patrijarh-opis p{
-    font-size: 21px;
-    text-align: justify;
-    margin: 0 10% 0 10%;
-}
-#patrijarh-border:hover #patrijarh-opis{
-    visibility: visible;
-    opacity: 1;
-}
-#patrijarh-border:hover ~ #patrijarh-ime{
-    opacity: 0;
-}
-#upravni-odbor-2-red{
+.directors-board-member{
+    height: fit-content;
+    width: fit-content;
+    background-color: wheat;
     display: flex;
     justify-content: center;
-    gap: 90px;
-    position: relative;
-    width: 100%;
-    height: 50%;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 80px 0;
 }
-.upravni-odbor-2-red-2-clana{
+.directors-board-member-border{
+    width: 80%;
     display: flex;
-    gap: 90px;
+    flex-direction: column;
+    gap: 20px;
 }
-.clan-uo-border{
-    width: 270px;
-    height: 350px;
-    border: 3px solid rgb(243, 233, 219);
-    position: relative;
-    top: 5%;
-}
-.clan-uo{
-    height: 100%;
+.directors-board-member-img{
     width: 100%;
-    cursor: pointer;
+    display: flex;
+    justify-content: center;
 }
-#upravni-odbor img{
-    height: 90%;
-    width: 90%;
-    position: relative;
-    left: 5%;
-    top: 50%;
-    transform: translate(0, -50%);
+.directors-board-member-img img{
+    width: auto;
+    max-height: 450px;
 }
-.clan-uo-opis{
-    width: 120%;
-    background-color: rgba(243, 233, 219, 85%);
-    position: relative;
-    left: 30%;
-    top: -80%;
-    transition: all 0.5s ease 0s;
-    box-shadow: 3px 3px 10px  rgb(129, 104, 104);
-    padding: 8% 15%;
-    font-weight: 550;
-    font-size: 18px;
-    /* font-family: MYRIADPRO-CONDIT; */
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s, opacity 0.5s linear;
-    z-index: 5;
+.directors-board-member-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.directors-board-member-text h2{
+    font-size: 34px;
+    text-align: center;
+}
+.directors-board-member-text p{
+    font-size: 20px;
+    padding: 0 140px;
     text-align: justify;
+    max-height: 250px;
+    overflow: auto;
 }
-.clan-uo-opis h2{
-    text-align: center;
-    padding: 5% 0;
-    font-size: 24px;
+.directors-board-member-text p::-webkit-scrollbar {
+    width: 6px;
+    height: 50px;
 }
-.clan-ime{
-    position: relative;
-    top: 10%;
-    color: rgb(243, 233, 219);
-    text-align: center;
-    font-size: 20px;  
-    transition: visibility 0s, opacity 0.5s linear;
+.directors-board-member-text p::-webkit-scrollbar-thumb {
+    background-color: rgba(54, 12, 11, .7);
+    border-radius: 6px; 
 }
-#clan2-uo-opis{
-    left: -70%;
+#directors-board-arrow-left{
+    font-size: 48px;
+    cursor: pointer;
+    background-color: rgba(161, 161, 161, 0.3);
+    padding: 5px 26px 5px 24px;
+    border-radius: 100px;
+    transition: .3s;
+
 }
-#clan4-uo-opis{
-    left: -70%;
+#directors-board-arrow-right{
+    font-size: 48px;
+    cursor: pointer;
+    background-color: rgba(161, 161, 161, 0.3);
+    padding: 5px 24px 5px 26px;
+    border-radius: 100px;
+    transition: .3s;
+
 }
-#clan1-uo:hover #clan1-uo-opis{  
-    visibility: visible;
-    opacity: 1;
+#directors-board-arrow-left:hover, #directors-board-arrow-right:hover{
+    color: white;
+    background-color: rgba(54, 12, 11, .9);
 }
-#clan1-uo:hover ~ .clan-ime{
-    opacity: 0;
+#directors-board-arrow-left i{
 }
-#clan2-uo:hover #clan2-uo-opis{
-    visibility: visible;
-    opacity: 1;
-}
-#clan2-uo:hover ~ .clan-ime{
-    opacity: 0;
-}
-#clan3-uo:hover #clan3-uo-opis{
-    
-    visibility: visible;
-    opacity: 1;
-}
-#clan3-uo:hover ~ .clan-ime{
-    opacity: 0;
-}
-#clan4-uo:hover #clan4-uo-opis{
-    visibility: visible;
-    opacity: 1;
-}
-#clan4-uo:hover ~ .clan-ime{
-    opacity: 0;
+#directors-board-arrow-right{
 }
 #about{
     /* font-family: MYRIADPRO-REGULAR; */
@@ -566,7 +463,7 @@ nav ul li:hover > ul{
     visibility: hidden;
     opacity: 0;
     cursor: pointer;
-    background-color: rgba(77, 21, 21, 0.9);
+    background-color: rgba(54, 12, 11, .9);;
     transition: visibility 0.3s, opacity 0.3s linear;
 }
 #about-pictures-enlarged-img{
@@ -584,7 +481,7 @@ nav ul li:hover > ul{
     top: 0px;
     right: 2px;
     z-index: 1;
-    background-color: rgb(77, 21, 21);
+    background-color: rgb(54, 12, 11);;
     color: wheat;
     width: 4.5%;
     height: 6%;
@@ -596,7 +493,7 @@ nav ul li:hover > ul{
     align-items: center;
 }
 #x:hover{
-    background-color: rgb(116, 48, 48);
+    background-color: rgb(54, 12, 11);;
     transition: 0.4s;
 }
 #contact{
